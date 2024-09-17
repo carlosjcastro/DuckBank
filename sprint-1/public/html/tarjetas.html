@@ -1,0 +1,214 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Tus tarjetas | Duck Bank</title>
+    <link rel="stylesheet" href="/public/css/tarjetas.css" />
+    <link rel="stylesheet" href="/public/css/menu.css">
+    <link rel="stylesheet" href="/public/css/footer.css">
+    <link
+      href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css"
+      rel="stylesheet"
+    />
+  </head>
+  <body>
+      <!-- Menú Hamburguesa -->
+      <header>
+        <a href="/public/index.html"
+          ><img
+            class="logo"
+            src="/src/assets/icons/LogoDuckBank2.png"
+            alt="Logo DuckBank"
+            title="Logo DuckBank"
+        /></a>
+        <h1 class="titulo">Duck Bank</h1>
+        <button class="menu-btn" onclick="toggleMenu()">
+          <span class="bar"></span>
+          <span class="bar"></span>
+          <span class="bar"></span>
+        </button>
+      </header>
+  
+      <!-- Menú lateral -->
+      <aside class="sidebar">
+        <nav class="nav">
+          <ul class="nav-list">
+            <li><a href="/public/index.html">Inicio</a></li>
+            <li><a href="#">Cuentas</a></li>
+            <li>
+              <a href="/public/html/tarjetas.html">Tarjetas</a>
+            </li>
+            <li><a href="#">Seguros</a></li>
+            <li><a href="#">Pagos y Servicios</a></li>
+            <li><a href="#">Historial de Cuenta</a></li>
+            <li><a href="#">Préstamos</a></li>
+            <li>
+              <a href="/public/html/inversiones.html">Inversiones</a>
+            </li>
+            <li><a href="#">Cuotificalo</a></li>
+            <li>
+              <button class="dropdown-btn" onclick="toggleDropdown(this)">
+                ¡Mis beneficios!
+                <i class="bx bx-chevron-down arrow-icon"></i>
+              </button>
+              <ul class="dropdown-content">
+                <li>
+                  <a href="/public/html/promociones.html"
+                    >Puntos y Promociones</a
+                  >
+                </li>
+                <li><a href="#">Referidos</a></li>
+              </ul>
+            </li>
+            <li>
+              <button class="dropdown-btn" onclick="toggleDropdown(this)">
+                Seguridad y Privacidad
+                <i class="bx bx-chevron-down arrow-icon"></i>
+              </button>
+              <ul class="dropdown-content">
+                <li><a href="#">Configuración</a></li>
+                <li><a href="#">TOKEN DUCK</a></li>
+                <li><a href="#">Claves</a></li>
+              </ul>
+            </li>
+            <li>
+              <button class="dropdown-btn" onclick="toggleDropdown(this)">
+                Contacto
+                <i class="bx bx-chevron-down arrow-icon"></i>
+              </button>
+              <ul class="dropdown-content">
+                <li><a href="#">Sucursales y Turnos</a></li>
+                <li><a href="#">Cajero más Cercano</a></li>
+                <li><a href="#">Atención al Cliente</a></li>
+              </ul>
+            </li>
+          </ul>
+        </nav>
+      </aside>
+
+      <!-- Inicio Tarjetas -->
+    <div class="cabecera-principal">
+      <h1>Tus Tarjetas</h1>
+    </div>
+
+    <!-- Menú desplegable -->
+    <div class="dropdown-tarjetas">
+      <button class="dropdown-button">
+        <span class="dropdown-text">Más opciones</span>
+        <span class="dropdown-icon">▼</span>
+      </button>
+      <div class="dropdown-content">
+        <a href="#">Pedir devolución impuesto PAIS</a>
+        <a href="#">Seguimiento de producto</a>
+        <a href="#">Solicitar adicionales</a>
+      </div>
+    </div>
+
+    <section class="cards-section">
+      <!-- Tarjetas de Débito -->
+      <h2>Débito</h2>
+      <div class="card-container debit"></div>
+
+      <!-- Tarjetas de Crédito -->
+      <h2>Crédito</h2>
+      <div class="card-container credit"></div>
+
+      <!-- Nuevas Tarjetas -->
+      <img
+        src="/src/assets/tarjetas/card.svg"
+        class="icono-new-cards"
+        alt="Icono de Tarjeta"
+      />
+      <h2 class="title-new-cards">Nuevas tarjetas proximamente</h2>
+      <p class="text-new-cards">
+        Podrás solicitarlas desde tu cuenta como tarjetas de débito y crédito
+        adicionales cuando estén disponibles.
+      </p>
+      <section class="cards-new container-new">
+        <!-- Tarjeta de Débito Nueva -->
+        <div class="card-new">
+          <img
+            src="/src/assets/icons/LogoDuckBank2.png"
+            alt="Logo de Duck Bank"
+            class="card-logo"
+          />
+          <div class="card-type">Débito</div>
+          <div class="card-number">**** **** **** 1234</div>
+          <div class="card-holder">EL PATITO PEREZ</div>
+          <div class="card-expiry">Exp: 08/28</div>
+        </div>
+        <!-- Tarjeta de Crédito Nueva -->
+        <div class="card-two-new">
+          <img
+            src="/src/assets/icons/LogoDuckBank2.png"
+            alt="Logo de Duck Bank"
+            class="card-logo"
+          />
+          <div class="card-type">Crédito</div>
+          <div class="card-number">**** **** **** 5678</div>
+          <div class="card-holder">EL PATITO PEREZ</div>
+          <div class="card-expiry">Exp: 08/28</div>
+        </div>
+      </section>
+    </section>
+
+      <!-- Footer -->
+      <footer class="pie-de-pagina">
+        <div class="footer-contenedor">
+          <a href="index.html"><h2>DuckBank</h2></a>
+          <div class="footer-contenedor-lista">
+            <ul class="footer-lista--contacto">
+              <li class="titulo-lista">Contacto</li>
+              <a href="mailto:soporte@duckbank.com.ar">
+                <li class="item">soporte@duckbank.com.ar</li>
+              </a>
+              <li class="item">0800-333-3333</li>
+            </ul>
+            <ul class="footer-lista--contacto">
+              <li class="titulo-lista">Nosotros</li>
+              <a href=""><li class="item">Blog</li></a>
+              <a href=""><li class="item">Únete al equipo</li></a>
+            </ul>
+            <ul class="footer-lista--contacto">
+              <li class="titulo-lista">Otros enlaces</li>
+              <a href=""><li class="item">Seguridad</li></a>
+              <a href=""><li class="item">Defensa consumidor</li></a>
+            </ul>
+          </div>
+          <div class="contenedor-newsLetter">
+            <p>Únete al NewsLetter!</p>
+            <form class="form-newsletter" action="#" id="suscripcion">
+              <input
+                class="email"
+                type="email"
+                name="email"
+                id="email"
+                placeholder="Ingrese su Email"
+              />
+              <input class="submit" type="submit" value="Suscribirse" />
+            </form>
+          </div>
+        </div>
+        <div class="contenedor-extras">
+          <div class="contenedor-extras--terminos">
+            <p>© Duckbank Argentina S.A.</p>
+            <a href="html/terminos-y-condiciones.html"
+              ><p class="terminos-condiciones">Términos y condiciones</p></a
+            >
+          </div>
+          <div class="contenedor-redes">
+            <ul id="contenedor-redes--lista"></ul>
+          </div>
+        </div>
+      </footer>
+
+    <!-- Iconos -->
+    <script src="https://unpkg.com/boxicons@2.1.4/dist/boxicons.js"></script>
+
+    <!-- Las tarjetas de Débito y Crédito se cargan de forma dinámica -->
+    <script src="/public/js/tarjetas.js"></script>
+    <script src="/public/js/menu.js"></script>
+    <script src="/public/js/footer.js"></script>
+  </body>
+</html>

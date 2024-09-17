@@ -1,0 +1,250 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900&display=swap");
+
+* {
+  box-sizing: border-box;
+  font-family: "Poppins", sans-serif;
+}
+
+.pie-de-pagina {
+  margin-top: auto;
+  background-color: #463f3a;
+  bottom: 0;
+  height: auto;
+  width: 100%;
+}
+
+.footer-contenedor {
+  background-color: #463f3a;
+  border-bottom: 1.6px solid #e2c290;
+  display: flex;
+  justify-content: space-between;
+  margin: 0 auto;
+  padding: 10px;
+  width: 95%;
+}
+
+.footer-contenedor a {
+  text-decoration: none;
+  color: #f3c677;
+}
+.footer-contenedor h2 {
+  margin-left: 10%;
+  margin-bottom: 20px;
+  min-width: 150px;
+  font-size: 30px;
+  color: #f3c677;
+}
+
+.footer-contenedor-lista {
+  align-items: center;
+  background-color: #463f3a;
+  color: #e2c290;
+  display: flex;
+  gap: 50px;
+  list-style: none;
+  margin: 0 auto;
+  /*  margin-left: 20%; */
+}
+.footer-lista--contacto {
+  list-style: none;
+}
+.item {
+  margin-top: 5px;
+  font-size: 12px;
+  color: grey;
+}
+.item:hover {
+  color: #ffffff;
+}
+ul a {
+  text-decoration: none;
+  color: grey;
+}
+.titulo-lista {
+  /* color: rgb(0, 102, 255); */
+  color: #f3c677;
+  font-weight: 700;
+  list-style: none;
+}
+
+.contenedor-newsLetter {
+  font-size: 20px;
+  margin: 0;
+  /* margin-right: 10%; */
+}
+.contenedor-newsLetter p {
+  color: #f3c677;
+  font-weight: 500;
+  margin-bottom: 6px;
+}
+/* Terminos y redes sociales */
+.contenedor-extras {
+  align-items: flex-end;
+  color: #f3c677;
+  display: flex;
+  justify-content: space-between;
+  margin: 10px auto;
+  width: 95%;
+}
+.contenedor-extras--terminos {
+  display: flex;
+  max-height: 50px;
+  font-size: 13px;
+}
+.contenedor-extras--terminos a {
+  text-decoration: none;
+}
+.terminos-condiciones {
+  border-left: 1.4px solid #f3c677;
+  color: #f3c677;
+  text-decoration: none;
+  margin-left: 4px;
+  padding-left: 3px;
+}
+.terminos-condiciones {
+  text-decoration: none;
+}
+.contenedor-redes {
+  margin-right: 10px;
+}
+.contenedor-redes ul {
+  list-style: none;
+  display: flex;
+  gap: 6px;
+}
+.contenedor-redes img {
+  max-height: 25px;
+}
+
+/* formulario newsletter */
+.form-newsletter {
+  display: flex;
+  align-items: center;
+  border-bottom: 1px solid #f3c677;
+}
+.email {
+  border: 0;
+  background-color: #463f3a;
+  color: grey;
+  outline: none;
+  margin-right: 4px;
+}
+
+.submit {
+  background-color: #f3c677;
+  color: rgb(0, 0, 0);
+  cursor: pointer;
+  border: none;
+  font-weight: 500;
+  /* border: 1px solid grey; */
+  padding: 7px;
+  border-radius: 15px;
+  margin-bottom: 5px;
+}
+
+/* Responsive */
+@media (max-width: 600px) {
+  .footer-contenedor {
+    flex-direction: column;
+    margin-bottom: 10px;
+    border-bottom: none;
+  }
+  .footer-lista--contacto {
+    padding: 0;
+  }
+  .footer-contenedor-lista {
+    flex-direction: column;
+    margin-top: 10px;
+    text-align: center;
+    gap: 7px;
+  }
+
+  .contenedor-extras {
+    margin-bottom: 0px;
+    align-items: flex-end;
+    font-size: 12px;
+  }
+  .contenedor-redes--lista {
+    align-items: flex-end;
+    justify-content: end;
+    align-self: flex-end;
+  }
+  .contenedor-redes img {
+    max-height: 19px;
+    /* max-height: 29px; */
+  }
+  .contenedor-newsLetter p {
+    font-size: 25px;
+    margin-bottom: 5px;
+  }
+  .contenedor-extras--terminos {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+  }
+  .contenedor-extras--terminos p {
+    font-size: 12px;
+  }
+  .terminos-condiciones {
+    color: grey;
+    border: none;
+  }
+  .form-newsletter {
+    border-bottom: none;
+  }
+}
+
+@media (max-width: 1045px) {
+  .pie-de-pagina {
+    height: auto;
+    padding: 10px 0;
+    margin-top: 30%;
+  }
+  .footer-contenedor {
+    flex-direction: column;
+    align-items: center;
+  }
+  .footer-contenedor h2 {
+    margin: 0;
+  }
+  .footer-contenedor .footer-contenedor-lista {
+    align-items: center;
+    /* gap: 40px; */
+    justify-content: center;
+  }
+
+  .contenedor-newsLetter {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    margin: 10px auto;
+  }
+  .contenedor-newsLetter form {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+  }
+  .form-newsletter {
+    border: none;
+    margin-bottom: 6px;
+  }
+  .email {
+    text-align: center;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 5px;
+    border-bottom: 1px solid #f3c677;
+  }
+  .contenedor-newsLetter p {
+    font-size: 25px;
+  }
+  .submit {
+    margin-top: 5px;
+  }
+
+  .contenedor-redes img {
+    max-height: 20px;
+  }
+}

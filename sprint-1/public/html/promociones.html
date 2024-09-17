@@ -1,0 +1,229 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="/public/css/promociones.css" />
+    <link rel="stylesheet" href="/public/css/menu.css" />
+    <link rel="stylesheet" href="/public/css/footer.css" />
+    
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css"
+    />
+    <title>Puntos y promociones | Duck Bank</title>
+  </head>
+  <body>
+   <!-- Menú Hamburguesa -->
+   <header>
+    <a href="/public/index.html"
+      ><img
+        class="logo"
+        src="/src/assets/icons/LogoDuckBank2.png"
+        alt="Logo DuckBank"
+        title="Logo DuckBank"
+    /></a>
+    <h1 class="titulo">Duck Bank</h1>
+    <button class="menu-btn" onclick="toggleMenu()">
+      <span class="bar"></span>
+      <span class="bar"></span>
+      <span class="bar"></span>
+    </button>
+  </header>
+
+  <!-- Menú lateral -->
+  <aside class="sidebar">
+    <nav class="nav">
+      <ul class="nav-list">
+        <li><a href="/public/index.html">Inicio</a></li>
+        <li><a href="#">Cuentas</a></li>
+        <li>
+          <a href="/public/html/tarjetas.html">Tarjetas</a>
+        </li>
+        <li><a href="#">Seguros</a></li>
+        <li><a href="#">Pagos y Servicios</a></li>
+        <li><a href="#">Historial de Cuenta</a></li>
+        <li><a href="#">Préstamos</a></li>
+        <li>
+          <a href="/public/html/inversiones.html">Inversiones</a>
+        </li>
+        <li><a href="#">Cuotificalo</a></li>
+        <li>
+          <button class="dropdown-btn" onclick="toggleDropdown(this)">
+            ¡Mis beneficios!
+            <i class="bx bx-chevron-down arrow-icon"></i>
+          </button>
+          <ul class="dropdown-content">
+            <li>
+              <a href="/public/html/promociones.html"
+                >Puntos y Promociones</a
+              >
+            </li>
+            <li><a href="#">Referidos</a></li>
+          </ul>
+        </li>
+        <li>
+          <button class="dropdown-btn" onclick="toggleDropdown(this)">
+            Seguridad y Privacidad
+            <i class="bx bx-chevron-down arrow-icon"></i>
+          </button>
+          <ul class="dropdown-content">
+            <li><a href="#">Configuración</a></li>
+            <li><a href="#">TOKEN DUCK</a></li>
+            <li><a href="#">Claves</a></li>
+          </ul>
+        </li>
+        <li>
+          <button class="dropdown-btn" onclick="toggleDropdown(this)">
+            Contacto
+            <i class="bx bx-chevron-down arrow-icon"></i>
+          </button>
+          <ul class="dropdown-content">
+            <li><a href="#">Sucursales y Turnos</a></li>
+            <li><a href="#">Cajero más Cercano</a></li>
+            <li><a href="#">Atención al Cliente</a></li>
+          </ul>
+        </li>
+      </ul>
+    </nav>
+  </aside>
+
+    <!-- Inicio Promociones -->
+    <div class="cabecera-principal">
+      <h1 class="title">Puntos y Promociones</h1>
+    </div>
+    <div class="intro">
+      <div class="caja">
+        <h2 class="caja-ppal">Viajá con DUCK BANK</h2>
+        <p class="caja-ppal">
+          Te contamos todos los beneficios y servicios que tenemos para vos.
+          Empezá a planificar tu próximo viaje
+        </p>
+      </div>
+    </div>
+
+    <div class="container-1">
+      <div class="box-1">
+        <h3>¡Armá tu viaje con Puntos DUCK!</h3>
+        <p class="caja1">
+          Los consumos que realices con nuestras tarjetas de crédito suman
+          puntos que te acercan a tu próximo destino.
+          <br />
+          Con Puntos DUCK vas a poder reservar vuelos de las principales
+          aerolíneas, hoteles en todo el mundo, actividades, alquilar auto y
+          ¡mucho más!
+        </p>
+        <button class="puntos" onclick="handleClick()">Ir a Puntos DUCK</button>
+      </div>
+
+      <div class="box-1">
+        <h3>Suma pasajeros a tu aventura</h3>
+        <p class="caja1">
+          Solicitá extensiones de tu tarjeta de crédito sin costo extra para
+          personas mayores de 14 años.
+          <br />
+          Por cada persona nueva que realice consumos con tus tarjetas
+          adicionales también sumas Puntos DUCK.
+        </p>
+        <button class="solicitar" onclick="handleClick()">
+          Solicitar adicional
+        </button>
+      </div>
+    </div>
+
+    <h2 class="servicios">Más servicios</h2>
+    <div class="container-2">
+      <div class="box-2">
+        <i class="fas fa-money-bill-wave"></i>
+        <h3 class="caja2">Compra de moneda extranjera</h3>
+        <p>
+          Para comprar reales o pesos uruguayos, acercate a la sucursal más
+          cercana.
+          <br />
+          Si necesitás comprar dólares o euros, podés hacerlo online desde tus
+          cuentas DUCK.
+        </p>
+        <button class="dolares" onclick="handleClick()">Comprar dólares</button>
+      </div>
+
+      <div class="box-2">
+        <i class="fas fa-credit-card"></i>
+        <h3 class="caja2">Aumento de límite transitorio</h3>
+        <p>
+          Para que el límite de tu tarjeta de crédito no sea un inconveniente,
+          podés solicitar un aumento transitorio por la duración de tu viaje.
+        </p>
+        <button class="aumentar" onclick="handleClick()">
+          Aumentar límite
+        </button>
+      </div>
+
+      <div class="box-2">
+        <i class="fas fa-shield-alt"></i>
+        <h3 class="caja2">Assist Card® 50%off</h3>
+        <p>
+          Contratá tu cobertura de asistencia al viajero a través de Assist
+          Card® con 50% de descuento y hasta 12 cuotas sin interés.
+        </p>
+        <button class="contratar" onclick="handleClick()">
+          Contratar ahora
+        </button>
+      </div>
+    </div>
+
+     <!-- Footer -->
+     <footer class="pie-de-pagina">
+      <div class="footer-contenedor">
+        <a href="index.html"><h2>DuckBank</h2></a>
+        <div class="footer-contenedor-lista">
+          <ul class="footer-lista--contacto">
+            <li class="titulo-lista">Contacto</li>
+            <a href="mailto:soporte@duckbank.com.ar">
+              <li class="item">soporte@duckbank.com.ar</li>
+            </a>
+            <li class="item">0800-333-3333</li>
+          </ul>
+          <ul class="footer-lista--contacto">
+            <li class="titulo-lista">Nosotros</li>
+            <a href=""><li class="item">Blog</li></a>
+            <a href=""><li class="item">Únete al equipo</li></a>
+          </ul>
+          <ul class="footer-lista--contacto">
+            <li class="titulo-lista">Otros enlaces</li>
+            <a href=""><li class="item">Seguridad</li></a>
+            <a href=""><li class="item">Defensa consumidor</li></a>
+          </ul>
+        </div>
+        <div class="contenedor-newsLetter">
+          <p>Únete al NewsLetter!</p>
+          <form class="form-newsletter" action="#" id="suscripcion">
+            <input
+              class="email"
+              type="email"
+              name="email"
+              id="email"
+              placeholder="Ingrese su Email"
+            />
+            <input class="submit" type="submit" value="Suscribirse" />
+          </form>
+        </div>
+      </div>
+      <div class="contenedor-extras">
+        <div class="contenedor-extras--terminos">
+          <p>© Duckbank Argentina S.A.</p>
+          <a href="/html/terminos-y-condiciones.html"
+            ><p class="terminos-condiciones">Términos y condiciones</p></a
+          >
+        </div>
+        <div class="contenedor-redes">
+          <ul id="contenedor-redes--lista"></ul>
+        </div>
+      </div>
+    </footer>
+
+    <!-- Scripts -->
+    <script src="/public/js/menu.js"></script>
+    <script src="/public/js/promociones.js"></script>
+    <script src="/public/js/footer.js"></script>
+  </body>
+</html>

@@ -1,0 +1,255 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Inversiones | Duck Bank</title>
+    <link rel="stylesheet" href="/public/css/inversiones.css" />
+    <link rel="stylesheet" href="/public/css/menu.css" />
+    <link rel="stylesheet" href="/public/css/footer.css" />
+  </head>
+  <body>
+    <!-- Menú Hamburguesa -->
+    <header>
+      <a href="/public/index.html"
+        ><img
+          class="logo"
+          src="/src/assets/icons/LogoDuckBank2.png"
+          alt="Logo DuckBank"
+          title="Logo DuckBank"
+      /></a>
+      <h1 class="titulo">Duck Bank</h1>
+
+      <button class="menu-btn" onclick="toggleMenu()">
+        <span class="bar"></span>
+        <span class="bar"></span>
+        <span class="bar"></span>
+      </button>
+    </header>
+
+    <!-- Menú lateral -->
+    <aside class="sidebar">
+      <nav class="nav">
+        <ul class="nav-list">
+          <li><a href="/public/index.html">Inicio</a></li>
+          <li><a href="#">Cuentas</a></li>
+          <li>
+            <a href="/public/html/tarjetas.html">Tarjetas</a>
+          </li>
+          <li><a href="#">Seguros</a></li>
+          <li><a href="#">Pagos y Servicios</a></li>
+          <li><a href="#">Historial de Cuenta</a></li>
+          <li><a href="#">Préstamos</a></li>
+          <li>
+            <a href="/public/html/inversiones.html">Inversiones</a>
+          </li>
+          <li><a href="#">Cuotificalo</a></li>
+          <li>
+            <button class="dropdown-btn" onclick="toggleDropdown(this)">
+              ¡Mis beneficios!
+              <i class="bx bx-chevron-down arrow-icon"></i>
+            </button>
+            <ul class="dropdown-content">
+              <li>
+                <a href="/public/html/promociones.html"
+                  >Puntos y Promociones</a
+                >
+              </li>
+              <li><a href="#">Referidos</a></li>
+            </ul>
+          </li>
+          <li>
+            <button class="dropdown-btn" onclick="toggleDropdown(this)">
+              Seguridad y Privacidad
+              <i class="bx bx-chevron-down arrow-icon"></i>
+            </button>
+            <ul class="dropdown-content">
+              <li><a href="#">Configuración</a></li>
+              <li><a href="#">TOKEN DUCK</a></li>
+              <li><a href="#">Claves</a></li>
+            </ul>
+          </li>
+          <li>
+            <button class="dropdown-btn" onclick="toggleDropdown(this)">
+              Contacto
+              <i class="bx bx-chevron-down arrow-icon"></i>
+            </button>
+            <ul class="dropdown-content">
+              <li><a href="#">Sucursales y Turnos</a></li>
+              <li><a href="#">Cajero más Cercano</a></li>
+              <li><a href="#">Atención al Cliente</a></li>
+            </ul>
+          </li>
+        </ul>
+      </nav>
+    </aside>
+
+    <!-- Inicio Inversiones -->
+    <div class="cabecera-principal">
+      <h1 class="titulo-inversiones">Inversiones</h1>
+    </div>
+
+    <main>
+      <section class="promo-section">
+        <div class="promo-text">
+          <h2>Hace crecer tus ahorros en un plazo fijo</h2>
+          <p>
+            Asegura el crecimiento de tus ahorros con nuestras ofertas de plazo
+            fijo, que te garantizan un rendimiento estable y atractivo.
+            Aprovecha nuestras tasas altamente competitivas, diseñadas para
+            maximizar tus beneficios y brindarte tranquilidad. Con nuestro
+            simulador fácil de usar, puedes calcular el rendimiento de tu
+            inversión en diferentes escenarios y plazos, adaptados a tus
+            necesidades. ¡Simula tu inversión hoy mismo y comienza a planificar
+            un futuro financiero más sólido!
+          </p>
+        </div>
+        <div class="promo-image">
+          <img src="/src/assets/inversiones/graph.svg" alt="Plazo fijo" />
+        </div>
+      </section>
+
+      <!-- Sección de Inversión Actual -->
+      <section class="current-investment">
+        <div class="card">
+          <div class="card-header-current">
+            <h3>Tu Inversión Actual: Plazo Fijo</h3>
+          </div>
+          <div class="card-body">
+            <p><strong>Monto Invertido:</strong> $100,000</p>
+            <p><strong>Fecha de Inicio:</strong> 01/08/2024</p>
+            <p><strong>Fecha de Finalización:</strong> 31/08/2024</p>
+          </div>
+          <div class="card-footer">
+            <button id="new-investment">Nueva Inversión</button>
+          </div>
+        </div>
+      </section>
+
+      <!-- Sección de opciones de inversión -->
+      <section class="investment-options">
+        <div class="card">
+          <div class="card-header">
+            <h4>Plazos Fijos</h4>
+            <div class="menu-icon-inversion" onclick="toggleMenu(event)">⋮</div>
+          </div>
+          <p>Inversiones a plazo fijo con tasas competitivas.</p>
+          <div class="menu-inversion" id="plazoFijoMenu">
+            <span onclick="navigateToSimulator()">Simular</span>
+            <span>Pendientes</span>
+          </div>
+        </div>
+        <div class="card">
+          <h4>Fondos Fima</h4>
+          <p>Inversiones en fondos comunes de inversión.</p>
+          <button>Agregar</button>
+          <button>Pendientes</button>
+        </div>
+        <div class="card">
+          <h4>Bonos y Acciones</h4>
+          <p>Compra y venta de bonos y acciones.</p>
+          <button>Comprar</button>
+          <button>Órdenes en curso</button>
+        </div>
+      </section>
+
+      <!-- Sección del Modal y Simulador de inversión -->
+      <div id="simulatorModal" class="modal">
+        <div class="modal-content">
+          <span class="close">&times;</span>
+          <h2>Simulador de Plazo Fijo Tradicional</h2>
+
+          <section class="simulator">
+            <label for="currency">Moneda:</label>
+            <select id="currency">
+              <option value="pesos">Pesos</option>
+              <option value="dolares">Dólares</option>
+            </select>
+
+            <label class="amount" for="amount">Monto $:</label>
+            <input
+              type="number"
+              id="amount"
+              placeholder="Monto a invertir"
+              min="100"
+              required
+            />
+            <p class="note">El monto mínimo a invertir es de $100.</p>
+
+            <label for="term">Plazo:</label>
+            <select id="term">
+              <option value="30">30 días</option>
+              <option value="60">60 días</option>
+              <option value="90">90 días</option>
+            </select>
+
+            <button id="simulate">Simular</button>
+
+            <div id="result" class="result" style="display: none">
+              <h3>Resultado de la Simulación</h3>
+              <p>Monto a recibir: <span id="totalAmount"></span></p>
+              <p>TNA: 35.00%</p>
+              <p>TEA: 41.20%</p>
+              <p>Intereses ganados: <span id="earnedInterest"></span></p>
+              <p>Fecha de vencimiento: <span id="endDate"></span></p>
+            </div>
+          </section>
+        </div>
+      </div>
+    </main>
+
+    <footer class="pie-de-pagina">
+      <div class="footer-contenedor">
+        <a href="index.html"><h2>duckBank</h2></a>
+        <div class="footer-contenedor-lista">
+          <ul class="footer-lista--contacto">
+            <li class="titulo-lista">Contacto</li>
+            <a href="mailto:soporte@duckbank.com.ar">
+              <li class="item">soporte@duckbank.com.ar</li>
+            </a>
+            <li class="item">0800-333-3333</li>
+          </ul>
+          <ul class="footer-lista--contacto">
+            <li class="titulo-lista">Nosotros</li>
+            <a href=""><li class="item">Blog</li></a>
+            <a href=""><li class="item">Únete al equipo</li></a>
+          </ul>
+          <ul class="footer-lista--contacto">
+            <li class="titulo-lista">Otros enlaces</li>
+            <a href=""><li class="item">Seguridad</li></a>
+            <a href=""><li class="item">Defensa consumidor</li></a>
+          </ul>
+        </div>
+        <div class="contenedor-newsLetter">
+          <p>Únete a nosotros!</p>
+          <form action="#" id="suscripcion">
+            <input
+              class="email"
+              type="email"
+              name="email"
+              id="email"
+              placeholder="Ingrese su Email"
+            />
+            <input class="submit" type="submit" value="Suscribirse" />
+          </form>
+        </div>
+      </div>
+      <div class="contenedor-extras">
+        <div class="contenedor-extras--terminos">
+          <p>© Duckbank Argentina S.A.</p>
+          <a href="/public/html/terminos-y-condiciones.html"
+            ><p class="terminos-condiciones">Términos y condiciones</p></a
+          >
+        </div>
+        <div class="contenedor-redes">
+          <ul id="contenedor-redes--lista"></ul>
+        </div>
+      </div>
+    </footer>
+
+    <!-- Script para cargar el Modal y Simulador al hacer click en el botón "Simular" de la card Plazo Fijo -->
+    <script src="/public/js/inversiones.js"></script>
+    <script src="/public/js/menu.js"></script>
+    <script src="/public/js/footer.js"></script>
+  </body>
+</html>

@@ -1,0 +1,296 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900&display=swap");
+
+body {
+  font-family: "Poppins", sans-serif;
+  margin: 0;
+  padding: 0;
+  background-color: #f4f4f4;
+}
+
+.cabecera-principal {
+  background-color: #463f3a;
+  color: white;
+  padding: 10px 20px;
+  text-align: center;
+  min-height: 30vh;
+  justify-content: center;
+  align-items: center;
+  display: flex;
+  margin-top: 4rem;
+}
+
+.titulo-inversiones {
+  text-align: center;
+  font-size: 50px;
+  font-weight: 900;
+  justify-content: center;
+}
+
+main {
+  padding: 20px;
+}
+
+.card {
+  position: relative;
+}
+
+.card-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  text-align: center;
+  background-color: #f4f4f4;
+  border-radius: 20px;
+  padding: 20px;
+  font-size: 1.5rem;
+}
+
+.card-header-current h3 {
+  text-align: center;
+  margin: 0;
+  background-color: #f4f4f4;
+  border-radius: 20px;
+  padding: 20px;
+  font-size: 1.4rem;
+}
+
+h4 {
+  margin: 0;
+  background-color: #f4f4f4;
+  border-radius: 20px;
+  padding: 20px;
+  font-size: 1.2rem;
+}
+
+.menu-icon-inversion {
+  cursor: pointer;
+  font-size: 24px;
+  padding: 5px;
+  background-color: #4e2d1e;
+  color: white;
+  border-radius: 50%;
+  width: 30px;
+  height: 30px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.menu-icon-inversion:hover {
+  background-color: #3f2518;
+}
+
+.menu-inversion {
+  display: none;
+  position: absolute;
+  background-color: white;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  border-radius: 20px;
+  top: 40px;
+  right: 0;
+  z-index: 10;
+  width: 120px;
+}
+
+.menu-inversion span {
+  display: block;
+  padding: 10px;
+  cursor: pointer;
+  border-radius: 10px;
+}
+
+.menu-inversion span:hover {
+  background-color: #f4f4f4;
+}
+
+.menu-show {
+  display: block;
+}
+
+.promo-section {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background-color: white;
+  padding: 20px;
+  border-radius: 20px;
+  margin-bottom: 20px;
+}
+
+.promo-text {
+  max-width: 60%;
+}
+
+.promo-image img {
+  max-width: 100%;
+  height: 100px;
+  border-radius: 8px;
+}
+
+.current-investment {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 20px;
+}
+
+/* Cards de opciones de inversión */
+.investment-options {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  margin-bottom: 4rem;
+}
+
+.card {
+  background-color: white;
+  border-radius: 20px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  padding: 20px;
+  width: 30%;
+  margin-bottom: 20px;
+  text-align: center;
+  justify-content: center;
+  align-items: center;
+}
+
+.card h4 {
+  margin-top: 0;
+  text-align: center;
+  align-items: center;
+}
+
+.card button {
+  background-color: #4e2d1e;
+  color: white;
+  border: none;
+  padding: 10px 15px;
+  margin: 5px;
+  border-radius: 20px;
+  cursor: pointer;
+  font-size: 1.1rem;
+}
+
+.card button:hover {
+  background-color: #3f2518;
+}
+
+/* Modal */
+.modal {
+  display: none;
+  position: fixed;
+  z-index: 10;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  overflow: auto;
+  background-color: rgba(0, 0, 0, 0.4);
+  border: none;
+}
+
+.modal-content {
+  background-color: #fefefe;
+  margin: 15% auto;
+  padding: 20px;
+  width: 80%;
+  max-width: 500px;
+  border-radius: 20px;
+}
+
+.modal button {
+  color: #ffffff;
+  border-radius: 20px;
+  padding: 15px 10px;
+  margin-top: 1rem;
+  border: none;
+  background-color: #4e2d1e;
+  cursor: pointer;
+}
+
+.modal button:hover {
+  background-color: #3f2518;
+}
+
+.modal-open {
+  overflow: hidden;
+}
+
+.simulator label {
+  display: block;
+  font-size: 1.1rem;
+}
+
+.simulator select,
+.simulator input {
+  width: 100%;
+  padding: 12px;
+  border-radius: 20px;
+  border: 1px solid #ccc;
+  font-size: 1rem;
+  box-sizing: border-box;
+}
+
+.close {
+  color: #aaa;
+  float: right;
+  font-size: 28px;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+.close:hover,
+.close:focus {
+  color: #000;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+.simulator {
+  display: flex;
+  flex-direction: column;
+}
+
+.simulator label {
+  margin-top: 10px;
+}
+
+.simulator .amount {
+  margin-top: 15px;
+}
+
+.simulator .note {
+  font-size: 12px;
+  color: #666;
+}
+
+.simulator .result {
+  margin-top: 20px;
+  border-top: 1px solid #ccc;
+  padding-top: 15px;
+}
+
+.simulator .result h3 {
+  margin-bottom: 10px;
+}
+
+@media (max-width: 768px) {
+  .promo-section {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .promo-text,
+  .promo-image {
+    max-width: 100%;
+  }
+
+  .investment-options {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .card {
+    width: 80%;
+  }
+}

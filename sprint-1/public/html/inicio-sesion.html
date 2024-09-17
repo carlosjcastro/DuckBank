@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Iniciar Sesión | Duck Bank</title>
+    <link rel="stylesheet" href="/css/inicio-sesion.css" />
+  </head>
+  <body>
+    <div class="container">
+      <div class="image-container">
+        <img
+          src="/src/assets/inicio-sesion/bank.jpeg"
+          alt="Imagen de las oficinas de Duck Bank"
+          class="side-image"
+        />
+      </div>
+      <div class="form-container">
+        <form id="formulario" method="post" name="form" class="form">
+          <img
+            src="/sprint-1/src/assets/icons/LogoDuckBank2.png"
+            alt="Logo de Duck Bank"
+            class="logo"
+          />
+          <h1>Iniciar sesión</h1>
+          <div class="input-container">
+            <input type="email" id="email" placeholder="Email" />
+            <span id="email-error" class="error-message"></span>
+          </div>
+          <div class="input-container">
+            <input type="password" id="pass" placeholder="Contraseña" />
+            <span id="pass-error" class="error-message"></span>
+          </div>
+          <input type="button" onclick="checkeosesion()" value="Ingresar" />
+          <p class="login">
+            ¿Necesitas una cuenta? <a href="#">Registrarse</a>
+          </p>
+        </form>
+      </div>
+    </div>
+    <script src="/sprint-1/public/js/inicio-sesion.js" defer></script>
+  </body>
+</html>
