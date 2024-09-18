@@ -41,7 +41,7 @@ export default function PerfilUsuario(){
         if (b3===true)
             setb3txt("Confirmar")
         else{
-            setb3txt("Editar Nombre")
+            setb3txt("Editar DNI")
         }
         return b3
          
