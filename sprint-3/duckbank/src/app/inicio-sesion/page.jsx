@@ -7,11 +7,15 @@ import Link from "next/link";
 
 export default function InicioSesion(){
   const router = useRouter()
+  const [hidden, sethidden] = useState("hidden");
   const [usuario, setUsuario] = useState("");
   const [contraseña, setContraseña] = useState("");
+  const [usuarionew, setUsuarionew] = useState("");
+  const [contraseñanew, setContraseñanew] = useState("");
   const [mensaje, setMensaje] = useState("");
   const [mensajeColor, setMensajeColor] = useState("");
   const [errores, setErrores] = useState({ usuario: "", contraseña: "" });
+  
   const validarInputs = () => {
     let erroresNuevos = { usuario: "", contraseña: "" };
     let esValido = true;
@@ -30,21 +34,38 @@ export default function InicioSesion(){
     return esValido;
   };
 
+
+
   const handleClick = () => {
     if (validarInputs()) {
-      if (usuario === "grupo4@duckbank.com.ar" && contraseña === "grupo4") {
+      if ((usuario === "grupo4@duckbank.com.ar" && contraseña === "grupo4")|| (usuario === usuarionew && contraseña === contraseñanew) ) {
         setMensaje("¡Has iniciado sesión correctamente!");
         setMensajeColor("#52b788");
        
 
          router.push('/') 
        
-      } else {
+      } 
+      else {
         setMensaje("Las credenciales son incorrectas.");
         setMensajeColor("#e63946");
       }
     }
   };
+  const unhide = () => {
+    sethidden ( " w-1/4 lg:w+1/3  items-center justify-center")
+    
+
+     
+}
+const hide = () => {
+  sethidden ( "   hidden")
+  setMensaje("¡Te has registrado correctamente!");
+        setMensajeColor("#52b788");
+  return hidden
+   
+}
+ 
 
 return (
   <div className="flex w-full h-screen items-center justify-center">
@@ -118,10 +139,18 @@ return (
                 Iniciar sesión
               </button>
             </div>
+            <div className="mt-8 flex  justify-center">
+              <button 
+              className=" bg-[#4e2d1e] text-white w-full lg:w-1/2 text-lg font-bold py-3 rounded-full active:scale-[.98] active:duration-75 transition-all hover:scale-[1.05] hover:bg-[#3f2518]"
+              onClick={unhide}>
+                Registrarme
+              </button>
+
+            </div>
           </div>
         </div>
       </div>
-
+      
       <div className="hidden lg:flex lg:w-1/2 justify-center lg:ml-2 mt-10 lg:mt-0">
         <Image
           src={bank}
@@ -132,7 +161,68 @@ return (
         />
       </div>
     </div>
+    <div className={hidden}>
+              <div className=" bg-white p-10 rounded-2xl ">
+                <h1 className="text-4xl lg:text-5xl font-semibold text-center">
+                  ¡Registre su cuenta !
+                </h1>
+                <p className="font-medium text-lg text-center mt-4">
+                  Ingrese sus datos: 
+                </p>
+      
+               
+      
+                <div className="mt-8">
+                  <div>
+                    <label className="text-lg font-medium">Email:</label>
+                    <input
+                      className={`w-full border-2 rounded-2xl p-4 mt-1 `}
+                      type="email"
+                      placeholder="Ingrese su E-mail"
+                      value={usuarionew}
+                      onChange={(e) => setUsuarionew(e.target.value)}
+                    />
+                    
+                  </div>
+      
+                  <div>
+                    <label className="text-lg font-medium">Contraseña:</label>
+                    <input
+                      className={`w-full border-2 rounded-2xl p-4 mt-1 `}
+                      type="password"
+                      placeholder="Ingrese su Contraseña"
+                      value={contraseñanew}
+                      onChange={(e) => setContraseñanew(e.target.value)}
+                    />
+                    
+                  </div>
+                  <div>
+                    <label className="text-lg font-medium">Ultimos 4 digitos de DNI:</label>
+                    <input
+                      className={`w-full border-2 rounded-2xl p-4 mt-1 `}
+                      
+                      placeholder="Ingrese su DNI"
+                    
+                    />
+                    
+                  </div>
+      
+
+                  <div className="mt-8 flex  justify-center">
+                 
+                    <button
+                      className="bg-[#4e2d1e] text-white w-full lg:w-1/2 text-lg font-bold py-3 rounded-full active:scale-[.98] active:duration-75 transition-all hover:scale-[1.05] hover:bg-[#3f2518]"
+                     onClick={hide}
+                    >
+                      Registrarme
+                    </button>
+                    
+                  </div>
+                </div>
+              </div>
+            </div>
   </div>
+  
 );
 }
 
