@@ -52,12 +52,6 @@ export default function InicioSesion({ onLogin }) {
 
   return (
     <>
-      <Head>
-        <title>¡Bienvenido a Duckbank!</title>
-        <meta
-          name="description"
-          content="Página de inicio de sesión del homebanking DuckBank."/>
-      </Head>
 
       <div className="flex flex:col lg:flex-row lg:items-center lg:justify-between  max-w-7xl min-h-screen ml-80">
         <div className="w-full lg:w-1/2 flex items-center justify-center">

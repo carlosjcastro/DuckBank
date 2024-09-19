@@ -1,21 +1,22 @@
 'use client';
 
 import Image from 'next/image';
-import Head from 'next/head';
 import axios from "axios";
-import {useState, useEffect, useCallback, useMemo} from 'react';
+import {useState, useEffect, useCallback, useContext, useMemo} from 'react';
 import { LiaExchangeAltSolid } from "react-icons/lia";
 import { RiDiscountPercentLine } from "react-icons/ri";
 import { LuBadgeDollarSign, LuBanknote } from "react-icons/lu";
 import { FaDollarSign } from "react-icons/fa";
 import { FaEye, FaEyeSlash } from "react-icons/fa";
-import PrecioDolar from '../inicio/precio-dolar/page';
+import PrecioDolar from '../inicio/precio-dolar/page.jsx';
+
 
 
     export default function Inicio(){
-        const accounts = [
-            { id: 1, name: 'Cuenta Principal', balance: 285547, currency: 'ARS', icon: <LuBanknote size={24} className="inline mr-2" /> },
-            { id: 2, name: 'Caja de Ahorros', balance: 899504, currency: 'ARS', icon: <LuBanknote size={24} className="inline mr-2" /> },
+
+        const accounts =[
+            { id: 1, name: 'Caja de ahorros', balance: 285547, currency: 'ARS', icon: <LuBanknote size={24} className="inline mr-2" /> },
+            { id: 2, name: 'Cuenta corriente', balance: 899504, currency: 'ARS', icon: <LuBanknote size={24} className="inline mr-2" /> },
             { id: 3, name: 'Cuenta Dólares', balance: 28039, currency: 'USD', icon: <FaDollarSign size={24} className="inline mr-2" /> },
         ];
         
@@ -49,11 +50,13 @@ import PrecioDolar from '../inicio/precio-dolar/page';
         const [errorMessage, setErrorMessage] = useState("");
         
         const [showBalances, setShowBalances] = useState(true);
+
         
         const toggleBalancesVisibility = useCallback(() => {
             setShowBalances(prev => !prev);
         }, []);
         
+        useEffect(() => {
         const fetchConversionRate = async () => {
             const storedRate = localStorage.getItem(`${fromCurrency}_${toCurrency}_rate`);
             if(storedRate){
@@ -61,7 +64,7 @@ import PrecioDolar from '../inicio/precio-dolar/page';
             }else{
                 try {
                 const response = await axios.get(
-                    ` https://api.exchangerate-api.com/v4/latest/${fromCurrency} `);
+                    `https://api.exchangerate-api.com/v4/latest/${fromCurrency}`);
                 const rate = response.data.rates[toCurrency];
                 localStorage.setItem(`${fromCurrency}-${toCurrency}_rate`, JSON.stringify(rate));
                 setConversionRate(rate);
@@ -71,13 +74,12 @@ import PrecioDolar from '../inicio/precio-dolar/page';
                     "Error al obtener la tasa de cambio. Por favor, intentálo de nuevo más tarde."
                 );
                 }
-            };
-            
-        
-        
-        useEffect(() => {
+            }
+        };
             fetchConversionRate();
         }, [fromCurrency, toCurrency]);
+        
+            
         
         const handleConvert = () => {
             if (!inputAmount || isNaN(inputAmount) || inputAmount <= 0) {
@@ -100,7 +102,7 @@ import PrecioDolar from '../inicio/precio-dolar/page';
         
         const handleAmountChange = (e) => {
             const newValue = e.target.value.replace(/[^0-9.]/g, '');
-            if (newValue >= 0) setInputAmount(newValue); 
+            if (Number(newValue) >= 0) setInputAmount(newValue); 
             }
         
         
@@ -114,16 +116,23 @@ import PrecioDolar from '../inicio/precio-dolar/page';
         
         const currencies = ["ARS", "EUR", "USD"];
 
-        return (
-            <main>
-            <Head>
-                <title>Inicio - Duckabnk</title>
-                <meta name = "description" content= " Página de inicio de homebanking Duckbank. Gestiona tus cuentas, realiza transacciones, visualiza tus movimientos recientes y encontrá las mejores promociones. Además de un conversor de divisas que donde podrás convertir de manera rápida y sencilla sin salir de tu casa."/>
-                <meta property='og:title' content="Inicio - DuckBank" />
-                <meta property = "og:description" content = "Página de inicio de homebanking Duckbank. Visualiza tus cuentas, movimientos recientes y promociones."/>
-                <meta property = "og:image" content="/assets/logo/LogoDuckBank2.png"/>
-            </Head>
+        const formatCurrency = useMemo(() => (value, currency) => {
+            if (typeof value !== 'number' || isNaN(value)) {
+                console.error('El valor debe ser un número');
+                return '';
+            }
+            if (typeof currency !== 'string' || !currency) {
+                console.error('El cambio debe ser una cadena de texto');
+                return '';
+            }
+            return value.toLocaleString("es-AR", {
+            style: "currency",
+            currency: currency,
+            minimumFractionDigits: 2,
+            });
+        }, []);
 
+        return (
             
             <div className="p-4 space-y-6 p-8 bg-white">
             <h1 className = "font-bold text-center text-3xl">Bienvenido /NOMBRE DE USUARIO</h1>
@@ -143,22 +152,30 @@ import PrecioDolar from '../inicio/precio-dolar/page';
             </section>
 
             <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
-                {accounts.map((account) => (
+                {accounts.map((accounts) => (
                 <div
-                    key={account.id}
-                    className="p-4 rounded-2xl shadow-lg hover:bg-[#f3c677]"
+                    key={accounts.id}
+                    className="p-4 rounded-2xl shadow-lg hover:bg-[#9DAB70]"
                 >
                     <h3 className="text-lg font-semibold">
-                    <span role = "img" aria-label={`${account.name} icon `}>{account.icon} </span>
-                    {account.name}
+                    <span role = "img" aria-label={`${accounts.name} icon `}>{accounts.icon} </span>
+                    {accounts.name}
                     </h3>
 
                     <p className="text-2xl font-bold mt-2">
                     {showBalances
-                        ? `${formatCurrency(account.balance, account.currency)} ${account.currency}`
+                        ? `${formatCurrency(accounts.balance, accounts.currency)} ${accounts.currency}`
                         : '***'}
                     </p>
                 </div>
+                ))}
+            </div>
+
+            <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
+                {accounts.map((accounts) => (
+                    <div key={accounts.id}>
+                        {/* ... detalles de la cuenta */}
+                    </div>
                 ))}
             </div>
             
@@ -255,7 +272,7 @@ import PrecioDolar from '../inicio/precio-dolar/page';
 
                     <button
                     onClick={handleConvert}
-                    className="text-white px-6 py-4 rounded-full bg-[#4e2d1e] hover:bg-[#3f2518]"
+                    className="text-white px-6 py-4 rounded-full bg-[#9DAB70]"
                     >
                     Convertir
                     </button>
@@ -286,8 +303,9 @@ import PrecioDolar from '../inicio/precio-dolar/page';
                 <PrecioDolar /> 
                 </div>
             </div>
+
+
             </div>
-            </main>
             )
         }
-    }
+

@@ -22,13 +22,7 @@ export default function PrecioDolar () {
     tarjeta: "https://dolarapi.com/v1/dolares/tarjeta",
   }), []);
 
-  const formatCurrency = useMemo(() => (value, currency) => {
-    return value.toLocaleString("es-AR", {
-    style: "currency",
-    currency: currency,
-    minimumFractionDigits: 2,
-    });
-}, []);
+  
 
   useEffect(() => {
     const fetchRates = async () => {
