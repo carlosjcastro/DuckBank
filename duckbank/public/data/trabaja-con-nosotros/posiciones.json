@@ -1,0 +1,630 @@
+[
+  {
+    "id": "desarrollador-frontend-react",
+    "area": "IT",
+    "title": "Desarrollador Frontend - React",
+    "description": "Buscamos un desarrollador frontend con experiencia en React para trabajar en proyectos innovadores.",
+    "qualifications": [
+      "Experiencia demostrable en desarrollo con React, incluyendo el manejo de estados globales con Context API o Redux.",
+      "Conocimientos sólidos en HTML5, CSS3 (incluyendo preprocesadores como SASS) y JavaScript ES6+, con habilidades en la creación de interfaces responsivas y accesibles.",
+      "Experiencia en el uso de herramientas de control de versiones como Git, incluyendo la gestión de ramas, resolución de conflictos y flujo de trabajo colaborativo.",
+      "Capacidad para integrar APIs RESTful y GraphQL en aplicaciones frontend.",
+      "Experiencia en la optimización de rendimiento de aplicaciones web y en la implementación de técnicas de carga diferida (lazy loading) y fragmentación de código."
+    ],
+    "skills": [
+      "React/Vite.js/Next.js",
+      "JavaScript",
+      "HTML/CSS/Tailwind",
+      "Git",
+      "RESTful APIs",
+      "GraphQL",
+      "Optimización de rendimiento",
+      "Accesibilidad web"
+    ],
+    "responsibilities": [
+      "Desarrollar y mantener interfaces de usuario interactivas y eficientes utilizando React, asegurando una experiencia de usuario fluida y libre de errores.",
+      "Colaborar con diseñadores UX/UI y otros miembros del equipo de desarrollo para implementar soluciones técnicas robustas y estéticamente agradables que cumplan con los requisitos del proyecto.",
+      "Realizar pruebas unitarias y de integración para asegurar la calidad del código, y participar en revisiones de código para mantener estándares altos de desarrollo.",
+      "Identificar y resolver problemas técnicos y bugs en el frontend, y proponer mejoras continuas en la arquitectura y el flujo de trabajo.",
+      "Participar en la planificación y estimación de tareas, y contribuir a la documentación técnica y de usuario para facilitar la transferencia de conocimientos y el soporte continuo."
+    ],
+    "applyLink": "mailto:jobs@duckbank.com.ar?subject=Aplicación para Desarrollador Frontend - React",
+    "slug": "desarrollador-frontend-react",
+    "seniority": "Junior",
+    "location": "Remoto"
+  },
+  {
+    "id": "ingeniero-backend",
+    "area": "IT",
+    "title": "Ingeniero de Software - Backend",
+    "description": "Ingeniero de software con experiencia en Node.js y bases de datos SQL para desarrollar nuestras APIs.",
+    "qualifications": [
+      "Experiencia en desarrollo con Node.js, incluyendo el uso de frameworks como Express.js para la construcción de aplicaciones robustas.",
+      "Conocimientos sólidos en bases de datos SQL (como PostgreSQL, MySQL) y NoSQL (como MongoDB), con experiencia en el diseño de esquemas y la optimización de consultas.",
+      "Experiencia en la creación y consumo de API RESTful, con habilidad para diseñar endpoints eficientes y seguros.",
+      "Experiencia en la implementación de prácticas de seguridad en aplicaciones backend, incluyendo autenticación y autorización.",
+      "Conocimiento en herramientas de integración y despliegue continuo (CI/CD), y familiaridad con plataformas en la nube como AWS, Azure o Google Cloud."
+    ],
+    "skills": [
+      "Node.js",
+      "SQL",
+      "API RESTful",
+      "NoSQL",
+      "Express.js",
+      "Autenticación y autorización",
+      "CI/CD",
+      "AWS/Azure/Google Cloud"
+    ],
+    "responsibilities": [
+      "Diseñar, desarrollar y mantener APIs escalables y seguras utilizando Node.js y frameworks asociados, asegurando el cumplimiento de los estándares de rendimiento y seguridad.",
+      "Integrar servicios y aplicaciones de terceros, y gestionar la comunicación entre microservicios si se aplican arquitecturas basadas en microservicios.",
+      "Optimizar el rendimiento del servidor y las bases de datos, aplicando técnicas de indexación, caché y optimización de consultas para mejorar la eficiencia general.",
+      "Participar en la definición de la arquitectura del sistema, proponiendo mejoras y nuevas tecnologías que puedan beneficiar el desarrollo y mantenimiento de la infraestructura backend.",
+      "Colaborar con otros desarrolladores y equipos para la implementación de nuevas funcionalidades, y proporcionar soporte técnico y mantenimiento a sistemas existentes."
+    ],
+    "applyLink": "mailto:jobs@duckbank.com.ar?subject=Aplicación para Ingeniero de Software - Backend",
+    "slug": "ingeniero-backend",
+    "seniority": "Junior/SSR",
+    "location": "Remoto"
+  },
+  {
+    "id": "especialista-en-marketing-digital",
+    "area": "Marketing",
+    "title": "Especialista en Marketing Digital",
+    "description": "Experto en marketing digital para gestionar campañas publicitarias y estrategias de SEO.",
+    "qualifications": [
+      "Experiencia demostrable en la creación y gestión de campañas publicitarias en diversas plataformas, incluyendo Google Ads, Facebook Ads, LinkedIn Ads, entre otras.",
+      "Conocimientos avanzados en SEO (Optimización para Motores de Búsqueda) y SEM (Marketing en Motores de Búsqueda), con habilidades en la investigación de palabras clave, análisis de competidores y optimización on-page y off-page.",
+      "Experiencia con herramientas de análisis web como Google Analytics, Google Search Console, y otras plataformas de análisis de tráfico web para medir y optimizar el rendimiento de las campañas.",
+      "Capacidad para interpretar datos y métricas, y tomar decisiones basadas en datos para mejorar las estrategias de marketing digital.",
+      "Experiencia en la gestión de presupuestos publicitarios y en la optimización del retorno de inversión (ROI) de las campañas.",
+      "Conocimientos en marketing de contenido, email marketing y automatización de marketing para crear estrategias integradas que impulsen el crecimiento y la conversión."
+    ],
+    "skills": [
+      "Marketing Digital",
+      "SEO",
+      "SEM",
+      "Google Analytics",
+      "Google Ads",
+      "Facebook Ads",
+      "LinkedIn Ads",
+      "Análisis de datos",
+      "Automatización de marketing"
+    ],
+    "responsibilities": [
+      "Crear, implementar y gestionar campañas publicitarias en diversas plataformas digitales, incluyendo motores de búsqueda y redes sociales, con el objetivo de aumentar la visibilidad y generar leads de calidad.",
+      "Desarrollar y ejecutar estrategias de SEO para mejorar la clasificación de la empresa en los resultados de búsqueda orgánica, incluyendo la optimización de contenido, la construcción de enlaces y la mejora de la experiencia del usuario.",
+      "Analizar datos de rendimiento de las campañas y generar informes detallados sobre métricas clave, como CTR (Click-Through Rate), CPC (Cost Per Click), CPA (Cost Per Acquisition) y ROI (Return on Investment).",
+      "Realizar pruebas A/B y experimentos para optimizar anuncios, páginas de destino y otros elementos de la campaña para maximizar la eficacia y el retorno de inversión.",
+      "Colaborar con otros equipos, incluyendo diseño y contenido, para asegurar que los activos publicitarios estén alineados con la estrategia de marca y objetivos de campaña.",
+      "Mantenerse actualizado sobre las últimas tendencias y mejores prácticas en marketing digital, y adaptar las estrategias en consecuencia para mantenerse a la vanguardia del mercado."
+    ],
+    "applyLink": "mailto:jobs@duckbank.com.ar?subject=Aplicación para Especialista en Marketing Digital",
+    "slug": "especialista-en-marketing-digital",
+    "seniority": "Senior",
+    "location": "Remoto"
+  },
+  {
+    "id": "analista-de-mercado",
+    "area": "Marketing",
+    "title": "Analista de Mercado",
+    "description": "Analista para investigar y analizar tendencias del mercado y comportamiento del consumidor.",
+    "qualifications": [
+      "Experiencia demostrable en el análisis de mercado, incluyendo la identificación y evaluación de tendencias emergentes y la comprensión del comportamiento del consumidor.",
+      "Habilidad avanzada para interpretar datos cuantitativos y cualitativos, y generar informes detallados que resuman hallazgos y proporcionen recomendaciones estratégicas.",
+      "Conocimientos en herramientas y técnicas de investigación de mercado como encuestas, focus groups y análisis de datos secundarios.",
+      "Experiencia en el uso de software analítico y herramientas de visualización de datos como SPSS, Tableau o similares.",
+      "Capacidad para presentar datos complejos de manera clara y accesible a diferentes audiencias, incluyendo equipos de marketing y directivos."
+    ],
+    "skills": [
+      "Análisis de Mercado",
+      "Investigación de Mercado",
+      "Interpretación de Datos",
+      "SPSS",
+      "Tableau",
+      "Análisis Cuantitativo y Cualitativo"
+    ],
+    "responsibilities": [
+      "Investigar y analizar tendencias del mercado y comportamiento del consumidor para identificar oportunidades y amenazas.",
+      "Preparar informes detallados sobre hallazgos y recomendaciones basadas en datos, incluyendo análisis de la competencia y estudios de mercado.",
+      "Colaborar con el equipo de marketing para desarrollar estrategias basadas en datos e impulsar la toma de decisiones informadas.",
+      "Monitorear y evaluar el impacto de las estrategias implementadas y ajustar las recomendaciones según sea necesario."
+    ],
+    "applyLink": "mailto:jobs@duckbank.com.ar?subject=Aplicación para Analista de Mercado",
+    "slug": "analista-de-mercado",
+    "seniority": "Senior",
+    "location": "CABA"
+  },
+
+  {
+    "id": "contador-financiero",
+    "area": "Contable",
+    "title": "Contador Financiero",
+    "description": "Contador con amplia experiencia en contabilidad financiera y gestión de informes.",
+    "qualifications": [
+      "Título universitario en Contabilidad, Finanzas o área relacionada, con certificaciones profesionales como CPA o equivalente.",
+      "Amplia experiencia en contabilidad financiera, incluyendo la preparación y análisis de estados financieros, informes contables y auditoría.",
+      "Conocimientos profundos en normativa contable y fiscal local e internacional, con la capacidad de interpretar y aplicar regulaciones en diversos contextos.",
+      "Experiencia en el uso de software contable y sistemas ERP, así como habilidades en el manejo de herramientas avanzadas de contabilidad y auditoría.",
+      "Capacidad para liderar y coordinar procesos contables complejos, con atención al detalle y habilidades para resolver problemas."
+    ],
+    "skills": [
+      "Contabilidad Financiera",
+      "Auditoría",
+      "Normativa Contable",
+      "Software Contable",
+      "Sistemas ERP",
+      "Preparación de Estados Financieros"
+    ],
+    "responsibilities": [
+      "Preparar, revisar y analizar estados financieros, informes contables y reports para garantizar la precisión y el cumplimiento de normas y regulaciones.",
+      "Asegurar el cumplimiento de normas contables y fiscales, y gestionar las auditorías internas y externas para mantener la integridad financiera.",
+      "Colaborar con otros departamentos para proporcionar soporte financiero y asesoramiento en temas contables y fiscales.",
+      "Implementar y mejorar procedimientos contables y controles internos para optimizar la eficiencia y efectividad de las operaciones financieras."
+    ],
+    "applyLink": "mailto:jobs@duckbank.com.ar?subject=Aplicación para Contador Senior",
+    "slug": "contador-financiero",
+    "seniority": "Senior",
+    "location": "CABA"
+  },
+  {
+    "id": "analista-financiero",
+    "area": "Contable",
+    "title": "Analista Financiero",
+    "description": "Analista para realizar análisis financieros y previsiones para apoyar la toma de decisiones.",
+    "qualifications": [
+      "Título universitario en Finanzas, Contabilidad, Economía o área relacionada.",
+      "Experiencia en análisis financiero, incluyendo la elaboración de previsiones y análisis de variaciones, y la preparación de informes financieros detallados.",
+      "Conocimientos avanzados en herramientas de análisis financiero y hojas de cálculo, especialmente Excel, y experiencia con software de análisis financiero.",
+      "Capacidad para interpretar datos financieros complejos y proporcionar recomendaciones claras y precisas para apoyar la toma de decisiones estratégicas.",
+      "Experiencia en la colaboración con equipos multidisciplinarios para la elaboración y seguimiento del presupuesto anual."
+    ],
+    "skills": [
+      "Análisis Financiero",
+      "Previsiones Financieras",
+      "Excel Avanzado",
+      "Elaboración de Informes",
+      "Presupuestación",
+      "Análisis de Variaciones"
+    ],
+    "responsibilities": [
+      "Realizar análisis financieros detallados, incluyendo la elaboración de previsiones, análisis de tendencias y variaciones, y modelado financiero.",
+      "Preparar informes financieros y presentaciones para la toma de decisiones, proporcionando información clave sobre el rendimiento financiero y recomendaciones.",
+      "Colaborar en la elaboración y seguimiento del presupuesto anual, asegurando la precisión de las proyecciones y el cumplimiento de los objetivos financieros.",
+      "Asistir en la evaluación de oportunidades de inversión y en el análisis de riesgos financieros, apoyando la estrategia financiera de la empresa."
+    ],
+    "applyLink": "mailto:jobs@duckbank.com.ar?subject=Aplicación para Analista Financiero",
+    "slug": "analista-financiero",
+    "seniority": "Semi Senior",
+    "location": "Córdoba"
+  },
+  {
+    "id": "especialista-recursos-humanos",
+    "area": "Recursos Humanos",
+    "title": "Especialista en Reclutamiento",
+    "description": "Responsable de reclutar talento para diferentes áreas de la empresa y gestionar procesos de selección.",
+    "qualifications": [
+      "Experiencia sólida en el reclutamiento y selección de personal en diversos sectores y niveles de la organización.",
+      "Conocimientos profundos en técnicas de entrevista, evaluación de candidatos y uso de herramientas de selección.",
+      "Capacidad para desarrollar y aplicar estrategias efectivas para atraer y retener talento en el mercado laboral competitivo.",
+      "Experiencia en la gestión del ciclo completo de reclutamiento, desde la definición de perfiles hasta la integración de nuevos empleados.",
+      "Habilidad para utilizar sistemas de gestión de candidatos (ATS) y otras tecnologías de reclutamiento."
+    ],
+    "skills": [
+      "Reclutamiento",
+      "Selección de Personal",
+      "Entrevistas",
+      "Gestión del Ciclo Completo de Reclutamiento",
+      "Sistemas de Gestión de Candidatos (ATS)",
+      "Estrategias de Atracción de Talento"
+    ],
+    "responsibilities": [
+      "Gestionar todo el proceso de reclutamiento desde la publicación de ofertas hasta la selección final, asegurando una experiencia positiva para los candidatos.",
+      "Desarrollar y ejecutar estrategias de reclutamiento para atraer talento de alta calidad y garantizar la adecuada cobertura de las necesidades de la empresa.",
+      "Colaborar estrechamente con los líderes de equipo y departamentos para entender las necesidades específicas de contratación y ajustar las estrategias de reclutamiento en consecuencia.",
+      "Realizar entrevistas y evaluaciones de candidatos, y coordinar con los equipos de contratación para tomar decisiones informadas y efectivas."
+    ],
+    "applyLink": "mailto:jobs@duckbank.com.ar?subject=Aplicación para Especialista en Reclutamiento",
+    "slug": "especialista-recursos-humanos",
+    "seniority": "Senior",
+    "location": "Remoto"
+  },
+  {
+    "id": "coordinador-de-capacitacion",
+    "area": "Recursos Humanos",
+    "title": "Coordinador de Capacitación",
+    "description": "Coordinador para diseñar y ejecutar programas de capacitación y desarrollo de empleados.",
+    "qualifications": [
+      "Experiencia demostrable en el desarrollo y coordinación de programas de capacitación y desarrollo para empleados.",
+      "Conocimientos avanzados en técnicas de formación y desarrollo, incluyendo el diseño de programas de formación tanto presenciales como virtuales.",
+      "Habilidades para evaluar la efectividad de los programas de capacitación mediante la implementación de métricas y herramientas de evaluación.",
+      "Capacidad para identificar las necesidades de formación a través de análisis de desempeño y feedback de los empleados.",
+      "Experiencia en la gestión de presupuestos de capacitación y coordinación con proveedores de formación externa cuando sea necesario."
+    ],
+    "skills": [
+      "Coordinación de Capacitación",
+      "Desarrollo de Programas de Formación",
+      "Evaluación de Efectividad",
+      "Análisis de Necesidades de Formación",
+      "Gestión de Presupuestos de Capacitación",
+      "Diseño de Programas de Formación"
+    ],
+    "responsibilities": [
+      "Diseñar, coordinar e implementar programas de capacitación y desarrollo que alineen con las necesidades y objetivos estratégicos de la empresa.",
+      "Evaluar las necesidades de formación de los empleados mediante análisis de desempeño y encuestas, y ajustar los programas en función de los resultados.",
+      "Monitorear y evaluar la efectividad de los programas de capacitación a través de indicadores clave de rendimiento y feedback de los participantes.",
+      "Colaborar con líderes de equipo y otras partes interesadas para asegurar que las iniciativas de capacitación apoyen el desarrollo profesional y el crecimiento de los empleados."
+    ],
+    "applyLink": "mailto:jobs@duckbank.com.ar?subject=Aplicación para Coordinador de Capacitación",
+    "slug": "coordinador-de-capacitacion",
+    "seniority": "Senior",
+    "location": "Córdoba"
+  },
+  {
+    "id": "abogado-corporativo",
+    "area": "Legal",
+    "title": "Abogado Corporativo",
+    "description": "Abogado especializado en derecho corporativo para manejar asuntos legales de la empresa.",
+    "qualifications": [
+      "Título en Derecho con especialización en derecho corporativo, y experiencia significativa en el manejo de asuntos legales empresariales.",
+      "Conocimientos avanzados en la redacción y revisión de contratos, fusiones, adquisiciones y otros acuerdos corporativos.",
+      "Experiencia en proporcionar asesoramiento legal integral a empresas, incluyendo la gestión de litigios y resolución de conflictos.",
+      "Capacidad para mantenerse actualizado con las leyes y regulaciones corporativas locales e internacionales, y aplicar estos conocimientos en la práctica diaria.",
+      "Habilidad para trabajar en estrecha colaboración con diferentes departamentos para asegurar el cumplimiento normativo y apoyar la estrategia empresarial."
+    ],
+    "skills": [
+      "Derecho Corporativo",
+      "Contratos",
+      "Fusiones y Adquisiciones",
+      "Asesoramiento Legal",
+      "Gestión de Litigios",
+      "Cumplimiento Normativo"
+    ],
+    "responsibilities": [
+      "Asesorar a la empresa en una variedad de asuntos legales corporativos, incluyendo la redacción, revisión y negociación de contratos y acuerdos.",
+      "Gestionar y resolver conflictos legales, incluyendo la preparación y manejo de litigios, y proporcionar orientación estratégica para la mitigación de riesgos.",
+      "Colaborar con diferentes departamentos para asegurar el cumplimiento de las normativas y regulaciones legales, y apoyar la toma de decisiones empresariales informadas.",
+      "Actualizar y educar al personal de la empresa sobre cambios en las leyes y regulaciones que puedan afectar las operaciones y estrategias corporativas."
+    ],
+    "applyLink": "mailto:jobs@duckbank.com.ar?subject=Aplicación para Abogado Corporativo",
+    "slug": "abogado-corporativo",
+    "seniority": "Senior",
+    "location": "CABA"
+  },
+  {
+    "id": "asistente-legal",
+    "area": "Legal",
+    "title": "Asistente Legal",
+    "description": "Asistente para apoyar en la preparación de documentos legales y gestión de casos.",
+    "qualifications": [
+      "Experiencia previa como asistente legal o en un rol administrativo similar en un entorno legal o corporativo.",
+      "Conocimientos básicos en derecho, procedimientos legales y términos jurídicos.",
+      "Habilidades organizativas excepcionales y atención meticulosa al detalle para asegurar la precisión en la preparación de documentos y la gestión de casos.",
+      "Capacidad para trabajar con múltiples tareas y manejar plazos ajustados en un entorno de trabajo dinámico.",
+      "Competencia en el uso de software de gestión de casos y documentación legal."
+    ],
+    "skills": [
+      "Preparación de Documentos Legales",
+      "Gestión de Casos",
+      "Organización",
+      "Manejo de Plazos",
+      "Software de Gestión de Casos",
+      "Atención al Detalle"
+    ],
+    "responsibilities": [
+      "Asistir en la preparación, revisión y archivo de documentos legales, incluyendo demandas, contratos y otros documentos relevantes.",
+      "Gestionar la correspondencia, archivos y documentación relacionada con casos, asegurando su correcta organización y accesibilidad.",
+      "Colaborar con abogados en la preparación de casos, incluyendo la recolección de pruebas y la coordinación de reuniones y audiencias.",
+      "Realizar tareas administrativas como la programación de citas, la gestión de agendas y la comunicación con clientes y otras partes interesadas."
+    ],
+    "applyLink": "mailto:jobs@duckbank.com.ar?subject=Aplicación para Asistente Legal",
+    "slug": "asistente-legal",
+    "seniority": "Senior",
+    "location": "CABA"
+  },
+  {
+    "id": "atencion-al-cliente",
+    "area": "Atención al Cliente",
+    "title": "Representante de Servicio al Cliente",
+    "description": "Representante para proporcionar soporte y resolver consultas de clientes.",
+    "qualifications": [
+      "Experiencia previa en atención al cliente o en roles similares en sectores de servicios o ventas.",
+      "Habilidades sobresalientes de comunicación verbal y escrita, con capacidad para resolver problemas de manera efectiva.",
+      "Capacidad para manejar situaciones difíciles con profesionalismo, empatía y una actitud orientada a soluciones.",
+      "Experiencia en el uso de sistemas de gestión de relaciones con clientes (CRM) y herramientas de soporte al cliente.",
+      "Habilidad para trabajar bajo presión y mantener la calma en situaciones estresantes."
+    ],
+    "skills": [
+      "Atención al Cliente",
+      "Comunicación",
+      "Resolución de Problemas",
+      "Uso de CRM",
+      "Manejo de Situaciones Difíciles",
+      "Empatía"
+    ],
+    "responsibilities": [
+      "Proporcionar soporte y asistencia a los clientes a través de diversos canales, incluyendo teléfono, correo electrónico y chat en vivo.",
+      "Resolver consultas, quejas y problemas de los clientes de manera rápida y efectiva, asegurando un alto nivel de satisfacción.",
+      "Gestionar quejas y escalar problemas complejos a niveles superiores cuando sea necesario, manteniendo al cliente informado del estado de su caso.",
+      "Realizar seguimiento con los clientes para asegurar la resolución completa de sus problemas y recoger feedback para mejorar el servicio."
+    ],
+    "applyLink": "mailto:jobs@duckbank.com.ar?subject=Aplicación para Representante de Servicio al Cliente",
+    "slug": "atencion-al-cliente",
+    "seniority": "Junior/SSR",
+    "location": "Remoto"
+  },
+  {
+    "id": "coordinador-atencion-al-cliente",
+    "area": "Atención al Cliente",
+    "title": "Coordinador de Atención al Cliente",
+    "description": "Coordinador para supervisar el equipo de atención al cliente y asegurar un servicio de alta calidad.",
+    "qualifications": [
+      "Experiencia previa en la supervisión de equipos de atención al cliente, incluyendo la gestión de personal y la implementación de estrategias de servicio.",
+      "Conocimientos en gestión de calidad de servicio, incluyendo la implementación de mejores prácticas y la optimización de procesos.",
+      "Habilidades para entrenar, motivar y desarrollar al personal, asegurando la entrega constante de un servicio al cliente excepcional.",
+      "Experiencia en el análisis de métricas de desempeño y en la implementación de acciones correctivas para mejorar la calidad del servicio.",
+      "Capacidad para resolver problemas complejos y tomar decisiones informadas que impacten positivamente en el equipo y en la experiencia del cliente."
+    ],
+    "skills": [
+      "Gestión de Equipos",
+      "Calidad de Servicio",
+      "Capacitación",
+      "Optimización de Procesos",
+      "Análisis de Métricas",
+      "Resolución de Problemas"
+    ],
+    "responsibilities": [
+      "Supervisar y coordinar las actividades del equipo de atención al cliente, garantizando que se cumplan los estándares de calidad y los objetivos del servicio.",
+      "Desarrollar, implementar y revisar políticas y procedimientos para mejorar la calidad del servicio y la eficiencia del equipo.",
+      "Realizar revisiones periódicas del desempeño del equipo, proporcionando retroalimentación constructiva y planes de desarrollo para cada miembro.",
+      "Colaborar con otros departamentos para resolver problemas complejos y mejorar los procesos de servicio al cliente en toda la empresa."
+    ],
+    "applyLink": "mailto:jobs@duckbank.com.ar?subject=Aplicación para Coordinador de Atención al Cliente",
+    "slug": "coordinador-atencion-al-cliente",
+    "seniority": "Senior",
+    "location": "Remoto"
+  },
+  {
+    "id": "gerente-de-operaciones",
+    "area": "Operaciones",
+    "title": "Gerente de Operaciones",
+    "description": "Gerente para supervisar y optimizar las operaciones diarias de la empresa.",
+    "qualifications": [
+      "Experiencia sólida en gestión de operaciones y liderazgo de equipos, idealmente en un entorno corporativo o de gran escala.",
+      "Conocimientos profundos en optimización de procesos, gestión de proyectos y análisis de operaciones para mejorar la eficiencia y la efectividad.",
+      "Capacidad demostrada para trabajar bajo presión, tomar decisiones estratégicas y manejar múltiples prioridades en un entorno dinámico.",
+      "Experiencia en la gestión de presupuestos operativos y recursos, con habilidades para desarrollar e implementar estrategias de reducción de costos y mejora de la rentabilidad.",
+      "Habilidades interpersonales y de comunicación efectivas para coordinar con diferentes departamentos y gestionar relaciones con partes interesadas."
+    ],
+    "skills": [
+      "Gestión de Operaciones",
+      "Optimización de Procesos",
+      "Gestión de Proyectos",
+      "Manejo de Presupuesto",
+      "Comunicación Interpersonal",
+      "Toma de Decisiones Estratégicas"
+    ],
+    "responsibilities": [
+      "Supervisar las operaciones diarias de la empresa, asegurando que los procesos se realicen de manera eficiente y conforme a los estándares establecidos.",
+      "Coordinar con diferentes departamentos para implementar estrategias operativas que mejoren la eficiencia y la calidad del servicio.",
+      "Desarrollar e implementar mejoras en los procesos operativos para aumentar la eficiencia, reducir costos y maximizar el rendimiento.",
+      "Gestionar recursos operativos y presupuesto, asegurando un uso efectivo y eficiente de los recursos disponibles.",
+      "Analizar datos operacionales y preparar informes para la alta dirección, proporcionando recomendaciones basadas en los resultados."
+    ],
+    "applyLink": "mailto:jobs@duckbank.com.ar?subject=Aplicación para Gerente de Operaciones",
+    "slug": "gerente-de-operaciones",
+    "seniority": "Senior",
+    "location": "CABA/Mendoza"
+  },
+  {
+    "id": "analista-de-procesos",
+    "area": "Operaciones",
+    "title": "Analista de Procesos",
+    "description": "Analista para identificar y mejorar procesos operativos internos.",
+    "qualifications": [
+      "Experiencia en análisis de procesos y mejora continua, con un enfoque en la identificación de áreas de mejora y la implementación de soluciones efectivas.",
+      "Conocimientos en metodologías de gestión de procesos como Lean, Six Sigma o BPM, con habilidades para aplicar estas metodologías en un entorno real.",
+      "Capacidad para trabajar con grandes volúmenes de datos, generar informes detallados y presentar hallazgos y recomendaciones de manera clara y concisa.",
+      "Experiencia en la colaboración con diferentes equipos para implementar cambios en los procesos y asegurar que las mejoras se mantengan a largo plazo.",
+      "Habilidades analíticas y de resolución de problemas, con una mentalidad orientada a la mejora continua y la eficiencia operativa."
+    ],
+    "skills": [
+      "Análisis de Procesos",
+      "Mejora Continua",
+      "Metodologías de Gestión de Procesos",
+      "Análisis de Datos",
+      "Documentación de Procesos",
+      "Comunicación Efectiva"
+    ],
+    "responsibilities": [
+      "Analizar los procesos operativos internos para identificar ineficiencias y oportunidades de mejora, utilizando herramientas y metodologías adecuadas.",
+      "Desarrollar y mantener documentación detallada de procesos, incluyendo flujos de trabajo, procedimientos y estándares operativos.",
+      "Trabajar con diferentes equipos para implementar cambios en los procesos, proporcionando apoyo y formación para asegurar una transición suave y efectiva.",
+      "Monitorear y evaluar el impacto de los cambios en los procesos, realizando ajustes según sea necesario para optimizar los resultados."
+    ],
+    "applyLink": "mailto:jobs@duckbank.com.ar?subject=Aplicación para Analista de Procesos",
+    "slug": "analista-de-procesos",
+    "seniority": "Senior",
+    "location": "CABA/San Juan/San Luis"
+  },
+  {
+    "id": "ejecutivo-de-ventas",
+    "area": "Ventas",
+    "title": "Ejecutivo de Ventas",
+    "description": "Ejecutivo para generar nuevas oportunidades de negocio y gestionar relaciones con clientes.",
+    "qualifications": [
+      "Experiencia previa en ventas y gestión de cuentas, idealmente en un entorno de ventas B2B o B2C con un historial comprobado de éxito.",
+      "Habilidades de negociación y comunicación excepcionales, con capacidad para persuadir y cerrar acuerdos de manera efectiva.",
+      "Conocimientos en estrategias de ventas, técnicas de prospección y CRM, con experiencia en el uso de herramientas para gestionar relaciones con clientes y seguimiento de ventas.",
+      "Capacidad para trabajar de manera independiente y en equipo, con habilidades organizativas para manejar múltiples cuentas y prioridades.",
+      "Orientación a resultados y habilidades para establecer y cumplir objetivos de ventas de manera consistente."
+    ],
+    "skills": [
+      "Ventas",
+      "Gestión de Cuentas",
+      "Negociación",
+      "CRM",
+      "Prospección",
+      "Comunicación"
+    ],
+    "responsibilities": [
+      "Desarrollar nuevas oportunidades de negocio, identificar prospectos y generar leads a través de diversas estrategias y técnicas de ventas.",
+      "Gestionar relaciones con clientes actuales, mantener contacto regular y proporcionar un servicio de alta calidad para asegurar la satisfacción y lealtad del cliente.",
+      "Realizar presentaciones de ventas, demostrar productos y servicios, y cerrar acuerdos en función de las necesidades del cliente y los objetivos de ventas de la empresa.",
+      "Mantener un seguimiento constante con los clientes, gestionar el ciclo de ventas completo y cumplir con los objetivos de ventas establecidos."
+    ],
+    "applyLink": "mailto:jobs@duckbank.com.ar?subject=Aplicación para Ejecutivo de Ventas",
+    "slug": "ejecutivo-de-ventas",
+    "seniority": "Senior",
+    "location": "Híbrido/CABA"
+  },
+  {
+    "id": "gerente-de-ventas",
+    "area": "Ventas",
+    "title": "Gerente de Ventas",
+    "description": "Gerente para liderar el equipo de ventas y desarrollar estrategias de crecimiento.",
+    "qualifications": [
+      "Experiencia demostrada en liderazgo de equipos de ventas, con un historial comprobado de cumplimiento de objetivos y motivación de equipos para alcanzar metas.",
+      "Conocimientos avanzados en planificación y estrategia de ventas, con capacidad para desarrollar e implementar planes que maximicen el rendimiento del equipo y el crecimiento de la empresa.",
+      "Habilidad para analizar el mercado y adaptar las estrategias de ventas según las tendencias y necesidades del mercado, con un enfoque en la identificación de nuevas oportunidades de negocio.",
+      "Capacidad para gestionar y optimizar el ciclo de ventas completo, desde la prospección hasta el cierre, incluyendo la gestión de relaciones con clientes clave y grandes cuentas."
+    ],
+    "skills": [
+      "Liderazgo de Ventas",
+      "Planificación Estratégica",
+      "Análisis de Mercado",
+      "Gestión de Cuentas Clave",
+      "Desarrollo de Estrategias de Ventas"
+    ],
+    "responsibilities": [
+      "Liderar y motivar al equipo de ventas para alcanzar y superar los objetivos establecidos, fomentando un ambiente de trabajo colaborativo y orientado a resultados.",
+      "Desarrollar e implementar estrategias de ventas efectivas, alineadas con los objetivos generales de la empresa y las necesidades del mercado.",
+      "Analizar el rendimiento del mercado y ajustar las estrategias de ventas según sea necesario para mejorar los resultados y adaptarse a los cambios del entorno.",
+      "Monitorear el desempeño del equipo de ventas mediante indicadores clave, proporcionando retroalimentación y capacitación continua para mejorar la eficacia del equipo."
+    ],
+    "applyLink": "mailto:jobs@duckbank.com.ar?subject=Aplicación para Gerente de Ventas",
+    "slug": "gerente-de-ventas",
+    "seniority": "Senior",
+    "location": "San Juan"
+  },
+  {
+    "id": "disenador-grafico",
+    "area": "Diseño",
+    "title": "Diseñador Gráfico",
+    "description": "Diseñador para crear materiales visuales y gráficos para nuestras campañas y comunicación.",
+    "qualifications": [
+      "Experiencia comprobada en diseño gráfico, con un portafolio que demuestre habilidades en la creación de materiales visuales efectivos y creativos.",
+      "Habilidad en el manejo de herramientas de diseño como Adobe Photoshop, Illustrator e InDesign, con capacidad para producir gráficos de alta calidad para diferentes plataformas y formatos.",
+      "Conocimientos en diseño de branding y comunicación visual, con experiencia en la creación y mantenimiento de la identidad visual de la empresa y sus productos.",
+      "Capacidad para trabajar en un entorno colaborativo, entendiendo las necesidades del cliente interno y proporcionando soluciones de diseño que cumplan con los objetivos establecidos."
+    ],
+    "skills": [
+      "Diseño Gráfico",
+      "Photoshop",
+      "Illustrator",
+      "InDesign",
+      "Branding",
+      "Comunicación Visual"
+    ],
+    "responsibilities": [
+      "Crear y diseñar materiales visuales para campañas publicitarias, comunicación corporativa y otros proyectos, garantizando la coherencia con la identidad de la marca.",
+      "Desarrollar conceptos de diseño desde la idea inicial hasta la ejecución final, gestionando proyectos gráficos de manera eficiente y efectiva.",
+      "Colaborar con el equipo de marketing y otros departamentos para entender los requisitos del proyecto y cumplir con los objetivos de diseño en tiempo y forma.",
+      "Revisar y ajustar diseños según sea necesario, utilizando la retroalimentación para mejorar la calidad y eficacia de los materiales visuales."
+    ],
+    "applyLink": "mailto:jobs@duckbank.com.ar?subject=Aplicación para Diseñador Gráfico",
+    "slug": "disenador-grafico",
+    "seniority": "Junior",
+    "location": "Remoto"
+  },
+  {
+    "id": "disenador-ui",
+    "area": "Diseño",
+    "title": "Diseñador UX/UI",
+    "description": "Diseñador especializado en experiencia de usuario y diseño de interfaces para nuestras aplicaciones.",
+    "qualifications": [
+      "Experiencia en diseño UX/UI con un enfoque en la creación de prototipos y diseño de interfaces de usuario que mejoren la experiencia del usuario.",
+      "Conocimientos en herramientas de diseño UX como Figma o Sketch, con habilidades para crear wireframes, prototipos y diseños de alta fidelidad.",
+      "Capacidad para realizar investigaciones de usuarios, pruebas de usabilidad y análisis de feedback para mejorar la experiencia y funcionalidad de las aplicaciones.",
+      "Experiencia en colaboración con equipos de desarrollo para asegurar la implementación efectiva de los diseños y ajustes según los comentarios y resultados de las pruebas."
+    ],
+    "skills": [
+      "UX/UI Design",
+      "Figma",
+      "Sketch",
+      "Prototipado",
+      "Investigación de Usuarios",
+      "Pruebas de Usabilidad"
+    ],
+    "responsibilities": [
+      "Diseñar interfaces de usuario intuitivas y atractivas, asegurando que cumplan con los estándares de usabilidad y las expectativas de los usuarios.",
+      "Realizar investigaciones y pruebas de usabilidad para identificar oportunidades de mejora y ajustar los diseños en función de los comentarios y resultados obtenidos.",
+      "Colaborar con desarrolladores para implementar los diseños en las aplicaciones, proporcionando la documentación necesaria y ajustando los diseños según los requisitos técnicos y comentarios de implementación.",
+      "Mantenerse actualizado con las tendencias y mejores prácticas en diseño UX/UI para asegurar que las soluciones de diseño sean modernas y efectivas."
+    ],
+    "applyLink": "mailto:jobs@duckbank.com.ar?subject=Aplicación para Diseñador UX/UI",
+    "slug": "disenador-ui",
+    "seniority": "Junior/SSR",
+    "location": "Remoto"
+  },
+  {
+    "id": "asistente-adimistrativo",
+    "area": "Administración",
+    "title": "Asistente Administrativo",
+    "description": "Asistente para apoyar en tareas administrativas y gestión de oficinas.",
+    "qualifications": [
+      "Experiencia previa en tareas administrativas y gestión de oficina, con habilidades para manejar una variedad de responsabilidades en un entorno dinámico.",
+      "Habilidades organizativas excepcionales y atención al detalle, con capacidad para mantener la eficiencia y precisión en la gestión de documentos y tareas administrativas.",
+      "Conocimientos en software de oficina y gestión documental, incluyendo herramientas como Microsoft Office, Google Workspace, y sistemas de gestión documental.",
+      "Capacidad para manejar múltiples tareas simultáneamente, coordinar reuniones y eventos, y mantener registros precisos y actualizados."
+    ],
+    "skills": [
+      "Administración",
+      "Gestión de Oficina",
+      "Organización",
+      "Software de Oficina",
+      "Coordinación de Reuniones",
+      "Gestión Documental"
+    ],
+    "responsibilities": [
+      "Apoyar en la gestión de tareas administrativas diarias, incluyendo la organización de documentos, coordinación de reuniones y eventos, y manejo de correspondencia.",
+      "Coordinar reuniones, eventos y correspondencia, asegurando que todas las actividades se realicen de manera eficiente y puntual.",
+      "Mantener registros y documentación precisa, asegurando que toda la información se almacene de manera organizada y sea fácilmente accesible cuando sea necesario.",
+      "Proporcionar apoyo general al equipo administrativo y a otros departamentos según sea necesario, contribuyendo a la operación fluida de la oficina."
+    ],
+    "applyLink": "mailto:jobs@duckbank.com.ar?subject=Aplicación para Asistente Administrativo",
+    "slug": "asistente-adimistrativo",
+    "seniority": "Senior",
+    "location": "Córdoba"
+  },
+  {
+    "id": "gerente-administrativo",
+    "area": "Administración",
+    "title": "Gerente Administrativo",
+    "description": "Gerente para coordinar y supervisar actividades administrativas y operativas.",
+    "qualifications": [
+      "Experiencia significativa en gestión administrativa y liderazgo, con habilidades para coordinar y supervisar todas las actividades operativas de la oficina.",
+      "Conocimientos sólidos en planificación y control de operaciones, con capacidad para desarrollar e implementar estrategias que mejoren la eficiencia administrativa y operativa.",
+      "Habilidades de comunicación y resolución de problemas, con capacidad para gestionar conflictos y proporcionar soluciones efectivas para problemas operativos.",
+      "Experiencia en la gestión del presupuesto administrativo y recursos operativos, con habilidades para optimizar costos y mejorar la rentabilidad."
+    ],
+    "skills": [
+      "Gestión Administrativa",
+      "Planificación",
+      "Liderazgo",
+      "Resolución de Problemas",
+      "Gestión de Presupuesto",
+      "Optimización de Recursos"
+    ],
+    "responsibilities": [
+      "Coordinar y supervisar todas las actividades administrativas y operativas de la oficina, asegurando que se realicen de manera eficiente y conforme a los estándares establecidos.",
+      "Desarrollar estrategias para mejorar la eficiencia administrativa, incluyendo la implementación de nuevas políticas y procedimientos para optimizar las operaciones diarias.",
+      "Gestionar el presupuesto administrativo y los recursos operativos, asegurando un uso efectivo y eficiente de los recursos disponibles y buscando oportunidades para reducir costos.",
+      "Proporcionar liderazgo al equipo administrativo, motivando y apoyando al personal para alcanzar los objetivos establecidos y mantener un entorno de trabajo productivo."
+    ],
+    "applyLink": "mailto:jobs@duckbank.com.ar?subject=Aplicación para Gerente Administrativo",
+    "slug": "gerente-administrativo",
+    "seniority": "Senior",
+    "location": "Buenos Aires"
+  }
+]

@@ -1,0 +1,80 @@
+[
+  {
+    "icon": "FaCreditCard",
+    "title": "Tarjetas",
+    "description": "Resumen, reposición, pagos...",
+    "link": "/las-tarjetas"
+  },
+  {
+    "icon": "FaUserAlt",
+    "title": "Cuentas",
+    "description": "Saldos, CBU, cheques...",
+    "link": "/cuentas"
+  },
+  {
+    "icon": "FaKey",
+    "title": "Claves",
+    "description": "Token Duck, PIN Banelco...",
+    "link": "/claves"
+  },
+  {
+    "icon": "FaShieldAlt",
+    "title": "Seguros",
+    "description": "Altas, siniestros...",
+    "link": "/seguros"
+  },
+  {
+    "icon": "FaMoneyCheckAlt",
+    "title": "Préstamos",
+    "description": "Personal, Hipotecario UVA...",
+    "link": "/prestamos"
+  },
+  {
+    "icon": "FaCoins",
+    "title": "Inversiones",
+    "description": "Plazo fijo, FIMA...",
+    "link": "/inversiones"
+  },
+  {
+    "icon": "FaFileInvoice",
+    "title": "Pago de servicios",
+    "description": "Pagos AFIP, servicios...",
+    "link": "/pago-servicios"
+  },
+  {
+    "icon": "FaBoxOpen",
+    "title": "Cajeros y terminales",
+    "description": "Extracciones, depósitos...",
+    "link": "/cajeros-terminales"
+  },
+  {
+    "icon": "FaTruck",
+    "title": "Envío e ingreso dinero",
+    "description": "Transferencias...",
+    "link": "/envio-dinero"
+  },
+  {
+    "icon": "FaHandshake",
+    "title": "Paquete de productos",
+    "description": "Beneficios, costo y bonificación.",
+    "link": "/paquete-productos"
+  },
+  {
+    "icon": "FaStore",
+    "title": "Comercios",
+    "description": "Nave.",
+    "link": "/comercios"
+  },
+  {
+    "icon": "FaCreditCard",
+    "title": "MODO",
+    "description": "Billetera Duck.",
+    "link": "/modo"
+  },
+  {
+    "icon": "FaRegBuilding",
+    "title": "Sucursales",
+    "description": "Encontrá tu sucursal más cercana.",
+    "link": "/sucursales"
+  }
+]
