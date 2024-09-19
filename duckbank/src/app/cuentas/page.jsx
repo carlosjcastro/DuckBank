@@ -88,9 +88,6 @@ export default function Cuentas() {
       const origen = accounts.find((acc) => acc.id === origenId);
       let destino = accounts.find((acc) => acc.id === destinoId);
 
-      localStorage.setItem('accounts', JSON.stringify(accounts));
-      localStorage.setItem('externalAccounts', JSON.stringify(externalAccounts));
-    
       if (!destino) {
         destino = externalAccounts.find((acc) => acc.id === destinoId);
       }
@@ -113,12 +110,10 @@ export default function Cuentas() {
         setSnackbarOpen(true);
         return;
       }
-    
-      // Actualiza los saldos
+ 
       const updatedOrigen = { ...origen, balance: origen.balance - monto };
       const updatedDestino = { ...destino, balance: destino.balance + monto };
-    
-      // Actualiza el estado de las cuentas
+
       setAccounts((prevAccounts) =>
         prevAccounts.map((acc) =>
           acc.id === origenId ? updatedOrigen : acc
@@ -143,7 +138,6 @@ export default function Cuentas() {
       localStorage.setItem('accounts', JSON.stringify(accounts));
       localStorage.setItem('externalAccounts', JSON.stringify(externalAccounts));
     
-      // Muestra un mensaje de éxito
       setSnackbarMessage('Transferencia realizada con éxito');
       setSnackbarOpen(true);
     };
@@ -215,7 +209,6 @@ export default function Cuentas() {
     };
   
     const handlePayment = ({ accountId, amount, service }) => {
-      // Lógica para procesar el pago aquí
       console.log(`Pago realizado: Cuenta ID ${accountId}, Monto ${amount}, Servicio ${service}`);
     };
   
@@ -236,14 +229,13 @@ export default function Cuentas() {
         setNewAccountName(selectedAccount.name);
         setOpenDialog(true);
       } else if (option === 'delete') {
-        setSelectedAccount(selectedAccount); // Guardar la cuenta seleccionada para eliminar
-        setConfirmDeleteOpen(true); // Abrir diálogo de confirmación
+        setSelectedAccount(selectedAccount); 
+        setConfirmDeleteOpen(true); 
       }
     };
   
     const handleConfirmDeleteClose = (confirm) => {
       if (confirm && selectedAccount) {
-        // Actualizar externalAccounts y localStorage
         const updatedExternalAccounts = externalAccounts.filter(
           (account) => account.id !== selectedAccount.id
         );
@@ -254,8 +246,8 @@ export default function Cuentas() {
         setSnackbarOpen(true);
       }
     
-      setConfirmDeleteOpen(false); // Cierra el diálogo de confirmación
-      setSelectedAccount(null);    // Restablece la cuenta seleccionada
+      setConfirmDeleteOpen(false); 
+      setSelectedAccount(null);  
     };
   
     const open = Boolean(anchorEl);

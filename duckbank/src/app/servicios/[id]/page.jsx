@@ -1,7 +1,7 @@
-"use client"; // Marcar el componente como Client Component
+"use client";
 
 import { useEffect, useState } from "react";
-import { useParams } from "next/navigation"; // Cambiamos useRouter por useParams
+import { useParams } from "next/navigation"; 
 
 const serviciosData = [
   { id: 1, name: "EPE", amount: 20000, dueDate: "30/09/2024" },
@@ -10,14 +10,14 @@ const serviciosData = [
 ];
 
 export default function ServiciosDetail() {
-  const { id } = useParams(); // Obtenemos el id desde useParams
-  const [servicio, setServicio] = useState(null);
+  const { id } = useParams(); 
+   const [servicio, setServicio] = useState(null);
   const [selectedAccountId, setSelectedAccountId] = useState(null);
   const [accounts, setAccounts] = useState([]);
 
   useEffect(() => {
     if (id) {
-      const selectedServicio = serviciosData.find((fact) => fact.id === parseInt(id, 10)); // Cambié servicio por serviciosData
+      const selectedServicio = serviciosData.find((fact) => fact.id === parseInt(id, 10));
       setServicio(selectedServicio);
     }
 
