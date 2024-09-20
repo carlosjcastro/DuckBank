@@ -4,7 +4,7 @@ import logo from "../../../public/assets/logo/duckbank2.png";
 
 export default function Header() {
   return (
-    <div className="mb-4 h-20 w-full flex items-center fixed bg-[#143D60] z-10">
+    <div className="mb-4 h-20 w-full flex items-center fixed bg-[#2e2828] z-10">
       <div className="ml-4">
         <Link href="/">
           <Image

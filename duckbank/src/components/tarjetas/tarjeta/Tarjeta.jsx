@@ -6,7 +6,7 @@ import { BsThreeDots } from 'react-icons/bs';
 
 export default function Tarjeta({ tarjeta, onDelete, onMenuToggle, menuOpen, onClick }) {
   return (
-    <div key={tarjeta.id} className="relative rounded-2xl shadow-lg p-4" style={{ backgroundColor: tarjeta.color }}>
+    <div key={tarjeta.id} className="relative rounded-2xl p-4" style={{ backgroundColor: tarjeta.color }}>
       <Image src="/assets/pages/tarjetas/DuckBank.png" alt="Logo de DuckBank" width={60} height={60} className="object-cover mb-4 shadow-inset-image" loading="lazy" />
       <div className="text-white">
         <p className="text-lg font-semibold">{tarjeta.type}</p>

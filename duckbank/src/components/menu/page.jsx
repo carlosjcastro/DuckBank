@@ -20,11 +20,11 @@ export default function Menu() {
 
   const menuItems = [
     { name: "Inicio", path: "/" },
-    { name: "Cuentas", path: "/pagina-en-mantenimiento" },
+    { name: "Cuentas", path: "/cuentas" },
     { name: "Tarjetas", path: "/tarjetas" },
-    { name: "Inversiones", path: "/inversiones" },
+    { name: "Inversiones", path: "/pagina-en-mantenimiento" },
     { name: "Seguros", path: "/pagina-en-mantenimiento" },
-    { name: "Pagos y servicios", path: "/pagina-en-mantenimiento" },
+    { name: "Pagos y servicios", path: "/servicios" },
     { name: "Historial de cuenta", path: "/pagina-en-mantenimiento" },
     { name: "Préstamos", path: "/pagina-en-mantenimiento" },
     { name: "Cuotificalo", path: "/pagina-en-mantenimiento" },

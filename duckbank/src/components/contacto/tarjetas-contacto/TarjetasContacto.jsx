@@ -19,7 +19,7 @@ export default function TarjetasContacto({ tarjetasContacto }) {
       {tarjetasContacto.map((tarjeta, index) => (
         <motion.div
           key={tarjeta.id}
-          className="flex flex-col items-start p-6 rounded-2xl shadow-lg"
+          className="flex flex-col items-start p-6 rounded-2xl"
           style={{ backgroundColor: tarjeta.color, color: 'black' }}
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}

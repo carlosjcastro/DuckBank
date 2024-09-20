@@ -80,9 +80,9 @@ export default function PerfilUsuario() {
   };
 
   return (
-    <div className="flex items-center justify-center min-h-screen bg-gray-100 mt-20">
-      <div className="p-10 rounded-2xl w-full max-w-md">
-        <motion.h1 className="text-2xl font-semibold text-center">
+    <div className="flex items-center justify-center min-h-screen bg-gray-100 mt-16">
+      <div className="p-10 rounded-2xl mt-10 bg-white w-full max-w-md">
+        <motion.h1 className="text-3xl font-bold text-center">
           Datos de tu cuenta
         </motion.h1>
         {isEditing && <p className="text-green-500 text-center">Modo edición</p>}
@@ -128,7 +128,7 @@ export default function PerfilUsuario() {
               <div key={label} className="mb-4">
                 <label className="text-lg font-medium">{label}:</label>
                 <input
-                  className={`w-full border-2 rounded-2xl p-4 mt-1 ${error ? "border-red-500" : ""}`}
+                  className={`w-full rounded-full p-4 border mt-1 ${error ? "border-red-500" : ""}`}
                   type={label === "Email" ? "email" : "text"}
                   readOnly={!isEditing}
                   value={value}

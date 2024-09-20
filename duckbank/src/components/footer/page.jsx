@@ -27,7 +27,7 @@ export default function Footer() {
   ];
 
   return (
-    <footer className="bg-[#143D60] w-full mt-24 py-6">
+    <footer className="bg-[#2e2828] w-full mt-24 py-6">
       <div className="container mx-auto px-4">
         <div className="flex flex-col items-center lg:flex-row lg:justify-between lg:border-b lg:border-gray-400 pb-6">
           <Link href="/">

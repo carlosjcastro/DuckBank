@@ -97,11 +97,11 @@ export default function Tarjetas() {
 
   return (
     <div className="p-6 mt-10">
-      <h1 className="text-4xl text-white font-bold mb-4 text-center mt-10 p-20 bg-[#463f3a] rounded-2xl">
+      <h1 className="text-4xl text-black font-bold text-center mt-6 p-20 rounded-2xl">
         Tus Tarjetas de Crédito
       </h1>
 
-      <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-4 mt-20">
+      <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-4 mt-6">
         <Suspense fallback={<div>Cargando tarjetas...</div>}>
           {tarjetasGeneradas.map(tarjeta => (
             <Tarjeta 
@@ -114,7 +114,7 @@ export default function Tarjetas() {
             />
           ))}
         </Suspense>
-        <div className="relative rounded-2xl p-4 bg-[#f9f9f9] flex items-center justify-center hover:bg-gray-200">
+        <div className="relative rounded-2xl p-4 bg-[#ffffff] flex items-center justify-center hover:bg-gray-200">
           <button onClick={handleOpenModal} disabled={solicitudes.length >= 3} className={`flex flex-col items-center ${solicitudes.length >= 3 ? "opacity-50 cursor-not-allowed" : ""}`}>
             <span className="text-5xl font-bold text-gray-500">+</span>
             <span className="text-lg font-semibold text-gray-700">Solicitar nueva tarjeta</span>
@@ -143,7 +143,7 @@ export default function Tarjetas() {
         <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4">
           {solicitudes.length > 0 ? (
             solicitudes.map(s => (
-              <div key={s.id} className="bg-[#f9f9f9] p-4 rounded-2xl flex flex-col justify-between">
+              <div key={s.id} className="bg-[#ffffff] p-4 rounded-2xl flex flex-col justify-between">
                 <div>
                   <p><strong>Nombre:</strong> {s.nombre}</p>
                   <p><strong>Categoría:</strong> {s.tipo}</p>

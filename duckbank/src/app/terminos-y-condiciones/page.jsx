@@ -80,21 +80,18 @@ const secciones = [
 
 export default function TerminosYCondiciones() {
   return (
-    <div className="p-6 mt-10">
-      <header className="text-center p-6 sm:p-10 bg-[#463f3a] rounded-2xl mt-10 sm:mt-20">
-        <Image
+    <div className="p-6 mt-4">
+      <header className="text-center p-6 sm:p-10 rounded-2xl mt-2 sm:mt-20">
+        {/* <Image
           className="w-24 h-16 sm:w-30 sm:h-20 mx-auto"
           src={privacy}
           alt="Términos y Condiciones Ícono"
           width={120}
           height={80}
-        />
-        <h1 className="text-3xl sm:text-6xl text-[#ffffff] font-bold mt-4">
+        /> */}
+        <h1 className="text-3xl sm:text-4xl text-[#000000] font-bold mt-2">
           Términos y Condiciones
         </h1>
-        <p className="text-lg sm:text-base text-[#ffffff] mt-4">
-          Explorá y gestiona tus opciones de inversión.
-        </p>
       </header>
 
       {secciones.map((seccion, index) => (

@@ -72,7 +72,7 @@ export default function FormularioContacto({ formValues, manejarCambio, manejarC
         <div>
           <motion.button
             type="submit"
-            className="w-full bg-[#4e2d1e] text-white py-2 rounded-full shadow-md hover:bg-[#3f2518] transition duration-300"
+            className="w-full bg-[#4e2d1e] text-white py-2 rounded-full hover:bg-[#3f2518] transition duration-300"
             initial={{ opacity: 0, scale: 0.95 }}
             animate={{ opacity: 1, scale: 1 }}
             transition={{ duration: 0.3 }}
