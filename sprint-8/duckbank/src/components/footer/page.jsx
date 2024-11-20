@@ -89,9 +89,7 @@ export default function Footer() {
           </div>
         </div>
         <div className="flex flex-col lg:flex-row lg:justify-between items-center mt-8 text-sm text-[#d1d1d1]">
-          <p className="mb-2 lg:mb-0">
-            © Duckbank Argentina S.A.
-          </p>
+        <p className="mb-2 lg:mb-0">© Duckbank Argentina S.A. {new Date().getFullYear()}</p>
           <div className="flex flex-col lg:flex-row lg:items-center lg:gap-4 lg:w-1/3">
             <Link href="/terminos-y-condiciones">
               <span className="hover:text-[#fef4f4] border-t border-[#d1d1d1] pt-1 lg:pt-0 lg:border-t-0 lg:border-l lg:pl-4 transition transition-300">
@@ -112,6 +110,41 @@ export default function Footer() {
                   </a>
                 </li>
               ))}
+            </ul>
+          </div>
+          <div className="mt-4 lg:mt-0 flex flex-col lg:flex-row lg:items-center lg:gap-4">
+            <span>Desarrollado y Diseñado por:</span>
+            <ul className="flex gap-4">
+              <li>
+                <a
+                  href="https://www.linkedin.com/in/carlosjcastrog"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="hover:text-[#fef4f4]"
+                >
+                  Carlos José Castro Galante
+                </a>
+              </li>
+              <li>
+                <a
+                  href="https://www.linkedin.com/in/celina-bono"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="hover:text-[#fef4f4]"
+                >
+                  Celina Bono
+                </a>
+              </li>
+              <li>
+                <a
+                  href="https://www.linkedin.com/in/nombre3"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="hover:text-[#fef4f4]"
+                >
+                  Ignacio Iannino
+                </a>
+              </li>
             </ul>
           </div>
         </div>
