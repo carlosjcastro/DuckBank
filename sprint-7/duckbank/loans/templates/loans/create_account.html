@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Crear Cuentas</title>
+  </head>
+  <body>
+    <header>
+      <h1>Crear Cuenta</h1>
+    </header>
+    <main>
+      <form method="post" action="{% url 'create_account' %}">
+        {% csrf_token %}
+        <button type="submit">Crear Nueva Cuenta</button>
+      </form>
+    </main>
+
+    {% if user.is_authenticated %}
+
+    <p>
+      Bienvenido, {{ user.Cliente.customer_name }} |
+      <a href="{% url 'logout %}">Cerrar sesión</a>
+    </p>
+
+    {% else %}
+
+    <a href="{% url 'login' %}">Iniciar sesión</a> |
+    <a href="{% url 'registro' %}">Registrarse</a>
+
+    {% endif %} {% block content %} {% endblock %}
+
+    <footer>
+      <p>&copy; 2024 Homebanking</p>
+    </footer>
+  </body>
+</html>
