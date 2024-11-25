@@ -8,7 +8,9 @@ from .models import LoanRequest, Account, Tarjeta, Cliente, Cuenta, Sucursal, Ma
 from django.contrib import messages
 import random
 from datetime import date, timedelta
-from rest_framework import viewsets
+from rest_framework import viewsets, permissions, generics
+from rest_framework.decorators import action
+from rest_framework.response import Response
 from .serializers import AccountSerializer, LoanRequestSerializer, MarcaSerializer, SucursalSerializer, ClienteSerializer, CuentaSerializer, PrestamoSerializer, EmpleadoSerializer, TarjetaSerializer
 
 # Se muestra la vista para iniciar sesión
@@ -196,6 +198,11 @@ class AccountViewSet(viewsets.ModelViewSet):
     queryset = Account.objects.all()
     serializer_class = AccountSerializer
 
+    @action(detail=False, methods=['get'], permission_classes=[permissions.IsAuthenticated])
+    def saldo(self, request):
+            Account = Account.objects.get(cliente__user=request.user)
+            return Response({'saldo': Account.saldo})
+
 class LoanRequestViewSet(viewsets.ModelViewSet):
     queryset = LoanRequest.objects.all()
     serializer_class = LoanRequestSerializer
@@ -208,9 +215,29 @@ class SucursalViewSet(viewsets.ModelViewSet):
     queryset = Sucursal.objects.all()
     serializer_class = SucursalSerializer
 
+    @action(detail=False, methods=['get'], permission_classes=[permissions.AllowAny])
+    def listado(self, request):
+        sucursales = Sucursal.objects.all()
+        serializer = SucursalSerializer(sucursales, many=True)
+        return Response(serializer.data)
+
 class ClienteViewSet(viewsets.ModelViewSet):
     queryset = Cliente.objects.all()
     serializer_class = ClienteSerializer
+
+    @action(detail=False, methods=['get'], permission_classes=[permissions.IsAuthenticated])
+    def datos(self, request):
+        cliente = Cliente.objects.get(user=request.user)
+        serializer = ClienteSerializer(cliente)
+        return Response(serializer.data)
+    
+    @action(detail=False, methods=['put'], permission_classes=[permissions.IsAuthenticated])
+    def direccion(self, request):
+        cliente = Cliente.objects.get(user=request.user)
+        cliente.direccion = request.data.get('direccion')
+        cliente.save()
+        serializer = ClienteSerializer(cliente)
+        return Response(serializer.data)
 
 class CuentaViewSet(viewsets.ModelViewSet):
     queryset = Cuenta.objects.all()
@@ -220,6 +247,39 @@ class PrestamoViewSet(viewsets.ModelViewSet):
     queryset = Prestamo.objects.all()
     serializer_class = PrestamoSerializer
 
+    @action(detail=False, methods=['get'], permission_classes=[permissions.IsAuthenticated])
+    def cliente(self, request):
+        prestamos = Prestamo.objects.filter(cliente__user=request.user)
+        serializer = PrestamoSerializer(prestamos, many=True)
+        return Response(serializer.data)
+
+    @action(detail=False, methods=['get'], permission_classes=[permissions.IsAuthenticated])
+    def sucursal(self, request):
+        if not request.user.is_staff:
+            return Response({'error': 'No autorizado'}, status=403)
+        prestamos = Prestamo.objects.filter(sucursal__empleados__user=request.user)
+        serializer = PrestamoSerializer(prestamos, many=True)
+        return Response(serializer.data)
+
+    @action(detail=False, methods=['post'], permission_classes=[permissions.IsAuthenticated])
+    def solicitud(self, request):
+        if not request.user.is_staff:
+            return Response({'error': 'No autorizado'}, status=403)
+        serializer = PrestamoSerializer(data=request.data)
+        if serializer.is_valid():
+            serializer.save()
+            return Response(serializer.data, status=201)
+        return Response(serializer.errors, status=400)
+
+    @action(detail=False, methods=['delete'], permission_classes=[permissions.IsAuthenticated])
+    def anular(self, request):
+        if not request.user.is_staff:
+            return Response({'error': 'No autorizado'}, status=403)
+        prestamo_id = request.data.get('id')
+        prestamo = Prestamo.objects.get(id=prestamo_id)
+        prestamo.delete()
+        return Response(status=204)
+
 class EmpleadoViewSet(viewsets.ModelViewSet):
     queryset = Empleado.objects.all()
     serializer_class = EmpleadoSerializer
@@ -227,3 +287,9 @@ class EmpleadoViewSet(viewsets.ModelViewSet):
 class TarjetaViewSet(viewsets.ModelViewSet):
     queryset = Tarjeta.objects.all()
     serializer_class = TarjetaSerializer
+
+    @action(detail=False, methods=['get'], permission_classes=[permissions.IsAuthenticated])
+    def cliente(self, request):
+        tarjetas = Tarjeta.objects.filter(cliente__user=request.user)
+        serializer = TarjetaSerializer(tarjetas, many=True)
+        return Response(serializer.data)
