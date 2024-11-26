@@ -1,0 +1,86 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" type="text/css" href="{% static 'css/show_client_data.css' %}">
+    <title>Información del Cliente</title>
+</head>
+<body>
+    <main>
+        <h1>Información del Cliente</h1>
+        <!-- Información del usuario -->
+        <section class="client-info">
+            <h2>Datos Personales</h2>
+            <p><strong>Usuario:</strong> {{ user.username }}</p>
+            <p><strong>Nombre Completo:</strong> {{ cliente.customer_name }} {{ cliente.customer_surname }}</p>
+            <!-- <p><strong>Email:</strong> {{ user.email }}</p> -->
+            <p><strong>DNI:</strong> {{ dni }}</p>  <!-- Mostrar DNI aquí -->
+            <p><strong>Fecha de Registro:</strong> {{ user.date_joined }}</p>
+            <p><strong>Último Inicio de Sesión:</strong> {{ user.last_login }}</p>
+        </section>
+
+        <!-- Información de cuentas -->
+        <section class="account-info">
+            <h2>Cuentas</h2>
+            {% if cuentas %}
+                <table>
+                    <thead>
+                        <tr>
+                            <th>ID</th>
+                            <th>Propietario</th>
+                            <th>Saldo</th>
+                            <th>IBAN</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        {% for cuenta in cuentas %}
+                            <tr>
+                                <td>{{ cuenta.account_id }}</td>
+                                <td>{{ cuenta.customer_id.customer_name }} {{ cuenta.customer_id.customer_surname }}</td>
+                                <td>{{ cuenta.balance }}</td>
+                                <td>{{ cuenta.iban }}</td>
+                            </tr>
+                        {% endfor %}
+                    </tbody>
+                </table>
+            {% else %}
+                <p>No tenes cuentas creadas.</p>
+            {% endif %}
+        </section>
+
+        <!-- Información de tarjetas -->
+        <section class="card-info">
+            <h2>Tarjetas</h2>
+            {% if tarjetas %}
+                <table>
+                    <thead>
+                        <tr>
+                            <th>ID</th>
+                            <th>Propietario</th>
+                            <th>Número</th>
+                            <th>Fecha de Expiración</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        {% for tarjeta in tarjetas %}
+                            <tr>
+                                <td>{{ tarjeta.id }}</td>
+                                <td>{{ tarjeta.cliente_id.customer_name }} {{ tarjeta.cliente_id.customer_surname }}</td>
+                                <td>{{ tarjeta.numero }}</td>
+                                <td>{{ tarjeta.fecha_expiracion }}</td>
+                            </tr>
+                        {% endfor %}
+                    </tbody>
+                </table>
+            {% else %}
+                <p>No tenes tarjetas creadas.</p>
+            {% endif %}
+        </section>
+        {% if user.is_authenticated %}
+        <a href="{% url 'logout' %}" class="logout-button">Cerrar Sesión</a>
+        {% endif %}
+    </main>
+</body>
+</html>
