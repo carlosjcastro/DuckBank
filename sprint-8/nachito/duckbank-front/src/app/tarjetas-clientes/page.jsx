@@ -1,0 +1,68 @@
+'use client';
+
+import React, { useEffect, useState } from "react";
+import axios from "axios";
+
+const TarjetasCliente = () => {
+  const [tarjetas, setTarjetas] = useState([]);
+  const [error, setError] = useState("");
+  const [loading, setLoading] = useState(true); // Nuevo estado para mostrar carga
+
+  useEffect(() => {
+    const fetchTarjetas = async () => {
+      try {
+        const token = localStorage.getItem("authToken");
+        if (!token) {
+          setError("Usuario no autenticado.");
+          setLoading(false);
+          return;
+        }
+
+        const response = await axios.get(
+          `${process.env.NEXT_PUBLIC_API_URL}/api/tarjetas/`,
+          {
+            headers: {
+              Authorization: `Bearer ${token}`,
+            },
+          }
+        );
+
+        const data = Array.isArray(response.data) ? response.data : [];
+        setTarjetas(data);
+      } catch (err) {
+        setError("No se pudieron cargar las tarjetas.");
+        console.error(err);
+      } finally {
+        setLoading(false);
+      }
+    };
+
+    fetchTarjetas();
+  }, []);
+
+  return (
+    <div className="p-6 m-10 bg-gray-100 bg-white mt-36 rounded-2xl">
+      <h2 className="text-xl font-bold mb-4">Tarjetas Asociadas</h2>
+
+      {loading && <p className="text-gray-500">Cargando tarjetas...</p>}
+
+      {error && !loading && <p className="text-red-500">{error}</p>}
+
+      {!loading && !error && (
+        <ul className="list-disc">
+          {tarjetas.length > 0 ? (
+            tarjetas.map((tarjeta) => (
+              <li key={tarjeta.id}>
+                {tarjeta.tipo} - {tarjeta.numero}
+              </li>
+            ))
+          ) : (
+            <p>No tenés tarjetas asociadas.</p>
+          )}
+        </ul>
+      )}
+    </div>
+  );
+};
+
+export default TarjetasCliente;
