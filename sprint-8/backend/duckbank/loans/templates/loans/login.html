@@ -1,0 +1,33 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Iniciar Sesión</title>
+    <link rel="stylesheet" type="text/css" href="{% static 'css/login.css' %}">
+</head>
+<body>
+    <div class="login-container">
+        <img src="{% static 'images/duckbank2.png' %}" alt="Logo de DuckBank" class="login-image">
+        
+        <h2>Bienvenido a DuckBank</h2>
+        {% if messages %}
+            <ul class="messages">
+                {% for message in messages %}
+                    <li class="{{ message.tags }}">{{ message }}</li>
+                {% endfor %}
+            </ul>
+        {% endif %}
+        <form method="post" novalidate>
+            {% csrf_token %}
+            {{ form.as_p }}
+            <button type="submit">Iniciar sesión</button>
+        </form>
+            <p class="action button">
+            ¿No tenes una cuenta?
+            <a href="{% url 'registro' %}">Registráte aquí</a>.
+          </p>
+    </div>
+</body>
+</html>
