@@ -1,0 +1,46 @@
+{% load static %}
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" type="text/css" href="{% static 'css/loan_history.css' %}">
+    <title>Historial de Préstamos</title>
+</head>
+<body>
+    <div class="container">
+        <h2>Historial de Solicitudes de Préstamo</h2>
+
+        {% if loan_requests %}
+            <ul>
+                {% for loan in loan_requests %}
+                    <li>
+                        <div class="loan-card">
+                            <div class="loan-details">
+                                <strong>Tipo de préstamo:</strong> {{ loan.loan_type }}<br>
+                                <strong>Monto solicitado:</strong> ${{ loan.amount_requested }}<br>
+                                <strong>Fecha de inicio:</strong> {{ loan.start_date }}<br>
+                                <strong>Estado:</strong>
+                                {% if loan.status == 'APPROVED' %}
+                                    <img src="{% static 'images/accepted.svg' %}" alt="Icono de préstamo aprobado" class="status-icon">
+                                    <span class="approved">Aprobado</span>
+                                {% elif loan.status == 'REJECTED' %}
+                                    <img src="{% static 'images/rejected.svg' %}" alt="Icono de préstamo rechazado" class="status-icon">
+                                    <span class="rejected">Rechazado</span>
+                                {% else %}
+                                    <span class="pending">Pendiente</span>
+                                {% endif %}
+                            </div>
+                        </div>
+                    </li>
+                {% endfor %}
+            </ul>
+        {% else %}
+            <p class="empty-message">No tienes solicitudes de préstamo.</p>
+        {% endif %}
+
+        {% if user.is_authenticated %}
+            <a href="{% url 'logout' %}" class="logout-button">Cerrar Sesión</a>
+        {% endif %}
+    </div>
+</body>
+</html>

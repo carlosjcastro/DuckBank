@@ -1,0 +1,133 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap");
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  text-decoration: none;
+}
+
+body {
+  font-family: "Poppins", sans-serif;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  background-color: #f4f5f7;
+}
+
+.form-container {
+  max-width: 600px; /* Incremento del ancho */
+  width: 100%;
+  padding: 30px;
+  background: #ffffff;
+  border-radius: 10px;
+  box-sizing: border-box;
+  margin: 20px;
+}
+
+.form-container h2 {
+  text-align: center;
+  margin-bottom: 20px;
+  color: #333333;
+  font-size: 1.5em;
+}
+
+.form-field {
+  margin-bottom: 20px;
+}
+
+.form-field label {
+  font-size: 16px;
+  color: #333;
+  text-align: left;
+  margin-bottom: 5px;
+}
+
+.form-field input,
+.form-field select {
+  width: 100%;
+  padding: 12px 15px;
+  border: 1px solid #cccccc;
+  border-radius: 50px;
+  font-size: 14px;
+  box-sizing: border-box;
+  outline: none;
+  background: none;
+  transition: border-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+.form-field input:focus,
+.form-field select:focus {
+  border-color: #4e2d1e;
+}
+
+.form-field select {
+  appearance: none;
+  background: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="%23333" width="24px" height="24px"><path d="M7 10l5 5 5-5z"/></svg>')
+    no-repeat right 12px center;
+  background-color: #f9f9f9;
+  background-size: 16px;
+}
+
+button {
+  padding: 15px;
+  width: 100%;
+  font-size: 16px;
+  color: #ffffff;
+  background-color: #4e2d1e;
+  border: none;
+  border-radius: 50px;
+  cursor: pointer;
+}
+
+button:hover {
+  background-color: #3f2518;
+}
+
+.messages {
+  margin-bottom: 20px;
+}
+
+.messages .errors {
+  color: #e63946;
+  font-size: 14px;
+  font-weight: bold;
+}
+
+.message.success {
+  color: #52b788;
+  font-size: 14px;
+  font-weight: bold;
+}
+
+p {
+  text-align: center;
+  margin-top: 20px;
+  font-size: 14px;
+}
+
+p a {
+  color: #007bff;
+  text-decoration: none;
+}
+
+p a:hover {
+  text-decoration: underline;
+}
+
+@media (max-width: 500px) {
+  .form-container {
+    padding: 15px;
+  }
+
+  .form-field label {
+    font-size: 14px;
+  }
+
+  button {
+    font-size: 14px;
+    padding: 10px 12px;
+  }
+}
