@@ -1,0 +1,19 @@
+client_number,name,surname,category,products,cards
+1,Juan,Pérez,Classic,Caja de ahorro en pesos,Classic
+2,Alicia,Gómez,Gold,"Caja de ahorro en pesos;Caja de ahorro en Dólares",Gold
+3,Micaela,Fernández,Black,"Caja de ahorro en pesos;Caja de ahorro en Dólares;Cuenta corriente en pesos",Black
+4,Lucas,Rodríguez,Classic,Caja de ahorro en pesos,Classic
+5,David,López,Gold,"Caja de ahorro en pesos;Caja de ahorro en Dólares",Gold
+6,Emma,Díaz,Black,"Caja de ahorro en pesos;Cuenta corriente en pesos",Black
+7,Debora,Martínez,Classic,Caja de ahorro en pesos,Classic
+8,Sofia,Ramírez,Gold,"Caja de ahorro en pesos;Caja de ahorro en Dólares;Cuenta corriente en pesos",Classic
+9,Jose,Hernández,Black,"Caja de ahorro en pesos;Caja de ahorro en Dólares;Cuenta corriente en pesos",Black
+10,Olivia,González,Classic,Caja de ahorro en pesos,Classic
+11,Benjamin,Sánchez,Gold,"Caja de ahorro en pesos;Caja de ahorro en Dólares",Gold
+12,Isabella,Castro,Black,"Caja de ahorro en pesos;Cuenta corriente en pesos",Black
+13,Carlos,Moreno,Classic,Caja de ahorro en pesos,Classic
+14,Mia,Ruiz,Gold,"Caja de ahorro en pesos;Cuenta corriente en pesos",Gold
+15,Ignacio,Ramírez,Black,"Caja de ahorro en pesos;Caja de ahorro en Dólares;Cuenta corriente en pesos",Black
+16,Roberto,Ortiz,Classic,Caja de ahorro en pesos,Classic
+17,Lina,Silva,Gold,"Caja de ahorro en pesos;Caja de ahorro en Dólares",Classic
+18,Esteban,Castillo,Black,"Caja de ahorro en pesos;Caja de ahorro en Dólares;Cuenta corriente en pesos",Black

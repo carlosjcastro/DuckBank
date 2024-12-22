@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+    <title>Reporte de cliente</title>
+</head>
+<body>
+    <h1> Reporte de Clientes</h1>
+    <table border="1">
+        <thead>
+            <tr>
+                <th>Numero</th>
+                <th>Nombre</th>
+                <th>Apellido</th>
+                <th>Categoria</th>
+                <th>Cuentas</th>
+                <th>Tarjetas</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for user in users %}
+            <tr>
+                <td>{{ user.client_number}}</td>
+                <td>{{ user.name}}</td>
+                <td>{{ user.surname}}</td>
+                <td>{{user.category}}</td>
+                <td>
+                    <ul>
+                        {% for product in user.products %}
+                        <li> {{product}}</li>
+                        {% endfor %}
+                    </ul>
+                </td>
+                <td>
+                    <ul>
+                        {% for card in user.cards %}
+                        <li> {{ card }} </li>
+                        {% endfor %}
+                    </ul>
+                </td>
+            </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+
+    <!-- Sección de transacciones para cada cliente -->
+    <h2>Transacciones</h2>
+    {% for user in users %}
+    <div>
+        <h3>Cliente: {{ user.name }} {{ user.surname }} (Número de cliente: {{ user.client_number }})</h3>
+        <ul>
+            {% for transaction in user.transactions %}
+            <li class="{% if transaction.estado == 'ACEPTADA' %}aceptada{% else %}rechazada{% endif %}">
+                <strong>Fecha:</strong> {{ transaction.fecha }},
+                <strong>Tipo:</strong> {{ transaction.tipo }},
+                <strong>Estado:</strong> {{ transaction.estado }},
+                <strong>Monto:</strong> {{ transaction.monto }}
+                {% if transaction.razon %}
+                    , <strong>Razón:</strong> {{ transaction.razon }}
+                {% endif %}
+            </li>
+            {% endfor %}
+        </ul>
+    </div>
+    {% endfor %}
+
+<form action="{{ url_for('index') }}" method="POST">
+    <h2>Realizar Transacción</h2>
+    <label for="client_number">Número de Cliente:</label>
+    <input type="text" id="client_number" name="client_number" required>
+
+    <label for="tipo_transaccion">Tipo de Transacción:</label>
+    <select id="tipo_transaccion" name="tipo_transaccion">
+        <option value="RETIRO_EFECTIVO_CAJERO_AUTOMATICO">Retiro Efectivo</option>
+        <option value="ALTA_TARJETA_CREDITO">Alta Tarjeta Crédito</option>
+        <option value="ALTA_CHEQUERA">Alta Chequera</option>
+        <option value="COMPRAR_DOLAR">Compra Dólar</option>
+        <option value="TRANSFERENCIA_ENVIADA">Transferencia Enviada</option>
+        <option value="TRANSFERENCIA_RECIBIDA">Transferencia Recibida</option>
+    </select>
+
+    <label for="monto">Monto (si aplica):</label>
+    <input type="number" id="monto" name="monto" step="0.01">
+
+    <button type="submit">Ejecutar Transacción</button>
+</form>
+
+</body>
+</html>
