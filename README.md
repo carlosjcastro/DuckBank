@@ -1,3 +1,5 @@
+![DuckBank](DuckBank.png)
+
 # Certificación Avanzada en Full Stack Developer - ITBA - 2024
 
 ## Introducción
