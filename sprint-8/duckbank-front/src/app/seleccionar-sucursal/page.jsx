@@ -68,7 +68,7 @@ export default function SeleccionarSucursal() {
 
     try {
       const response = await axios.post(
-        `${process.env.NEXT_PUBLIC_API_BASE_URL}/update-sucursal/${selectedSucursal}/`,
+        `https://web-production-b8a3.up.railway.app/api/update-sucursal/${selectedSucursal}/`,
         {},
         {
           headers: {

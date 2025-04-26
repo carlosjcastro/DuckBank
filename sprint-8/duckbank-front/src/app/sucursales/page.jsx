@@ -4,9 +4,9 @@ import dynamic from "next/dynamic";
 import Image from "next/image";
 import Link from "next/link";
 import persona from "../../../public/assets/pages/sucursales/sucursal.png";
-import provincias from "../../../public/data/sucursales/provincias.json";
-import coordenadas from "../../../public/data/sucursales/coordenadas.json";
-import direcciones from "../../../public/data/sucursales/direcciones.json";
+import provincias from "@/data/sucursales/provincias.json";
+import coordenadas from "@/data/sucursales/coordenadas.json";
+import direcciones from "@/data/sucursales/direcciones.json";
 import { motion } from "framer-motion";
 
 const MapaSucursales = dynamic(
