@@ -40,10 +40,13 @@ export default function InicioSesion() {
     setLoading(true);
 
     try {
-      const response = await axios.post(`https://web-production-b8a3.up.railway.app/api/login/`, {
-        username: usuario,
-        password: contraseña,
-      });
+      const response = await axios.post(
+        `https://web-production-b8a3.up.railway.app/api/login/`,
+        {
+          username: usuario,
+          password: contraseña,
+        }
+      );
 
       if (response.status === 200 && response.data.access_token) {
         localStorage.setItem("authToken", response.data.access_token);
@@ -65,7 +68,9 @@ export default function InicioSesion() {
       <div className="flex flex-col lg:flex-row w-full max-w-4xl">
         {/* Formulario de inicio de sesión */}
         <div className="bg-white p-10 rounded-l-2xl w-full lg:w-1/2">
-          <h1 className="text-2xl lg:text-3xl font-bold text-center">¡Bienvenido a DuckBank!</h1>
+          <h1 className="text-2xl lg:text-3xl font-bold text-center">
+            ¡Bienvenido a DuckBank!
+          </h1>
           {mensaje && (
             <motion.div
               className="mt-4 text-center"
@@ -81,22 +86,32 @@ export default function InicioSesion() {
           <div className="mt-8">
             <label className="text-lg font-medium">Usuario:</label>
             <input
-              className={`w-full border-2 rounded-2xl p-4 mb-4 ${errores.usuario && "border-[#f65151]"}`}
+              className={`w-full border-2 rounded-2xl p-4 mb-4 ${
+                errores.usuario && "border-[#f65151]"
+              }`}
               type="text"
               placeholder="Ingrese su usuario"
               value={usuario}
               onChange={(e) => setUsuario(e.target.value)}
             />
-            {errores.usuario && <p className="text-[#f65151] text-sm mb-4">{errores.usuario}</p>}
+            {errores.usuario && (
+              <p className="text-[#f65151] text-sm mb-4">{errores.usuario}</p>
+            )}
             <label className="text-lg font-medium">Contraseña:</label>
             <input
-              className={`w-full border-2 rounded-2xl p-4 mb-4 ${errores.contraseña && "border-[#f65151]"}`}
+              className={`w-full border-2 rounded-2xl p-4 mb-4 ${
+                errores.contraseña && "border-[#f65151]"
+              }`}
               type="password"
               placeholder="Ingrese su contraseña"
               value={contraseña}
               onChange={(e) => setContraseña(e.target.value)}
             />
-            {errores.contraseña && <p className="text-[#f65151] text-sm mb-4">{errores.contraseña}</p>}
+            {errores.contraseña && (
+              <p className="text-[#f65151] text-sm mb-4">
+                {errores.contraseña}
+              </p>
+            )}
             <div className="mt-8 flex justify-center">
               <button
                 className="bg-[#4e2d1e] text-white w-full lg:w-1/2 text-lg font-bold py-3 rounded-full"
@@ -108,16 +123,18 @@ export default function InicioSesion() {
             </div>
             <div className="mt-4 text-center">
               <Link href="/registro">
-                <p className="text-[#4e2d1e] cursor-pointer">¿No tienes cuenta? Regístrate aquí.</p>
+                <p className="text-[#4e2d1e] cursor-pointer">
+                  ¿No tienes cuenta? Regístrate aquí.
+                </p>
               </Link>
             </div>
           </div>
         </div>
-        <div className="w-full lg:w-1/2 flex justify-center">
+        <div className="hidden lg:flex w-full lg:w-1/2 justify-center">
           <img
             src="/assets/pages/inicio-sesion/bank.jpeg"
-            alt="Imagen de registro"
-            className="w-full lg:w-auto h-auto object-cover rounded-r-2xl"
+            alt="Imagen de Inicio de Sesión"
+            className="w-full h-full object-cover rounded-r-2xl"
           />
         </div>
       </div>

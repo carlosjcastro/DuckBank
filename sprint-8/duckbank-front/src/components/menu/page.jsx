@@ -1,4 +1,3 @@
-"use client";
 import { useState, useEffect, useRef } from "react";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
@@ -111,7 +110,7 @@ export default function Menu() {
             href="/perfil-usuario"
             className="text-lg font-semibold text-gray-900"
           >
-            {profileData?.Nombre || "Usuario"}
+            {profileData?.first_name || "Usuario"}
           </Link>
         </div>
         <ul className="p-4">

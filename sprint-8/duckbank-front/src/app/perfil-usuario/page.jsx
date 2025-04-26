@@ -23,7 +23,7 @@ export default function PerfilUsuario() {
       try {
         const response = await fetch("https://web-production-b8a3.up.railway.app/api/profile/", {
           headers: {
-            Authorization: `Bearer ${localStorage.getItem("token")}`,
+            Authorization: `Bearer ${localStorage.getItem("authToken")}`,
           },
         });
 
@@ -42,6 +42,7 @@ export default function PerfilUsuario() {
   useEffect(() => {
     if (profileData) {
       setFirstName(profileData.first_name || "");
+      console.log("Datos del perfil:", profileData);
       setLastName(profileData.last_name || "");
       setEmail(profileData.email || "");
       setDni(profileData.dni || "");
@@ -61,7 +62,7 @@ export default function PerfilUsuario() {
 
   const handleSave = async () => {
     if (!validateInputs()) return;
-
+  
     const formData = new FormData();
     formData.append("first_name", firstName);
     formData.append("last_name", lastName);
@@ -70,18 +71,24 @@ export default function PerfilUsuario() {
     if (profileImage instanceof File) {
       formData.append("profile_image", profileImage);
     }
-
+  
     try {
+      const token = localStorage.getItem("authToken");
       const response = await fetch("https://web-production-b8a3.up.railway.app/api/update-profile/", {
         method: "PUT",
         headers: {
-          Authorization: `Bearer ${localStorage.getItem("token")}`,
+          Authorization: `Bearer ${token}`,
         },
         body: formData,
       });
-
-      if (!response.ok) throw new Error("Error al guardar cambios");
-
+  
+      if (!response.ok) {
+        if (response.status === 401) {
+          console.error("No autorizado. Token inválido o expirado.");
+        }
+        throw new Error("Error al guardar cambios");
+      }
+  
       const updatedProfile = await response.json();
       setProfileData(updatedProfile);
       setIsEditing(false);

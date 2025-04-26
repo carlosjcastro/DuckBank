@@ -1,4 +1,4 @@
-'use client';
+"use client";
 
 import { useState } from "react";
 import { useRouter } from "next/navigation";
@@ -13,7 +13,11 @@ export default function Registro() {
   const [dni, setDni] = useState("");
   const [mensaje, setMensaje] = useState("");
   const [mensajeColor, setMensajeColor] = useState("");
-  const [errores, setErrores] = useState({ usuario: "", password: "", dni: "" });
+  const [errores, setErrores] = useState({
+    usuario: "",
+    password: "",
+    dni: "",
+  });
   const [loading, setLoading] = useState(false);
 
   const validarInputs = () => {
@@ -26,7 +30,8 @@ export default function Registro() {
     }
 
     if (!password || password.length < 6) {
-      erroresNuevos.password = "La contraseña debe tener al menos 6 caracteres.";
+      erroresNuevos.password =
+        "La contraseña debe tener al menos 6 caracteres.";
       esValido = false;
     }
 
@@ -46,7 +51,7 @@ export default function Registro() {
 
     try {
       const headers = {
-        'Content-Type': 'application/json',
+        "Content-Type": "application/json",
       };
 
       const data = {
@@ -55,7 +60,11 @@ export default function Registro() {
         dni,
       };
 
-      const response = await axios.post(`https://web-production-b8a3.up.railway.app/api/register/`, data, { headers });
+      const response = await axios.post(
+        `https://web-production-b8a3.up.railway.app/api/register/`,
+        data,
+        { headers }
+      );
 
       // Verificar que la respuesta tiene el código de estado correcto
       if (response.status === 201) {
@@ -68,7 +77,10 @@ export default function Registro() {
       }
     } catch (error) {
       // Manejar los errores y mostrar mensajes claros
-      console.error("Error al registrarse:", error.response ? error.response.data : error.message);
+      console.error(
+        "Error al registrarse:",
+        error.response ? error.response.data : error.message
+      );
       setMensaje(error.response?.data?.detail || "Error al registrarse.");
       setMensajeColor("#f65151");
     } finally {
@@ -81,7 +93,9 @@ export default function Registro() {
     <div className="flex w-full h-screen items-center justify-center">
       <div className="flex flex-col lg:flex-row w-full max-w-4xl">
         <div className="bg-white p-10 rounded-l-2xl w-full lg:w-1/2">
-          <h1 className="text-2xl lg:text-3xl font-bold text-center">¡Regístrate en DuckBank!</h1>
+          <h1 className="text-2xl lg:text-3xl font-bold text-center">
+            ¡Regístrate en DuckBank!
+          </h1>
           {mensaje && (
             <motion.div
               className="mt-4 text-center"
@@ -95,9 +109,29 @@ export default function Registro() {
             </motion.div>
           )}
           <div className="mt-8">
-            {[{ label: "Usuario", type: "text", value: usuario, setValue: setUsuario, error: errores.usuario },
-              { label: "Contraseña", type: "password", value: password, setValue: setPassword, error: errores.password },
-              { label: "DNI", type: "text", value: dni, setValue: setDni, error: errores.dni }].map((input, index) => (
+            {[
+              {
+                label: "Usuario",
+                type: "text",
+                value: usuario,
+                setValue: setUsuario,
+                error: errores.usuario,
+              },
+              {
+                label: "Contraseña",
+                type: "password",
+                value: password,
+                setValue: setPassword,
+                error: errores.password,
+              },
+              {
+                label: "DNI",
+                type: "text",
+                value: dni,
+                setValue: setDni,
+                error: errores.dni,
+              },
+            ].map((input, index) => (
               <motion.div
                 key={index}
                 initial={{ opacity: 0 }}
@@ -106,13 +140,17 @@ export default function Registro() {
               >
                 <label className="text-lg font-medium">{input.label}:</label>
                 <input
-                  className={`w-full border-2 rounded-2xl p-4 mb-4 ${input.error ? "border-[#f65151]" : ""}`}
+                  className={`w-full border-2 rounded-2xl p-4 mb-4 ${
+                    input.error ? "border-[#f65151]" : ""
+                  }`}
                   type={input.type}
                   placeholder={`Ingrese su ${input.label}`}
                   value={input.value}
                   onChange={(e) => input.setValue(e.target.value)}
                 />
-                {input.error && <p className="text-[#f65151] text-sm mb-4">{input.error}</p>}
+                {input.error && (
+                  <p className="text-[#f65151] text-sm mb-4">{input.error}</p>
+                )}
               </motion.div>
             ))}
             <div className="mt-8 flex justify-center">
@@ -126,12 +164,14 @@ export default function Registro() {
             </div>
             <div className="mt-4 text-center">
               <Link href="/inicio-sesion">
-                <p className="text-[#4e2d1e] cursor-pointer">¿Ya tienes cuenta? Inicia sesión aquí.</p>
+                <p className="text-[#4e2d1e] cursor-pointer">
+                  ¿Ya tienes cuenta? Inicia sesión aquí.
+                </p>
               </Link>
             </div>
           </div>
         </div>
-        <div className="w-full lg:w-1/2 flex justify-center">
+        <div className="hidden lg:flex w-full lg:w-1/2 justify-center">
           <img
             src="/assets/pages/inicio-sesion/bank.jpeg"
             alt="Imagen de Registro"
