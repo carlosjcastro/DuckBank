@@ -111,6 +111,11 @@ export default function InicioSesion() {
                 <p className="text-[#4e2d1e] cursor-pointer">¿No tienes cuenta? Regístrate aquí.</p>
               </Link>
             </div>
+            <div className="mt-4 text-center">
+              <Link href="/registrar-empleado">
+                <p className="text-[#4e2d1e] cursor-pointer">¿No tenes cuenta? Registráte como Empleado</p>
+              </Link>
+            </div>
           </div>
         </div>
       </div>

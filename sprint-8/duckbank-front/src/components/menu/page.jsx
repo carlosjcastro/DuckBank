@@ -28,6 +28,7 @@ export default function Menu() {
     { name: "Historial de cuenta", path: "/pagina-en-mantenimiento" },
     { name: "Préstamos", path: "/prestamos" },
     { name: "Mis Préstamos", path: "/mis-prestamos" },
+    { name: "Gestionar Préstamos", path: "/gestionar-prestamos" },
     { name: "Cuotificalo", path: "/cuotificalo" },
     { name: "¡Mis beneficios!", path: "/beneficios" },
     { name: "Ayuda", path: "/ayuda" },
