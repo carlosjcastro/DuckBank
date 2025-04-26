@@ -101,6 +101,7 @@ export default function TuInformacion() {
         </div>
       </div>
 
+      {/* Imagen de perfil */}
       {userData.profile_image && (
         <div className="flex justify-center mt-8 cursor-pointer">
           <div className="relative" onClick={() => openModal(`${process.env.NEXT_PUBLIC_API_BASE_URL}${userData.profile_image}`)}>
@@ -129,6 +130,7 @@ export default function TuInformacion() {
         </div>
       )}
 
+      {/* Modal de imagen */}
       {isModalOpen && (
         <div className="fixed inset-0 bg-gray-900 bg-opacity-50 flex justify-center items-center z-50">
           <div className="relative">
@@ -147,12 +149,13 @@ export default function TuInformacion() {
         </div>
       )}
 
+      {/* Mensaje final */}
       <div className="mt-12 text-center text-lg text-gray-600">
         <p className="font-semibold text-[#4e2d1e]">
-          Mantené siempre tu información actualizada para recibir las últimas novedades y disfrutar de nuestros servicios de manera eficiente.
+          Mantén siempre tu información actualizada para recibir las últimas novedades y disfrutar de nuestros servicios de manera eficiente.
         </p>
         <p className="mt-4">
-          En DuckBank, tu seguridad y comodidad son nuestra prioridad. No te olvidés de revisar y actualizar tus datos periódicamente para aprovechar todas las ventajas que ofrecemos.
+          En DuckBank, tu seguridad y comodidad son nuestra prioridad. No olvides revisar y actualizar tus datos periódicamente para aprovechar todas las ventajas que ofrecemos.
         </p>
       </div>
     </div>

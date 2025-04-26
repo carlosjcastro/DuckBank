@@ -1,5 +1,4 @@
-'use client';
-
+"use client";
 import { useState } from "react";
 import { useRouter } from "next/navigation";
 import Link from "next/link";
@@ -64,6 +63,7 @@ export default function InicioSesion() {
   return (
     <div className="flex w-full h-screen items-center justify-center">
       <div className="flex flex-col lg:flex-row w-full max-w-4xl">
+        {/* Formulario de inicio de sesión */}
         <div className="bg-white p-10 rounded-l-2xl w-full lg:w-1/2">
           <h1 className="text-2xl lg:text-3xl font-bold text-center">¡Bienvenido a DuckBank!</h1>
           {mensaje && (
@@ -111,12 +111,14 @@ export default function InicioSesion() {
                 <p className="text-[#4e2d1e] cursor-pointer">¿No tienes cuenta? Regístrate aquí.</p>
               </Link>
             </div>
-            <div className="mt-4 text-center">
-              <Link href="/registrar-empleado">
-                <p className="text-[#4e2d1e] cursor-pointer">¿No tenes cuenta? Registráte como Empleado</p>
-              </Link>
-            </div>
           </div>
+        </div>
+        <div className="w-full lg:w-1/2 flex justify-center">
+          <img
+            src="/assets/pages/inicio-sesion/bank.jpeg"
+            alt="Imagen de registro"
+            className="w-full lg:w-auto h-auto object-cover rounded-r-2xl"
+          />
         </div>
       </div>
     </div>

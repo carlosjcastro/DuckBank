@@ -1,6 +1,6 @@
 "use client";
 import React from "react";
-import { FaExchangeAlt, FaIdCard, FaBuilding, FaClipboardList, FaCreditCard } from "react-icons/fa";
+import { FaExchangeAlt, FaIdCard, FaBuilding, FaClipboardList } from "react-icons/fa";
 import Link from "next/link";
 
 export default function Transferir() {
@@ -25,19 +25,17 @@ export default function Transferir() {
       icon: <FaClipboardList className="text-[#4e2d1e] text-4xl mb-4" />,
       title: "Transferencias Realizadas",
     },
-    {
-      href: "/tarjetas-clientes",
-      icon: <FaCreditCard className="text-[#4e2d1e] text-4xl mb-4" />,
-      title: "Tus Tarjetas",
-    },
   ];
 
   return (
-    <div>
-      <div className="grid grid-cols-1 sm:grid-cols-5 gap-2">
+    <div className="w-full px-4 md:px-0">
+      <div className="flex flex-wrap justify-center md:justify-between gap-6">
         {cardData.map((card, index) => (
-          <Link key={index} href={card.href}>
-            <div className="bg-white p-6 rounded-2xl flex flex-col items-center hover:bg-gray-200">
+          <Link 
+            key={index} 
+            href={card.href} 
+            className="w-full sm:w-[45%] md:w-[22%]">
+            <div className="bg-white p-6 rounded-2xl flex flex-col items-center justify-center text-center transition-transform transform hover:shadow-xl min-h-[160px] ease-in-out">
               {card.icon}
               <h3 className="text-lg font-semibold text-gray-800">{card.title}</h3>
             </div>

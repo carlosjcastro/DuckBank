@@ -131,6 +131,13 @@ export default function Registro() {
             </div>
           </div>
         </div>
+        <div className="w-full lg:w-1/2 flex justify-center">
+          <img
+            src="/assets/pages/inicio-sesion/bank.jpeg"
+            alt="Imagen de Registro"
+            className="w-full h-full object-cover rounded-r-2xl"
+          />
+        </div>
       </div>
     </div>
   );
