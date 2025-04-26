@@ -45,21 +45,34 @@ export default function Registro() {
     setLoading(true);
 
     try {
-      const response = await axios.post(`https://web-production-b8a3.up.railway.app/api/register/`, {
+      const headers = {
+        'Content-Type': 'application/json',
+      };
+
+      const data = {
         usuario,
         password,
         dni,
-      });
+      };
 
+      const response = await axios.post(`https://web-production-b8a3.up.railway.app/api/register/`, data, { headers });
+
+      // Verificar que la respuesta tiene el código de estado correcto
       if (response.status === 201) {
         setMensaje("Registro exitoso");
         setMensajeColor("#52b788");
         router.push("/inicio-sesion");
+      } else {
+        setMensaje("Error al registrar el usuario.");
+        setMensajeColor("#f65151");
       }
     } catch (error) {
+      // Manejar los errores y mostrar mensajes claros
+      console.error("Error al registrarse:", error.response ? error.response.data : error.message);
       setMensaje(error.response?.data?.detail || "Error al registrarse.");
       setMensajeColor("#f65151");
     } finally {
+      // Restablecer el estado de loading después de la respuesta
       setLoading(false);
     }
   };
