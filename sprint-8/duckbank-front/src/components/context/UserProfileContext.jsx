@@ -12,7 +12,7 @@ export const UserProfileProvider = ({ children }) => {
   useEffect(() => {
     const token = localStorage.getItem("authToken");
     if (token) {
-      fetch("/api/validate-token", {
+      fetch("https://web-production-b8a3.up.railway.app/api/validate-token/", {
         method: "GET",
         headers: {
           Authorization: `Bearer ${token}`,

@@ -21,7 +21,7 @@ function AuthCheck() {
 
     if (token && !profileData) {
       // Si hay token, pero no hay datos del perfil, valida el token
-      fetch("/api/validate-token", {
+      fetch("https://web-production-b8a3.up.railway.app/api/validate-token/", {
         method: "GET",
         headers: {
           Authorization: `Bearer ${token}`,

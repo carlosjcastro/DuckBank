@@ -29,6 +29,7 @@ export default function Menu() {
     { name: "Préstamos", path: "/prestamos" },
     { name: "Mis Préstamos", path: "/mis-prestamos" },
     { name: "Gestionar Préstamos", path: "/gestionar-prestamos" },
+    { name: "Tu Sucursal", path: "/seleccionar-sucursal" },
     { name: "Cuotificalo", path: "/cuotificalo" },
     { name: "¡Mis beneficios!", path: "/beneficios" },
     { name: "Ayuda", path: "/ayuda" },

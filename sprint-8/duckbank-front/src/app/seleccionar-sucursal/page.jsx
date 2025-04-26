@@ -22,13 +22,13 @@ export default function SeleccionarSucursal() {
       const token = localStorage.getItem("authToken");
       if (token) {
         const permissionResponse = await axios.get(
-          `${process.env.NEXT_PUBLIC_API_BASE_URL}/check-sucursal-permission/`,
+          `https://web-production-b8a3.up.railway.app/api/check-sucursal-permission/`,
           { headers: { Authorization: `Bearer ${token}` } }
         );
         setIsDisabled(!permissionResponse.data.can_change_sucursal);
 
         const assignedResponse = await axios.get(
-          `${process.env.NEXT_PUBLIC_API_BASE_URL}/mi-sucursal/`,
+          `https://web-production-b8a3.up.railway.app/api/mi-sucursal/`,
           { headers: { Authorization: `Bearer ${token}` } }
         );
         setAssignedSucursal(assignedResponse.data);
