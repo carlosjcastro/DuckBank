@@ -34,7 +34,7 @@ const SolicitarPrestamo = () => {
       }
 
       const response = await axios.post(
-        `https://web-production-b8a3.up.railway.app/api/solicitrar-prestamo/`,
+        `https://web-production-b8a3.up.railway.app/api/solicitar-prestamo/`,
         {
           monto,
           motivo,
