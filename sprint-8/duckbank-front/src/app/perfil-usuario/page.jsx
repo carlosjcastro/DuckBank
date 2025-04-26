@@ -33,7 +33,7 @@ export default function PerfilUsuario() {
   useEffect(() => {
     const fetchClienteData = async () => {
       try {
-        const response = await fetch("http://127.0.0.1:8000/api/cuentas/");
+        const response = await fetch("https://web-production-b8a3.up.railway.app/api/cuentas/");
         if (!response.ok) {
           throw new Error("Error al obtener datos del cliente");
         }
