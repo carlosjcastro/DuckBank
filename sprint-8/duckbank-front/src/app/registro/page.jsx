@@ -45,7 +45,7 @@ export default function Registro() {
     setLoading(true);
 
     try {
-      const response = await axios.post(`${process.env.NEXT_PUBLIC_API_BASE_URL}/register/`, {
+      const response = await axios.post(`https://web-production-b8a3.up.railway.app/api/register/`, {
         usuario,
         password,
         dni,
