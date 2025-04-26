@@ -34,7 +34,7 @@ const SolicitarPrestamo = () => {
       }
 
       const response = await axios.post(
-        `${process.env.NEXT_PUBLIC_API_URL}/solicitar-prestamo/`,
+        `https://web-production-b8a3.up.railway.app/api/solicitrar-prestamo/`,
         {
           monto,
           motivo,

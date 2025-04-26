@@ -16,7 +16,7 @@ export default function SeleccionarSucursal() {
     setError("");
 
     try {
-      const sucursalesResponse = await axios.get(`${process.env.NEXT_PUBLIC_API_BASE_URL}/sucursales/`);
+      const sucursalesResponse = await axios.get(`https://web-production-b8a3.up.railway.app/api/sucursales/`);
       setSucursales(sucursalesResponse.data);
 
       const token = localStorage.getItem("authToken");

@@ -56,7 +56,7 @@ export default function Transferencia() {
     try {
       const token = localStorage.getItem('authToken');
       const response = await axios.post(
-        `${process.env.NEXT_PUBLIC_API_BASE_URL}/transferir/`,
+        `https://web-production-b8a3.up.railway.app/api/transferir/`,
         transferData,
         {
           headers: {

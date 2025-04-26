@@ -55,7 +55,7 @@ const ModificarDireccion = () => {
     try {
       // Se envía la dirección al servidor para ser modificada
       await axios.put(
-        `${process.env.NEXT_PUBLIC_API_URL}/api/direccion/`,
+        `https://web-production-b8a3.up.railway.app/api/direccion/`,
         { direccion },
         {
           headers: {

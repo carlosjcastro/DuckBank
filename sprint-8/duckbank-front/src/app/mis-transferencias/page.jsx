@@ -13,7 +13,7 @@ export default function Transferencias() {
       try {
         const token = localStorage.getItem("authToken");
         const response = await axios.get(
-          `${process.env.NEXT_PUBLIC_API_BASE_URL}/transferencias/`,
+          `${process.env.NEXT_PUBLIC_API_BASE_URL}https://web-production-b8a3.up.railway.app/api/transferencias/`,
           {
             headers: {
               Authorization: `Bearer ${token}`,

@@ -16,7 +16,7 @@ const MisPrestamos = () => {
 
       try {
         const response = await axios.get(
-          `${process.env.NEXT_PUBLIC_API_URL}/mis-prestamos/`,
+          `https://web-production-b8a3.up.railway.app/api/mis-prestamos/`,
           {
             headers: {
               Authorization: `Bearer ${token}`,
