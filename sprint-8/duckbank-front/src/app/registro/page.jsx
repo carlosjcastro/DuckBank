@@ -54,7 +54,7 @@ export default function Registro() {
       };
 
       const data = {
-        usuario: usuario.trim(),
+        username: usuario.trim(),
         password,
         dni: dni.trim(),
       };
