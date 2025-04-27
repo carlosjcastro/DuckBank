@@ -46,41 +46,47 @@ export default function Registro() {
 
   const handleClick = async () => {
     if (!validarInputs()) return;
-
+  
     setLoading(true);
-
+  
     try {
       const headers = {
         "Content-Type": "application/json",
       };
-
+  
       const data = {
         usuario,
         password,
         dni,
       };
-
+  
       const response = await axios.post(
         `https://web-production-b8a3.up.railway.app/api/register/`,
         data,
         { headers }
       );
-
-      setMensaje("Registro exitoso");
-      setMensajeColor("#52b788");
-      router.push("/inicio-sesion");
-
-    } catch (error) {
-      if (error.response && error.response.status === 201) {
+  
+      // Si la respuesta es 201, éxito
+      if (response.status === 201) {
         setMensaje("Registro exitoso");
         setMensajeColor("#52b788");
         router.push("/inicio-sesion");
       } else {
-        console.error(
-          "Error al registrarse:",
-          error.response ? error.response.data : error.message
-        );
+        // En caso de que la respuesta no sea 201, mostrar el mensaje de error
+        setMensaje("Error inesperado al registrarse");
+        setMensajeColor("#f65151");
+      }
+  
+    } catch (error) {
+      console.error("Detalles del error al registrarse:", error);
+  
+      if (error.response) {
+        console.error("Error de respuesta:", error.response);
         setMensaje(error.response?.data?.detail || "Error al registrarse.");
+        setMensajeColor("#f65151");
+      } else {
+        // Si el error no tiene `error.response`, es un error de red
+        setMensaje("Error de red, por favor intente nuevamente.");
         setMensajeColor("#f65151");
       }
     } finally {
