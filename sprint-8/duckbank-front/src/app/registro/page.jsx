@@ -66,7 +66,6 @@ export default function Registro() {
         { headers }
       );
 
-      // Verificar que la respuesta tiene el código de estado correcto
       if (response.status === 201) {
         setMensaje("Registro exitoso");
         setMensajeColor("#52b788");
@@ -76,15 +75,19 @@ export default function Registro() {
         setMensajeColor("#f65151");
       }
     } catch (error) {
-      // Manejar los errores y mostrar mensajes claros
-      console.error(
-        "Error al registrarse:",
-        error.response ? error.response.data : error.message
-      );
-      setMensaje(error.response?.data?.detail || "Error al registrarse.");
-      setMensajeColor("#f65151");
+      if (error.response && error.response.status === 201) {
+        setMensaje("Registro exitoso");
+        setMensajeColor("#52b788");
+        router.push("/inicio-sesion");
+      } else {
+        console.error(
+          "Error al registrarse:",
+          error.response ? error.response.data : error.message
+        );
+        setMensaje(error.response?.data?.detail || "Error al registrarse.");
+        setMensajeColor("#f65151");
+      }
     } finally {
-      // Restablecer el estado de loading después de la respuesta
       setLoading(false);
     }
   };
