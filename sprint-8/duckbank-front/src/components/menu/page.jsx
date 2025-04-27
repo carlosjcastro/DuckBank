@@ -89,9 +89,10 @@ export default function Menu() {
         ref={menuRef}
         className={`fixed top-0 left-0 w-64 h-full bg-[#f4f4f4] shadow-lg transform ${
           isOpen ? "translate-x-0" : "-translate-x-full"
-        } transition-transform duration-300 ease-in-out z-50`}
+        } transition-transform duration-300 ease-in-out z-50 flex flex-col`}
       >
-        <div className="flex items-center p-4 transition-transform duration-500 ease-in-out hover:translate-x-4">
+        {/* Perfil arriba */}
+        <div className="flex items-center p-4">
           {profileData?.profileImage ? (
             <div className="relative w-10 h-10 mr-2 rounded-full overflow-hidden">
               <Image
@@ -102,9 +103,7 @@ export default function Menu() {
               />
             </div>
           ) : (
-            <div className="bg-gray-300 rounded-full w-10 h-10 flex items-center justify-center mr-2">
-              {/* <span className="text-gray-600">Sin imagen</span> */}
-            </div>
+            <div className="bg-gray-300 rounded-full w-10 h-10 flex items-center justify-center mr-2"></div>
           )}
           <Link
             href="/perfil-usuario"
@@ -113,13 +112,14 @@ export default function Menu() {
             {profileData?.first_name || "Usuario"}
           </Link>
         </div>
-        <ul className="p-4">
+
+        <ul className="flex-1 overflow-y-auto p-4">
           {menuItems.map((item, index) => (
             <motion.li
               key={index}
               initial={{ opacity: 0, y: -10 }}
               animate={{ opacity: isOpen ? 1 : 0, y: isOpen ? 0 : -10 }}
-              transition={{ duration: 0.3, delay: index * 0.1 }}
+              transition={{ duration: 0.3, delay: index * 0.05 }}
             >
               <Link
                 href={item.path}
@@ -133,13 +133,17 @@ export default function Menu() {
             </motion.li>
           ))}
         </ul>
+
+        {/* Botón logout abajo */}
         {isAuthenticated && (
-          <button
-            onClick={handleLogout}
-            className="flex items-center justify-center w-full p-2 text-[#f65151] transition duration-300 mt-auto transition-transform duration-500 ease-in-out hover:translate-x-2"
-          >
-            <IoMdExit className="mr-2" /> Cerrar sesión
-          </button>
+          <div className="p-4 border-t">
+            <button
+              onClick={handleLogout}
+              className="flex items-center justify-center w-full p-2 text-[#f65151] transition duration-300 hover:translate-x-2"
+            >
+              <IoMdExit className="mr-2" /> Cerrar sesión
+            </button>
+          </div>
         )}
       </nav>
     </div>
