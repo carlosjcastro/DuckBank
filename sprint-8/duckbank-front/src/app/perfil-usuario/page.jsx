@@ -1,4 +1,4 @@
-'use client';
+"use client";
 import React, { useState, useEffect } from "react";
 import Image from "next/image";
 import { FaEdit } from "react-icons/fa";
@@ -21,11 +21,14 @@ export default function PerfilUsuario() {
   useEffect(() => {
     const fetchProfileData = async () => {
       try {
-        const response = await fetch("https://web-production-b8a3.up.railway.app/api/profile/", {
-          headers: {
-            Authorization: `Bearer ${localStorage.getItem("authToken")}`,
-          },
-        });
+        const response = await fetch(
+          "https://web-production-b8a3.up.railway.app/api/profile/",
+          {
+            headers: {
+              Authorization: `Bearer ${localStorage.getItem("authToken")}`,
+            },
+          }
+        );
 
         if (!response.ok) throw new Error("Error al obtener perfil");
 
@@ -62,7 +65,7 @@ export default function PerfilUsuario() {
 
   const handleSave = async () => {
     if (!validateInputs()) return;
-  
+
     const formData = new FormData();
     formData.append("first_name", firstName);
     formData.append("last_name", lastName);
@@ -71,24 +74,27 @@ export default function PerfilUsuario() {
     if (profileImage instanceof File) {
       formData.append("profile_image", profileImage);
     }
-  
+
     try {
       const token = localStorage.getItem("authToken");
-      const response = await fetch("https://web-production-b8a3.up.railway.app/api/update-profile/", {
-        method: "PUT",
-        headers: {
-          Authorization: `Bearer ${token}`,
-        },
-        body: formData,
-      });
-  
+      const response = await fetch(
+        "https://web-production-b8a3.up.railway.app/api/update-profile/",
+        {
+          method: "PUT",
+          headers: {
+            Authorization: `Bearer ${token}`,
+          },
+          body: formData,
+        }
+      );
+
       if (!response.ok) {
         if (response.status === 401) {
           console.error("No autorizado. Token inválido o expirado.");
         }
         throw new Error("Error al guardar cambios");
       }
-  
+
       const updatedProfile = await response.json();
       setProfileData(updatedProfile);
       setIsEditing(false);
@@ -115,7 +121,11 @@ export default function PerfilUsuario() {
           {profileImage ? (
             <div className="relative w-40 h-40">
               <Image
-                src={typeof profileImage === "string" ? profileImage : URL.createObjectURL(profileImage)}
+                src={
+                  typeof profileImage === "string"
+                    ? profileImage
+                    : URL.createObjectURL(profileImage)
+                }
                 layout="fill"
                 objectFit="cover"
                 className="rounded-full"
@@ -149,10 +159,14 @@ export default function PerfilUsuario() {
               type="text"
               value={firstName}
               onChange={(e) => setFirstName(e.target.value)}
-              className={`w-full rounded-full p-4 border mt-1 ${errors.firstName ? "border-red-500" : ""}`}
+              className={`w-full rounded-full p-4 border mt-1 ${
+                errors.firstName ? "border-red-500" : ""
+              }`}
               readOnly={!isEditing}
             />
-            {errors.firstName && <p className="text-red-500 text-sm">{errors.firstName}</p>}
+            {errors.firstName && (
+              <p className="text-red-500 text-sm">{errors.firstName}</p>
+            )}
           </div>
 
           <div className="mb-4">
@@ -172,10 +186,14 @@ export default function PerfilUsuario() {
               type="email"
               value={email}
               onChange={(e) => setEmail(e.target.value)}
-              className={`w-full rounded-full p-4 border mt-1 ${errors.email ? "border-red-500" : ""}`}
+              className={`w-full rounded-full p-4 border mt-1 ${
+                errors.email ? "border-red-500" : ""
+              }`}
               readOnly={!isEditing}
             />
-            {errors.email && <p className="text-red-500 text-sm">{errors.email}</p>}
+            {errors.email && (
+              <p className="text-red-500 text-sm">{errors.email}</p>
+            )}
           </div>
 
           <div className="mb-4">
@@ -184,14 +202,19 @@ export default function PerfilUsuario() {
               type="text"
               value={dni}
               onChange={(e) => setDni(e.target.value)}
-              className={`w-full rounded-full p-4 border mt-1 ${errors.dni ? "border-red-500" : ""}`}
+              className={`w-full rounded-full p-4 border mt-1 ${
+                errors.dni ? "border-red-500" : ""
+              }`}
               readOnly={!isEditing}
             />
             {errors.dni && <p className="text-red-500 text-sm">{errors.dni}</p>}
           </div>
         </div>
 
-        <p onClick={() => setIsEditing(!isEditing)} className="mt-4 text-blue-500 cursor-pointer">
+        <p
+          onClick={() => setIsEditing(!isEditing)}
+          className="mt-4 text-blue-500 cursor-pointer"
+        >
           {isEditing ? "Salir de Modo Edición" : "Entrar en Modo Edición"}
         </p>
         <button

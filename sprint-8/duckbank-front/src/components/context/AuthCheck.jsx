@@ -12,7 +12,6 @@ function AuthCheck() {
     const token = localStorage.getItem("authToken");
     const publicRoutes = ["/inicio-sesion", "/registro"];
 
-    // Si no hay token y estás en una ruta privada, redirige
     if (!token && !publicRoutes.includes(pathname)) {
       router.push("/inicio-sesion");
       setIsLoading(false);

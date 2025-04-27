@@ -13,17 +13,15 @@ import Transferir from "../components/transferir/Tranferir";
 export default function Inicio() {
   const { profileData, loading } = useUserProfile();
 
-  const userName = profileData
-    ? `${profileData.first_name}`
-    : "Usuario";
+  const userName = profileData ? `${profileData.first_name}` : "Usuario";
 
   const [showBalances, setShowBalances] = useState(true);
 
   const toggleBalancesVisibility = () => setShowBalances((prev) => !prev);
 
-  if (loading) {
-    return <div>Cargando perfil...</div>;
-  }
+  // if (loading) {
+  //   return <div>Cargando perfil...</div>;
+  // }
 
   return (
     <div className="px-4 md:px-12 mt-28 space-y-12 max-w-7xl mx-auto">

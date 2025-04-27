@@ -1,11 +1,20 @@
 import { useState, useEffect, useRef } from "react";
 import Link from "next/link";
-import { usePathname } from "next/navigation";
+import { usePathname, useRouter } from "next/navigation";
 import Image from "next/image";
 import { useUserProfile } from "../context/UserProfileContext";
 import { motion } from "framer-motion";
-import { useRouter } from "next/navigation";
-import { IoMdExit } from "react-icons/io";
+
+import { 
+  IoExitOutline, IoHomeOutline, IoCardOutline, IoCashOutline, 
+  IoHelpCircleOutline, IoCallOutline, IoLockClosedOutline, 
+  IoBusinessOutline, IoCalendarOutline 
+} from "react-icons/io5";
+import { FaRegMoneyBillAlt, FaRegSmileBeam } from "react-icons/fa";
+import { MdOutlinePayments, MdOutlineHistory, MdOutlineManageAccounts } from "react-icons/md";
+import { RiBuilding2Line } from "react-icons/ri";
+import { BsCashCoin } from "react-icons/bs"; 
+import { TbListDetails } from "react-icons/tb";
 
 export default function Menu() {
   const [isOpen, setIsOpen] = useState(false);
@@ -17,25 +26,50 @@ export default function Menu() {
 
   const isAuthenticated = profileData !== null;
 
-  const menuItems = [
-    { name: "Inicio", path: "/" },
-    { name: "Cuentas", path: "/cuentas" },
-    { name: "Tarjetas", path: "/tarjetas" },
-    { name: "Inversiones", path: "/inversiones" },
-    { name: "Seguros", path: "/seguros" },
-    { name: "Pagos y servicios", path: "/servicios" },
-    { name: "Historial de cuenta", path: "/pagina-en-mantenimiento" },
-    { name: "Préstamos", path: "/prestamos" },
-    { name: "Mis Préstamos", path: "/mis-prestamos" },
-    { name: "Gestionar Préstamos", path: "/gestionar-prestamos" },
-    { name: "Tu Sucursal", path: "/seleccionar-sucursal" },
-    { name: "Cuotificalo", path: "/cuotificalo" },
-    { name: "¡Mis beneficios!", path: "/beneficios" },
-    { name: "Ayuda", path: "/ayuda" },
-    { name: "Sucursales", path: "/sucursales" },
-    { name: "Turnos", path: "/sacar-turno" },
-    { name: "Contacto", path: "/contacto" },
-    { name: "Seguridad y Privacidad", path: "/terminos-y-condiciones" },
+  const menuGroups = [
+    {
+      title: "Inicio",
+      items: [
+        { name: "Inicio", path: "/", icon: <IoHomeOutline /> },
+      ],
+    },
+    {
+      title: "Cuentas y Tarjetas",
+      items: [
+        { name: "Cuentas", path: "/cuentas", icon: <FaRegMoneyBillAlt /> },
+        { name: "Tarjetas", path: "/tarjetas", icon: <IoCardOutline /> },
+        { name: "Inversiones", path: "/inversiones", icon: <FaRegSmileBeam /> },
+        { name: "Seguros", path: "/seguros", icon: <MdOutlineManageAccounts /> },
+      ],
+    },
+    {
+      title: "Servicios y Pagos",
+      items: [
+        { name: "Pagos y servicios", path: "/servicios", icon: <MdOutlinePayments /> },
+        { name: "Historial de cuenta", path: "/pagina-en-mantenimiento", icon: <MdOutlineHistory /> },
+      ],
+    },
+    {
+      title: "Préstamos",
+      items: [
+        { name: "Préstamos", path: "/prestamos", icon: <IoCashOutline /> },
+        { name: "Mis Préstamos", path: "/mis-prestamos", icon: <BsCashCoin /> },
+        { name: "Gestionar Préstamos", path: "/gestionar-prestamos", icon: <MdOutlineManageAccounts /> },
+        { name: "Cuotificalo", path: "/cuotificalo", icon: <TbListDetails /> },
+      ],
+    },
+    {
+      title: "Otros",
+      items: [
+        { name: "¡Mis beneficios!", path: "/beneficios", icon: <FaRegSmileBeam /> },
+        { name: "Tu Sucursal", path: "/seleccionar-sucursal", icon: <RiBuilding2Line /> },
+        { name: "Sucursales", path: "/sucursales", icon: <IoBusinessOutline /> },
+        { name: "Turnos", path: "/sacar-turno", icon: <IoCalendarOutline /> },
+        { name: "Ayuda", path: "/ayuda", icon: <IoHelpCircleOutline /> },
+        { name: "Contacto", path: "/contacto", icon: <IoCallOutline /> },
+        { name: "Seguridad y Privacidad", path: "/terminos-y-condiciones", icon: <IoLockClosedOutline /> },
+      ],
+    }
   ];
 
   const handleClickOutside = (event) => {
@@ -65,7 +99,7 @@ export default function Menu() {
     <div className="relative z-50">
       <button
         ref={buttonRef}
-        className={`fixed right-4 top-4 flex flex-col h-12 w-12 rounded-full justify-center items-center z-60`}
+        className="fixed right-4 top-4 flex flex-col h-12 w-12 rounded-full justify-center items-center z-60"
         onClick={() => setIsOpen(!isOpen)}
       >
         <div
@@ -113,24 +147,33 @@ export default function Menu() {
           </Link>
         </div>
 
-        <ul className="flex-1 overflow-y-auto p-4">
-          {menuItems.map((item, index) => (
-            <motion.li
-              key={index}
-              initial={{ opacity: 0, y: -10 }}
-              animate={{ opacity: isOpen ? 1 : 0, y: isOpen ? 0 : -10 }}
-              transition={{ duration: 0.3, delay: index * 0.05 }}
-            >
-              <Link
-                href={item.path}
-                className={`flex items-center p-2 text-gray-900 rounded-full hover:bg-[#2e2828] hover:text-white group transition duration-300 ${
-                  pathname === item.path ? "bg-[#2e2828] text-white" : ""
-                }`}
-                onClick={() => setIsOpen(false)}
-              >
-                <span className="ms-3">{item.name}</span>
-              </Link>
-            </motion.li>
+        {/* Links del menú */}
+        <ul className="flex-1 overflow-y-auto p-4 space-y-6">
+          {menuGroups.map((group, groupIndex) => (
+            <div key={groupIndex}>
+              <h3 className="text-xs font-semibold text-gray-500 uppercase mb-2">{group.title}</h3>
+              <ul className="space-y-2">
+                {group.items.map((item, itemIndex) => (
+                  <motion.li
+                    key={itemIndex}
+                    initial={{ opacity: 0, y: -10 }}
+                    animate={{ opacity: isOpen ? 1 : 0, y: isOpen ? 0 : -10 }}
+                    transition={{ duration: 0.3, delay: itemIndex * 0.05 }}
+                  >
+                    <Link
+                      href={item.path}
+                      className={`flex items-center gap-3 p-2 text-gray-900 rounded-full hover:bg-[#2e2828] hover:text-white group transition duration-300 ${
+                        pathname === item.path ? "bg-[#2e2828] text-white" : ""
+                      }`}
+                      onClick={() => setIsOpen(false)}
+                    >
+                      <span className="text-lg">{item.icon}</span>
+                      <span>{item.name}</span>
+                    </Link>
+                  </motion.li>
+                ))}
+              </ul>
+            </div>
           ))}
         </ul>
 
@@ -141,7 +184,7 @@ export default function Menu() {
               onClick={handleLogout}
               className="flex items-center justify-center w-full p-2 text-[#f65151] transition duration-300 hover:translate-x-2"
             >
-              <IoMdExit className="mr-2" /> Cerrar sesión
+              <IoExitOutline className="mr-2" /> Cerrar sesión
             </button>
           </div>
         )}

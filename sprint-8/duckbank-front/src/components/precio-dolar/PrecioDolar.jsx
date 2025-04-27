@@ -1,3 +1,5 @@
+"use client";
+
 import { useState, useEffect, useMemo } from "react";
 import axios from "axios";
 import { GoGraph } from "react-icons/go";
@@ -50,61 +52,72 @@ export default function PrecioDolar() {
     fetchRates();
   }, [apiUrls]);
 
-  if (loading) return <p className="text-blue-600">Cargando...</p>;
-  if (error)
+  if (loading) {
     return (
-      <p className="text-red-600">
-        Error al obtener la solicitud: {error.message}
-      </p>
+      <div className="rounded-2xl bg-white p-6 h-full flex items-center justify-center w-full">
+        <p className="text-blue-600 font-bold">Cargando...</p>
+      </div>
     );
+  }
+
+  if (error) {
+    return (
+      <div className="rounded-2xl bg-white p-6 h-full flex items-center justify-center w-full">
+        <p className="text-red-600 font-bold">
+          Error al obtener la solicitud: {error.message}
+        </p>
+      </div>
+    );
+  }
 
   return (
-    <div className="rounded-2xl bg-white p-6">
-      <GoGraph size={35} className="m-2" alt="Icóno de gráfico" />
-      <h1 className="text-xl font-bold mb-4"> Valor del dólar en Argentina</h1>
-      <div className="overflow-x-auto rounded-2xl">
-        <table className="min-w-full bg-white rounded-2xl shadow-md">
-          <thead className="bg-[#]">
-            <tr>
-              <th className="px-4 py-2 text-left font-bold text-gray-600">
-                Tipo
-              </th>
-              <th className="px-4 py-2 text-left font-bold text-gray-600">
-                Cotización
-              </th>
-            </tr>
-          </thead>
+    <div className="h-full min-h-[400px] w-full rounded-2xl bg-white p-6 flex flex-col justify-between">
+      <div className="flex items-center space-x-2 mb-6">
+        <GoGraph size={32} className="text-[#4e2d1e]" />
+        <h1 className="text-2xl font-bold">Valor del dólar en Argentina</h1>
+      </div>
 
-          <tbody>
-            <tr className="bg-white">
-              <td className="px-4 py-2 text-gray-700">Oficial</td>
-              <td className="px-4 py-2 text-gray-700">
-                ${rates.oficial?.venta || "N/A"}
-              </td>
-            </tr>
-
-            <tr className="bg-white">
-              <td className="px-4 py-2 text-gray-700">Blue</td>
-              <td className="px-4 py-2 text-gray-700">
-                ${rates.blue?.venta || "N/A"}
-              </td>
-            </tr>
-
-            <tr className="bg-white">
-              <td className="px-4 py-2 text-gray-700">Bolsa</td>
-              <td className="px-4 py-2 text-gray-700">
-                ${rates.bolsa?.venta || "N/A"}
-              </td>
-            </tr>
-
-            <tr className="bg-white">
-              <td className="px-4 py-2 text-gray-700">Tarjeta</td>
-              <td className="px-4 py-2 text-gray-700">
-                ${rates.tarjeta?.venta || "N/A"}
-              </td>
-            </tr>
-          </tbody>
-        </table>
+      <div className="flex-1 flex flex-col justify-center">
+        <div className="overflow-x-auto rounded-2xl">
+          <table className="min-w-full bg-white rounded-2xl shadow-md">
+            <thead>
+              <tr>
+                <th className="px-4 py-2 text-left font-bold text-gray-600">
+                  Tipo
+                </th>
+                <th className="px-4 py-2 text-left font-bold text-gray-600">
+                  Cotización
+                </th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr className="bg-white">
+                <td className="px-4 py-2 text-gray-700">Oficial</td>
+                <td className="px-4 py-2 text-gray-700">
+                  ${rates.oficial?.venta ?? "N/A"}
+                </td>
+              </tr>
+              <tr className="bg-white">
+                <td className="px-4 py-2 text-gray-700">Blue</td>
+                <td className="px-4 py-2 text-gray-700">
+                  ${rates.blue?.venta ?? "N/A"}
+                </td>
+              </tr>
+              <tr className="bg-white">
+                <td className="px-4 py-2 text-gray-700">Bolsa</td>
+                <td className="px-4 py-2 text-gray-700">
+                  ${rates.bolsa?.venta ?? "N/A"}
+                </td>
+              </tr>
+              <tr className="bg-white">
+                <td className="px-4 py-2 text-gray-700">Tarjeta</td>
+                <td className="px-4 py-2 text-gray-700">
+                  ${rates.tarjeta?.venta ?? "N/A"}
+                </td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
       </div>
     </div>
   );
