@@ -47,6 +47,7 @@ export default function Registro() {
     if (!validarInputs()) return;
 
     setLoading(true);
+    setMensaje("");  // Limpiar mensaje previo
 
     try {
       const headers = {
@@ -66,6 +67,7 @@ export default function Registro() {
       );
 
       if (response.status === 201) {
+        // Aunque haya error en la respuesta, muestra siempre el mensaje de éxito
         setMensaje("Registro exitoso");
         setMensajeColor("#52b788");
         setTimeout(() => {
@@ -78,7 +80,6 @@ export default function Registro() {
         setMensaje("Error inesperado al registrarse");
         setMensajeColor("#f65151");
       }
-
     } catch (error) {
       console.error("Detalles del error al registrarse:", error);
 
