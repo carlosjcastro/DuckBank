@@ -30,8 +30,7 @@ export default function Registro() {
     }
 
     if (!password || password.length < 6) {
-      erroresNuevos.password =
-        "La contraseña debe tener al menos 6 caracteres.";
+      erroresNuevos.password = "La contraseña debe tener al menos 6 caracteres.";
       esValido = false;
     }
 
@@ -46,42 +45,43 @@ export default function Registro() {
 
   const handleClick = async () => {
     if (!validarInputs()) return;
-  
+
     setLoading(true);
-  
+
     try {
       const headers = {
         "Content-Type": "application/json",
       };
-  
+
       const data = {
-        usuario,
+        usuario: usuario.trim(),
         password,
-        dni,
+        dni: dni.trim(),
       };
-  
+
       const response = await axios.post(
         `https://web-production-b8a3.up.railway.app/api/register/`,
         data,
         { headers }
       );
-  
+
       if (response.status === 201) {
         setMensaje("Registro exitoso");
         setMensajeColor("#52b788");
-        router.push("/inicio-sesion");
+        setTimeout(() => {
+          router.push("/inicio-sesion");
+        }, 1500);
       } else if (response.data.detail) {
-        
         setMensaje(response.data.detail);
         setMensajeColor("#f65151");
       } else {
         setMensaje("Error inesperado al registrarse");
         setMensajeColor("#f65151");
       }
-  
+
     } catch (error) {
       console.error("Detalles del error al registrarse:", error);
-  
+
       if (error.response) {
         console.error("Error de respuesta:", error.response);
         setMensaje(error.response?.data?.detail || "Error al registrarse.");
@@ -115,7 +115,7 @@ export default function Registro() {
             </motion.div>
           )}
           <div className="mt-8">
-            {[
+            {[ // inputs
               {
                 label: "Usuario",
                 type: "text",
