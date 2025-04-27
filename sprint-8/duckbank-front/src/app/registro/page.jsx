@@ -1,5 +1,4 @@
 "use client";
-
 import { useState } from "react";
 import { useRouter } from "next/navigation";
 import Link from "next/link";
@@ -35,8 +34,9 @@ export default function Registro() {
       esValido = false;
     }
 
-    if (!dni || !/^\d+$/.test(dni)) {
-      erroresNuevos.dni = "El DNI debe contener solo números.";
+    if (!dni || !/^\d+$/.test(dni) || dni.length > 8) {
+      erroresNuevos.dni =
+        "El DNI debe contener solo números y ser de máximo 8 caracteres.";
       esValido = false;
     }
 
@@ -95,6 +95,14 @@ export default function Registro() {
     }
   };
 
+  const handleDniChange = (e) => {
+    const inputDni = e.target.value;
+
+    if (/^\d{0,8}$/.test(inputDni)) {
+      setDni(inputDni);
+    }
+  };
+
   return (
     <div className="flex w-full h-screen items-center justify-center">
       <div className="flex flex-col lg:flex-row w-full max-w-4xl">
@@ -107,7 +115,6 @@ export default function Registro() {
             Podes continuar a iniciar sesión.
           </div>
           {mensaje && (
-
             <motion.div
               className="mt-4 text-center"
               style={{ color: mensajeColor }}
@@ -142,6 +149,7 @@ export default function Registro() {
                 value: dni,
                 setValue: setDni,
                 error: errores.dni,
+                onChange: handleDniChange,
               },
             ].map((input, index) => (
               <motion.div
@@ -158,7 +166,9 @@ export default function Registro() {
                   type={input.type}
                   placeholder={`Ingrese su ${input.label}`}
                   value={input.value}
-                  onChange={(e) => input.setValue(e.target.value)}
+                  onChange={
+                    input.onChange || ((e) => input.setValue(e.target.value))
+                  }
                 />
                 {input.error && (
                   <p className="text-[#f65151] text-sm mb-4">{input.error}</p>

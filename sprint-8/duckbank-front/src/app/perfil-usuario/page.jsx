@@ -11,10 +11,10 @@ export default function PerfilUsuario() {
   const [firstName, setFirstName] = useState("");
   const [lastName, setLastName] = useState("");
   const [email, setEmail] = useState("");
-  const [dni, setDni] = useState("");
   const [profileImage, setProfileImage] = useState(null);
   const [isEditing, setIsEditing] = useState(false);
   const [errors, setErrors] = useState({});
+  const [dni, setDni] = useState("");
 
   const router = useRouter();
 
@@ -22,7 +22,7 @@ export default function PerfilUsuario() {
     const fetchProfileData = async () => {
       try {
         const response = await fetch(
-          "https://web-production-b8a3.up.railway.app/api/profile/",
+          "https://web-production-b8a3.up.railway.app/api/perfil-completo/",
           {
             headers: {
               Authorization: `Bearer ${localStorage.getItem("authToken")}`,
@@ -33,6 +33,8 @@ export default function PerfilUsuario() {
         if (!response.ok) throw new Error("Error al obtener perfil");
 
         const data = await response.json();
+        console.log("Datos del perfil:", data);
+
         setProfileData(data);
       } catch (error) {
         console.error(error);
@@ -44,12 +46,12 @@ export default function PerfilUsuario() {
 
   useEffect(() => {
     if (profileData) {
-      setFirstName(profileData.first_name || "");
       console.log("Datos del perfil:", profileData);
+      setFirstName(profileData.first_name || "");
       setLastName(profileData.last_name || "");
       setEmail(profileData.email || "");
-      setDni(profileData.dni || "");
       setProfileImage(profileData.profile_image || null);
+      setDni(profileData.dni || "");
     }
   }, [profileData]);
 
@@ -57,7 +59,6 @@ export default function PerfilUsuario() {
     const newErrors = {};
     if (!firstName.trim()) newErrors.firstName = "Nombre obligatorio";
     if (!email.includes("@")) newErrors.email = "Email inválido";
-    if (!dni.trim() || isNaN(dni)) newErrors.dni = "DNI inválido";
 
     setErrors(newErrors);
     return Object.keys(newErrors).length === 0;
@@ -70,7 +71,6 @@ export default function PerfilUsuario() {
     formData.append("first_name", firstName);
     formData.append("last_name", lastName);
     formData.append("email", email);
-    formData.append("dni", dni);
     if (profileImage instanceof File) {
       formData.append("profile_image", profileImage);
     }
@@ -196,18 +196,14 @@ export default function PerfilUsuario() {
             )}
           </div>
 
+          {/* Mostrar DNI, pero no editable */}
           <div className="mb-4">
             <label className="text-lg font-medium">DNI:</label>
             <input
               type="text"
-              value={dni}
-              onChange={(e) => setDni(e.target.value)}
-              className={`w-full rounded-full p-4 border mt-1 ${
-                errors.dni ? "border-red-500" : ""
-              }`}
-              readOnly={!isEditing}
+              value={dni || "No disponible"}
+              className="w-full rounded-full p-4 border mt-1"
             />
-            {errors.dni && <p className="text-red-500 text-sm">{errors.dni}</p>}
           </div>
         </div>
 
