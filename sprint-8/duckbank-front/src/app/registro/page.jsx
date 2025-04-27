@@ -30,7 +30,8 @@ export default function Registro() {
     }
 
     if (!password || password.length < 6) {
-      erroresNuevos.password = "La contraseña debe tener al menos 6 caracteres.";
+      erroresNuevos.password =
+        "La contraseña debe tener al menos 6 caracteres.";
       esValido = false;
     }
 
@@ -47,7 +48,6 @@ export default function Registro() {
     if (!validarInputs()) return;
 
     setLoading(true);
-    setMensaje("");  // Limpiar mensaje previo
 
     try {
       const headers = {
@@ -67,7 +67,6 @@ export default function Registro() {
       );
 
       if (response.status === 201) {
-        // Aunque haya error en la respuesta, muestra siempre el mensaje de éxito
         setMensaje("Registro exitoso");
         setMensajeColor("#52b788");
         setTimeout(() => {
@@ -103,7 +102,12 @@ export default function Registro() {
           <h1 className="text-2xl lg:text-3xl font-bold text-center">
             ¡Regístrate en DuckBank!
           </h1>
+          <div className="mt-4 text-center text-lg text-[#000000] border-2 border-[#f3c677] bg-[#f3c677] bg-opacity-10 p-4 rounded-2xl">
+            Aunque aparezca algún error, tu registro se ha realizado con éxito.
+            Podes continuar a iniciar sesión.
+          </div>
           {mensaje && (
+
             <motion.div
               className="mt-4 text-center"
               style={{ color: mensajeColor }}
@@ -115,8 +119,9 @@ export default function Registro() {
               {mensaje}
             </motion.div>
           )}
+
           <div className="mt-8">
-            {[ // inputs
+            {[
               {
                 label: "Usuario",
                 type: "text",
@@ -147,7 +152,9 @@ export default function Registro() {
               >
                 <label className="text-lg font-medium">{input.label}:</label>
                 <input
-                  className={`w-full border-2 rounded-2xl p-4 mb-4 ${input.error ? "border-[#f65151]" : ""}`}
+                  className={`w-full border-2 rounded-2xl p-4 mb-4 ${
+                    input.error ? "border-[#f65151]" : ""
+                  }`}
                   type={input.type}
                   placeholder={`Ingrese su ${input.label}`}
                   value={input.value}
