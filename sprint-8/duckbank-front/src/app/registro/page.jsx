@@ -66,14 +66,10 @@ export default function Registro() {
         { headers }
       );
 
-      if (response.status === 201) {
-        setMensaje("Registro exitoso");
-        setMensajeColor("#52b788");
-        router.push("/inicio-sesion");
-      } else {
-        setMensaje("Error al registrar el usuario.");
-        setMensajeColor("#f65151");
-      }
+      setMensaje("Registro exitoso");
+      setMensajeColor("#52b788");
+      router.push("/inicio-sesion");
+
     } catch (error) {
       if (error.response && error.response.status === 201) {
         setMensaje("Registro exitoso");
