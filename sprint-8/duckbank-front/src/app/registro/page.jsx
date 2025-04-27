@@ -57,6 +57,7 @@ export default function Registro() {
         username: usuario.trim(),
         password,
         dni: dni.trim(),
+        alias: alias.trim(),
       };
 
       const response = await axios.post(
