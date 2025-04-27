@@ -66,13 +66,15 @@ export default function Registro() {
         { headers }
       );
   
-      // Si la respuesta es 201, éxito
       if (response.status === 201) {
         setMensaje("Registro exitoso");
         setMensajeColor("#52b788");
         router.push("/inicio-sesion");
+      } else if (response.data.detail) {
+        
+        setMensaje(response.data.detail);
+        setMensajeColor("#f65151");
       } else {
-        // En caso de que la respuesta no sea 201, mostrar el mensaje de error
         setMensaje("Error inesperado al registrarse");
         setMensajeColor("#f65151");
       }
@@ -85,7 +87,6 @@ export default function Registro() {
         setMensaje(error.response?.data?.detail || "Error al registrarse.");
         setMensajeColor("#f65151");
       } else {
-        // Si el error no tiene `error.response`, es un error de red
         setMensaje("Error de red, por favor intente nuevamente.");
         setMensajeColor("#f65151");
       }
