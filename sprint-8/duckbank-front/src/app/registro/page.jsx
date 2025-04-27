@@ -57,7 +57,6 @@ export default function Registro() {
         username: usuario.trim(),
         password,
         dni: dni.trim(),
-        alias: alias.trim(),
       };
 
       const response = await axios.post(
@@ -147,9 +146,7 @@ export default function Registro() {
               >
                 <label className="text-lg font-medium">{input.label}:</label>
                 <input
-                  className={`w-full border-2 rounded-2xl p-4 mb-4 ${
-                    input.error ? "border-[#f65151]" : ""
-                  }`}
+                  className={`w-full border-2 rounded-2xl p-4 mb-4 ${input.error ? "border-[#f65151]" : ""}`}
                   type={input.type}
                   placeholder={`Ingrese su ${input.label}`}
                   value={input.value}
