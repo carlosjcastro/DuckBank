@@ -99,6 +99,15 @@ El desarrollo del proyecto se llevó a cabo en un equipo de **tres integrantes**
 
 ---
 
+## ¿Qué ofrece el proyecto?
+- 🧾 Registro e inicio de sesión con autenticación segura.  
+- 💰 Consulta de saldos, movimientos y estado general de las cuentas.  
+- 🔄 Realización de transferencias entre cuentas propias o de terceros.  
+- 💳 Solicitud y cancelación de préstamos.  
+- 🪪 Solicitud o eliminación de tarjetas.  
+- 🏠 Actualización de datos personales y dirección.  
+- 📊 Visualización de un panel financiero general con resúmenes 
+
 📎 *El desarrollo del sistema integró principios de lógica algorítmica, estructuras de datos y diseño modular aplicados a un entorno web moderno.*
 
 ## Tecnologías y Herramientas Utilizadas
