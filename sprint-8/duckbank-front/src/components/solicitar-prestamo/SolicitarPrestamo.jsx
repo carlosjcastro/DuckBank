@@ -34,7 +34,7 @@ const SolicitarPrestamo = () => {
       }
 
       const response = await axios.post(
-        `https://web-production-b8a3.up.railway.app/api/solicitar-prestamo/`,
+        `https://duckbank-backend.onrender.com/api/solicitar-prestamo/`,
         {
           monto,
           motivo,

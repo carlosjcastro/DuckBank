@@ -19,7 +19,7 @@ const TarjetasCliente = () => {
         }
 
         const response = await axios.get(
-          `https://web-production-b8a3.up.railway.app/api/tarjetas/`,
+          `https://duckbank-backend.onrender.com/api/tarjetas/`,
           {
             headers: {
               Authorization: `Bearer ${token}`,

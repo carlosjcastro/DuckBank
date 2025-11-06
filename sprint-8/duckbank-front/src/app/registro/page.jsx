@@ -61,7 +61,7 @@ export default function Registro() {
       };
 
       const response = await axios.post(
-        `https://web-production-b8a3.up.railway.app/api/register/`,
+        `https://duckbank-backend.onrender.com/api/register/`,
         data,
         { headers }
       );

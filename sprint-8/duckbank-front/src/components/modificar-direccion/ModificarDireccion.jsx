@@ -55,7 +55,7 @@ const ModificarDireccion = () => {
     try {
       // Se envía la dirección al servidor para ser modificada
       await axios.put(
-        `https://web-production-b8a3.up.railway.app/api/direccion/`,
+        `https://duckbank-backend.onrender.com/api/direccion/`,
         { direccion },
         {
           headers: {

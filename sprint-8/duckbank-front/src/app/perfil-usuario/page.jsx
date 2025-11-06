@@ -22,7 +22,7 @@ export default function PerfilUsuario() {
     const fetchProfileData = async () => {
       try {
         const response = await fetch(
-          "https://web-production-b8a3.up.railway.app/api/perfil-completo/",
+          "https://duckbank-backend.onrender.com/api/perfil-completo/",
           {
             headers: {
               Authorization: `Bearer ${localStorage.getItem("authToken")}`,
@@ -78,7 +78,7 @@ export default function PerfilUsuario() {
     try {
       const token = localStorage.getItem("authToken");
       const response = await fetch(
-        "https://web-production-b8a3.up.railway.app/api/update-profile/",
+        "https://duckbank-backend.onrender.com/api/update-profile/",
         {
           method: "PUT",
           headers: {

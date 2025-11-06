@@ -16,19 +16,19 @@ export default function SeleccionarSucursal() {
     setError("");
 
     try {
-      const sucursalesResponse = await axios.get(`https://web-production-b8a3.up.railway.app/api/sucursales/`);
+      const sucursalesResponse = await axios.get(`https://duckbank-backend.onrender.com/api/sucursales/`);
       setSucursales(sucursalesResponse.data);
 
       const token = localStorage.getItem("authToken");
       if (token) {
         const permissionResponse = await axios.get(
-          `https://web-production-b8a3.up.railway.app/api/check-sucursal-permission/`,
+          `https://duckbank-backend.onrender.com/api/check-sucursal-permission/`,
           { headers: { Authorization: `Bearer ${token}` } }
         );
         setIsDisabled(!permissionResponse.data.can_change_sucursal);
 
         const assignedResponse = await axios.get(
-          `https://web-production-b8a3.up.railway.app/api/mi-sucursal/`,
+          `https://duckbank-backend.onrender.com/api/mi-sucursal/`,
           { headers: { Authorization: `Bearer ${token}` } }
         );
         setAssignedSucursal(assignedResponse.data);

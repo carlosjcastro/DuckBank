@@ -13,7 +13,7 @@ export default function Transferencias() {
       try {
         const token = localStorage.getItem("authToken");
         const response = await axios.get(
-          `https://web-production-b8a3.up.railway.app/api/transferencias/`,
+          `https://duckbank-backend.onrender.com/api/transferencias/`,
           {
             headers: {
               Authorization: `Bearer ${token}`,

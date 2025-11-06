@@ -20,7 +20,7 @@ const MisPrestamos = () => {
 
       try {
         const response = await axios.get(
-          `https://web-production-b8a3.up.railway.app/api/mis-prestamos/`,
+          `https://duckbank-backend.onrender.com/api/mis-prestamos/`,
           {
             headers: {
               Authorization: `Bearer ${token}`,

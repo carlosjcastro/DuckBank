@@ -28,7 +28,7 @@ export default function Transferencias({ handleTransfer }) {
     setDestino("");
     setMonto("");
 
-    const response = await fetch("https://web-production-b8a3.up.railway.app/api/transferencias/", {
+    const response = await fetch("https://duckbank-backend.onrender.com/api/transferencias/", {
       method: "POST",
       headers: {
         "Content-Type": "application/json",

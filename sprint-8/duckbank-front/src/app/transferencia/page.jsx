@@ -56,7 +56,7 @@ export default function Transferencia() {
     try {
       const token = localStorage.getItem('authToken');
       const response = await axios.post(
-        `https://web-production-b8a3.up.railway.app/api/transferir/`,
+        `https://duckbank-backend.onrender.com/api/transferir/`,
         transferData,
         {
           headers: {

@@ -8,7 +8,7 @@ const Saldo = () => {
   // Se envía la solicitud al servidor para obtener el saldo del usuario
   useEffect(() => {
     axios
-      .get(`https://web-production-b8a3.up.railway.app/api/perfil-completo/`, {
+      .get(`https://duckbank-backend.onrender.com/api/perfil-completo/`, {
         headers: {
           Authorization: `Bearer ${localStorage.getItem("authToken")}`,
         },

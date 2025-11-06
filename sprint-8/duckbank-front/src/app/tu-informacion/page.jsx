@@ -17,7 +17,7 @@ export default function TuInformacion() {
           return;
         }
   
-        const response = await axios.get(`https://web-production-b8a3.up.railway.app/api/perfil-completo/`, {
+        const response = await axios.get(`https://duckbank-backend.onrender.com/api/perfil-completo/`, {
           headers: { Authorization: `Bearer ${token}` },
         });
   
