@@ -85,6 +85,22 @@ El desarrollo del proyecto se llevó a cabo en un equipo de **tres integrantes**
 
 ---
 
+### 🧠 Lógica y estructura del sistema
+
+- Implementación de **estructuras de datos** (arreglos, objetos y colecciones) para gestionar usuarios, cuentas, préstamos y movimientos.  
+- Uso de **estructuras de control de flujo** (condicionales, bucles y funciones) para validar operaciones y mantener la consistencia del sistema.  
+- Aplicación de **modularización del código** mediante componentes reutilizables y funciones especializadas.  
+- Manejo de **eventos** y actualización del estado mediante el paradigma **orientado a eventos** en React.  
+- Implementación de **validaciones dinámicas** en formularios y flujos de registro.  
+- Persistencia y consulta de datos mediante operaciones CRUD (crear, leer, actualizar y eliminar).  
+- Comunicación entre cliente y servidor a través de **APIs RESTful**.  
+- Uso de **métodos de iteración y manipulación de datos** (map, filter, reduce) para el procesamiento de información.  
+- Diseño de **interfaces interactivas** con retroalimentación en tiempo real al usuario.
+
+---
+
+📎 *El desarrollo del sistema integró principios de lógica algorítmica, estructuras de datos y diseño modular aplicados a un entorno web moderno.*
+
 ## Tecnologías y Herramientas Utilizadas
 
 ### **Front-End**:
