@@ -1,10 +1,11 @@
-'use client';
+"use client";
 import { useEffect } from "react";
 import { usePathname, useRouter } from "next/navigation";
 import { UserProfileProvider } from "../components/context/UserProfileContext";
 import AuthCheck from "../components/context/AuthCheck";
 import Layout from "../components/layout/page";
 import ChatBot from "../components/chatbot/page";
+import Head from "next/head";
 import "./globals.css";
 
 export default function RootLayout({ children }) {
@@ -14,14 +15,38 @@ export default function RootLayout({ children }) {
   useEffect(() => {
     const token = localStorage.getItem("authToken");
     const publicRoutes = ["/inicio-sesion", "/registro"];
-    
+
     if (!token && !publicRoutes.includes(pathname)) {
       router.push("/inicio-sesion");
     }
   }, [pathname, router]);
 
+  // Map de rutas dinámicas
+  const titles = {
+    "/": "DuckBank - Inicio",
+    "/perfil": "DuckBank - Perfil",
+    "/registro": "DuckBank - Registro",
+    "/contacto": "DuckBank - Contacto",
+    "/error-404": "DuckBank - Error 404",
+    "/inicio": "DuckBank - Inicio",
+    "/inicio-sesion": "DuckBank - Iniciar Sesión",
+    "/inversiones": "DuckBank - Inversiones",
+    "/mis-tarjetas": "DuckBank - Mis tarjetas",
+    "/nosotros": "DuckBank - Nosotros",
+    "/pagina-en-mantenimiento": "DuckBank - Mantenimiento",
+    "/perfil-usuario": "DuckBank - Perfil Completo",
+    "/sacar-turno": "DuckBank - Turnos",
+    "/sucursales": "DuckBank - Sucursales",
+    "/tarjetas": "DuckBank - Tarjetas",
+    "/terminos-y-condiciones": "DuckBank - TyC",
+    "trabaja-con-nosotros": "DuckBank - Empleos",
+  };
+
   return (
     <html lang="en">
+      <Head>
+        <title>{titles[pathname] || "DuckBank"}</title>
+      </Head>
       <body>
         <UserProfileProvider>
           <AuthCheck />
