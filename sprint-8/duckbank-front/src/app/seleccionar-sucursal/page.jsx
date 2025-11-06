@@ -68,7 +68,7 @@ export default function SeleccionarSucursal() {
 
     try {
       const response = await axios.post(
-        `https://web-production-b8a3.up.railway.app/api/update-sucursal/${selectedSucursal}/`,
+        `https://duckbank-backend.onrender.com/api/update-sucursal/${selectedSucursal}/`,
         {},
         {
           headers: {
