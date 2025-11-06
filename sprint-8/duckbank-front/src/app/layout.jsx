@@ -5,7 +5,6 @@ import { UserProfileProvider } from "../components/context/UserProfileContext";
 import AuthCheck from "../components/context/AuthCheck";
 import Layout from "../components/layout/page";
 import ChatBot from "../components/chatbot/page";
-import Head from "next/head";
 import "./globals.css";
 
 export default function RootLayout({ children }) {
@@ -21,7 +20,7 @@ export default function RootLayout({ children }) {
     }
   }, [pathname, router]);
 
-  // Map de rutas dinámicas
+  // Mapeo de títulos dinámicos
   const titles = {
     "/": "DuckBank - Inicio",
     "/perfil": "DuckBank - Perfil",
@@ -39,14 +38,16 @@ export default function RootLayout({ children }) {
     "/sucursales": "DuckBank - Sucursales",
     "/tarjetas": "DuckBank - Tarjetas",
     "/terminos-y-condiciones": "DuckBank - TyC",
-    "trabaja-con-nosotros": "DuckBank - Empleos",
+    "/trabaja-con-nosotros": "DuckBank - Empleos",
   };
+
+  // Cambio de nombres de pestañas de forma dinámica
+  useEffect(() => {
+    document.title = titles[pathname] || "DuckBank";
+  }, [pathname]);
 
   return (
     <html lang="en">
-      <Head>
-        <title>{titles[pathname] || "DuckBank"}</title>
-      </Head>
       <body>
         <UserProfileProvider>
           <AuthCheck />
