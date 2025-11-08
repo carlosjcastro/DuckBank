@@ -42,29 +42,58 @@ const TarjetasCliente = () => {
   }, []);
 
   return (
-    <div className="p-6 m-10 bg-gray-100 bg-white mt-36 rounded-2xl">
-      <h2 className="text-xl font-bold mb-4">Tarjetas Asociadas</h2>
+    <div className="flex flex-col items-center justify-start px-4 pt-20 pb-10 md:pt-28 md:pb-20">
+      <div className="bg-white rounded-2xl p-6 border border-gray-100  w-full max-w-6xl">
+        <h2 className="text-xl font-bold text-gray-900 mb-4 flex items-center gap-2">
+          Tarjetas Asociadas
+        </h2>
 
-      {loading && <p className="text-gray-500">Cargando tarjetas...</p>}
+        <p className="text-gray-600 mb-6 text-sm leading-relaxed text-center md:text-left">
+          A continuación se muestran las tarjetas asociadas a tu cuenta. Estos
+          datos son generados automáticamente al crear tu cuenta y deben
+          mantenerse en confidencialidad.
+        </p>
 
-      {error && !loading && <p className="text-red-500">{error}</p>}
+        {loading && (
+          <p className="text-gray-500 text-center">Cargando tarjetas...</p>
+        )}
 
-      {!loading && !error && (
-        <ul className="list-disc">
-          {tarjetas.length > 0 ? (
-            tarjetas.map((tarjeta) => (
-              <li key={tarjeta.id} className="flex items-center gap-2">
-                <FaRegCreditCard className="text-lg" />
-                <span>
-                  {tarjeta.tipo} - {tarjeta.numero}
-                </span>
-              </li>
-            ))
-          ) : (
-            <p>No tenés tarjetas asociadas.</p>
-          )}
-        </ul>
-      )}
+        {error && !loading && (
+          <p className="text-red-500 text-center">{error}</p>
+        )}
+
+        {!loading && !error && (
+          <>
+            {tarjetas.length > 0 ? (
+              <div className="flex flex-wrap justify-center gap-6 mt-4">
+                {tarjetas.map((tarjeta) => (
+                  <div
+                    key={tarjeta.id}
+                    className="relative bg-gradient-to-r from-[#4e2d1e] to-[#7b4a2e] text-white rounded-xl p-4 w-full sm:w-64 shadow-lg transform hover:scale-[1.02] transition duration-300"
+                  >
+                    <div className="flex justify-between items-center mb-4">
+                      <FaRegCreditCard className="text-2xl opacity-90" />
+                      <span className="text-sm bg-white/20 px-2 py-1 rounded-md">
+                        {tarjeta.tipo}
+                      </span>
+                    </div>
+                    <p className="text-lg tracking-widest font-mono mb-2 text-center">
+                      {tarjeta.numero.replace(/(\d{4})(?=\d)/g, "$1 ")}
+                    </p>
+                    <p className="text-sm opacity-80 text-center">
+                      Cliente asociado
+                    </p>
+                  </div>
+                ))}
+              </div>
+            ) : (
+              <p className="text-gray-500 text-center mt-4">
+                No tenés tarjetas asociadas.
+              </p>
+            )}
+          </>
+        )}
+      </div>
     </div>
   );
 };
