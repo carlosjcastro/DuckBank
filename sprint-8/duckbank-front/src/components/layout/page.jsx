@@ -1,6 +1,7 @@
 import Header from "../header/page";
 import Menu from "../menu/page";
 import Footer from "../footer/page";
+import ServerStatus from "../server-status/ServerStatus";
 
 export default function Layout({ children }) {
   return (

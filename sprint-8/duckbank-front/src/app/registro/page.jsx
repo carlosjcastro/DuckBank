@@ -4,6 +4,7 @@ import { useRouter } from "next/navigation";
 import Link from "next/link";
 import { motion } from "framer-motion";
 import axios from "axios";
+import ServerStatus from "@/components/server-status/ServerStatus";
 
 export default function Registro() {
   const router = useRouter();
@@ -105,6 +106,7 @@ export default function Registro() {
 
   return (
     <div className="flex w-full h-screen items-center justify-center">
+      <ServerStatus />
       <div className="flex flex-col lg:flex-row w-full max-w-4xl">
         <div className="bg-white p-10 rounded-l-2xl w-full lg:w-1/2">
           <h1 className="text-2xl lg:text-3xl font-bold text-center">

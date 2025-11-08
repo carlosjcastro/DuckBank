@@ -1,7 +1,7 @@
 "use client";
 import Link from "next/link";
 import Image from "next/image";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 
 export default function Footer() {
   const redes = [
@@ -62,6 +62,31 @@ export default function Footer() {
       setStatusMessage("Error al conectar con el servidor.");
     }
   };
+
+  // Estado del servidor
+  const [serverStatus, setServerStatus] = useState("checking");
+
+  useEffect(() => {
+    const checkServer = async () => {
+      try {
+        const response = await fetch(
+          "https://duckbank-backend.onrender.com/api/status/"
+        );
+        const data = await response.json();
+        if (data.status === "online") {
+          setServerStatus("online");
+        } else {
+          setServerStatus("offline");
+        }
+      } catch (error) {
+        setServerStatus("offline");
+      }
+    };
+
+    checkServer();
+    const interval = setInterval(checkServer, 30000);
+    return () => clearInterval(interval);
+  }, []);
 
   return (
     <footer className="bg-[#2e2828] w-full mt-24 py-6">
@@ -140,6 +165,21 @@ export default function Footer() {
         <div className="flex flex-col lg:flex-row lg:justify-between items-center mt-8 text-sm text-[#d1d1d1]">
           <p className="mb-2 lg:mb-0">
             © Duckbank Argentina S.A. {new Date().getFullYear()}
+          </p>
+          <p
+            className={`text-sm mt-2 ml-2 mb-2 lg:mt-0 ${
+              serverStatus === "online"
+                ? "text-green-400"
+                : serverStatus === "offline"
+                ? "text-red-400"
+                : "text-yellow-400"
+            }`}
+          >
+            {serverStatus === "online"
+              ? "Servidor activo"
+              : serverStatus === "offline"
+              ? "Servidor caído"
+              : "Verificando servidor..."}
           </p>
           <div className="flex flex-col lg:flex-row lg:items-center lg:gap-4 lg:w-1/3">
             <Link href="/terminos-y-condiciones">
