@@ -1,6 +1,7 @@
-'use client';
+"use client";
 
 import React, { useEffect, useState } from "react";
+import { FaRegCreditCard } from "react-icons/fa";
 import axios from "axios";
 
 const TarjetasCliente = () => {
@@ -52,8 +53,11 @@ const TarjetasCliente = () => {
         <ul className="list-disc">
           {tarjetas.length > 0 ? (
             tarjetas.map((tarjeta) => (
-              <li key={tarjeta.id}>
-                {tarjeta.tipo} - {tarjeta.numero}
+              <li key={tarjeta.id} className="flex items-center gap-2">
+                <FaRegCreditCard className="text-lg" />
+                <span>
+                  {tarjeta.tipo} - {tarjeta.numero}
+                </span>
               </li>
             ))
           ) : (
