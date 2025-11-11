@@ -39,6 +39,7 @@ export default function RootLayout({ children }) {
     "/tarjetas": "DuckBank - Tarjetas",
     "/terminos-y-condiciones": "DuckBank - TyC",
     "/trabaja-con-nosotros": "DuckBank - Empleos",
+    "/beneficios": "DuckBank - Beneficios",
   };
 
   // Cambio de nombres de pestañas de forma dinámica
