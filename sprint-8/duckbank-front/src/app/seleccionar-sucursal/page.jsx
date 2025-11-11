@@ -17,13 +17,11 @@ export default function SeleccionarSucursal() {
     setError("");
 
     try {
-      // 1️⃣ Obtener todas las sucursales disponibles
       const sucursalesResponse = await axios.get(
         `https://duckbank-backend.onrender.com/api/sucursales/`
       );
       setSucursales(sucursalesResponse.data);
 
-      // 2️⃣ Verificar si el usuario puede cambiar sucursal
       const token = localStorage.getItem("authToken");
       if (token) {
         const permissionResponse = await axios.get(
@@ -35,7 +33,6 @@ export default function SeleccionarSucursal() {
         setCanChangeSucursal(can_change_sucursal);
         setChangesLeft(changes_left);
 
-        // 3️⃣ Obtener la sucursal actual asignada
         const assignedResponse = await axios.get(
           `https://duckbank-backend.onrender.com/api/mi-sucursal/`,
           { headers: { Authorization: `Bearer ${token}` } }
@@ -101,10 +98,8 @@ export default function SeleccionarSucursal() {
           });
         }
 
-        // 🔒 Actualizar el contador de cambios
         setChangesLeft((prev) => Math.max(prev - 1, 0));
 
-        // Si ya no le quedan cambios, bloquear
         if (changesLeft - 1 <= 0) {
           setCanChangeSucursal(false);
         }
@@ -119,7 +114,6 @@ export default function SeleccionarSucursal() {
     }
   };
 
-  // 🔥 Mensaje dinámico según cambios restantes
   const renderChangeMessage = () => {
     if (changesLeft > 1) {
       return (
@@ -130,7 +124,7 @@ export default function SeleccionarSucursal() {
     } else if (changesLeft === 1) {
       return (
         <p className="text-sm text-yellow-600 mb-2 text-center">
-          ⚠️ Te queda <strong>1 cambio</strong> disponible.
+          Te queda <strong>1 cambio</strong> disponible.
         </p>
       );
     } else {
@@ -169,7 +163,10 @@ export default function SeleccionarSucursal() {
               </p>
             )}
 
-            <label htmlFor="sucursal" className="block text-lg font-medium mb-2">
+            <label
+              htmlFor="sucursal"
+              className="block text-lg font-medium mb-2"
+            >
               Elegí una sucursal:
             </label>
 

@@ -3,7 +3,7 @@ import React, { useState, useEffect } from "react";
 import Image from "next/image";
 import { FaEdit } from "react-icons/fa";
 import { useUserProfile } from "../../components/context/UserProfileContext";
-import { motion } from "framer-motion";
+import { motion, AnimatePresence } from "framer-motion";
 import { useRouter } from "next/navigation";
 
 export default function PerfilUsuario() {
@@ -15,6 +15,8 @@ export default function PerfilUsuario() {
   const [isEditing, setIsEditing] = useState(false);
   const [errors, setErrors] = useState({});
   const [dni, setDni] = useState("");
+  const [showModal, setShowModal] = useState(false);
+  const [isDeleting, setIsDeleting] = useState(false);
 
   const router = useRouter();
 
@@ -33,8 +35,6 @@ export default function PerfilUsuario() {
         if (!response.ok) throw new Error("Error al obtener perfil");
 
         const data = await response.json();
-        console.log("Datos del perfil:", data);
-
         setProfileData(data);
       } catch (error) {
         console.error(error);
@@ -46,7 +46,6 @@ export default function PerfilUsuario() {
 
   useEffect(() => {
     if (profileData) {
-      console.log("Datos del perfil:", profileData);
       setFirstName(profileData.first_name || "");
       setLastName(profileData.last_name || "");
       setEmail(profileData.email || "");
@@ -88,18 +87,37 @@ export default function PerfilUsuario() {
         }
       );
 
-      if (!response.ok) {
-        if (response.status === 401) {
-          console.error("No autorizado. Token inválido o expirado.");
-        }
-        throw new Error("Error al guardar cambios");
-      }
+      if (!response.ok) throw new Error("Error al guardar cambios");
 
       const updatedProfile = await response.json();
       setProfileData(updatedProfile);
       setIsEditing(false);
     } catch (error) {
       console.error(error);
+    }
+  };
+
+  const handleDeleteAccount = async () => {
+    setIsDeleting(true);
+    try {
+      const token = localStorage.getItem("authToken");
+      const response = await fetch(
+        "https://duckbank-backend.onrender.com/api/delete-account/",
+        {
+          method: "DELETE",
+          headers: { Authorization: `Bearer ${token}` },
+        }
+      );
+
+      if (!response.ok) throw new Error("Error al eliminar la cuenta.");
+
+      setShowModal(false);
+      localStorage.removeItem("authToken");
+      router.push("/");
+    } catch (error) {
+      console.error(error);
+    } finally {
+      setIsDeleting(false);
     }
   };
 
@@ -112,7 +130,7 @@ export default function PerfilUsuario() {
 
   return (
     <div className="flex flex-col items-center justify-center min-h-screen bg-gray-100 mt-16 gap-8">
-      <div className="p-10 rounded-2xl bg-white w-full max-w-md">
+      <div className="p-10 rounded-2xl bg-white w-full max-w-md shadow-lg">
         <motion.h1 className="text-3xl font-bold text-center">
           Datos de tu cuenta
         </motion.h1>
@@ -196,20 +214,20 @@ export default function PerfilUsuario() {
             )}
           </div>
 
-          {/* Mostrar DNI, pero no editable */}
           <div className="mb-4">
             <label className="text-lg font-medium">DNI:</label>
             <input
               type="text"
               value={dni || "No disponible"}
               className="w-full rounded-full p-4 border mt-1"
+              readOnly
             />
           </div>
         </div>
 
         <p
           onClick={() => setIsEditing(!isEditing)}
-          className="mt-4 text-blue-500 cursor-pointer"
+          className="mt-4 text-blue-500 cursor-pointer text-center"
         >
           {isEditing ? "Salir de Modo Edición" : "Entrar en Modo Edición"}
         </p>
@@ -221,42 +239,59 @@ export default function PerfilUsuario() {
         </button>
 
         <button
-          onClick={async () => {
-            const confirmed = confirm(
-              "⚠️ Esta acción eliminará tu cuenta permanentemente junto con todos tus datos.\n¿Seguro que deseas continuar?"
-            );
-            if (!confirmed) return;
-
-            try {
-              const token = localStorage.getItem("authToken");
-              const response = await fetch(
-                "https://duckbank-backend.onrender.com/api/delete-account/",
-                {
-                  method: "DELETE",
-                  headers: {
-                    Authorization: `Bearer ${token}`,
-                  },
-                }
-              );
-
-              if (!response.ok) throw new Error("Error al eliminar la cuenta.");
-
-              alert(
-                "Tu cuenta fue eliminada correctamente. ¡Lamentamos verte ir! 😢"
-              );
-
-              localStorage.removeItem("authToken");
-              router.push("/");
-            } catch (error) {
-              console.error(error);
-              alert("Hubo un error al intentar eliminar tu cuenta.");
-            }
-          }}
+          onClick={() => setShowModal(true)}
           className="mt-6 bg-red-600 hover:bg-red-700 rounded-full px-6 py-2 text-white active:scale-[.98] transition duration-300 mx-auto block"
         >
           Eliminar mi cuenta
         </button>
       </div>
+
+      {/* Modal de confirmación */}
+      <AnimatePresence>
+        {showModal && (
+          <motion.div
+            className="fixed inset-0 bg-black/50 flex justify-center items-center z-50 px-4"
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            exit={{ opacity: 0 }}
+          >
+            <motion.div
+              className="bg-white rounded-2xl p-6 max-w-sm w-full shadow-lg text-center"
+              initial={{ scale: 0.8, opacity: 0 }}
+              animate={{ scale: 1, opacity: 1 }}
+              exit={{ scale: 0.8, opacity: 0 }}
+            >
+              <h2 className="text-xl font-semibold text-gray-800 mb-2">
+                ¿Eliminar cuenta?
+              </h2>
+              <p className="text-gray-600 mb-6">
+                Esta acción eliminará tu cuenta y todos tus datos de forma
+                permanente.
+              </p>
+
+              <div className="flex gap-4 justify-center">
+                <button
+                  onClick={() => setShowModal(false)}
+                  className="bg-gray-300 hover:bg-gray-400 text-gray-800 font-medium px-5 py-2 rounded-full transition"
+                >
+                  Cancelar
+                </button>
+                <button
+                  onClick={handleDeleteAccount}
+                  disabled={isDeleting}
+                  className={`${
+                    isDeleting
+                      ? "bg-red-400 cursor-not-allowed"
+                      : "bg-red-600 hover:bg-red-700"
+                  } text-white font-medium px-5 py-2 rounded-full transition`}
+                >
+                  {isDeleting ? "Eliminando..." : "Eliminar"}
+                </button>
+              </div>
+            </motion.div>
+          </motion.div>
+        )}
+      </AnimatePresence>
     </div>
   );
 }
