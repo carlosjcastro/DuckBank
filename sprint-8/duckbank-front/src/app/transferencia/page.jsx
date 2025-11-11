@@ -232,7 +232,7 @@ export default function Transferencia() {
       </div>
       <div className="mt-4">
         <p className="block">
-          P Revisá tus transferencias en{" "}
+          Revisá tus transferencias en{" "}
           <Link href="/mis-transferencias" className="font-bold">
             Mis Transferencias
           </Link>
