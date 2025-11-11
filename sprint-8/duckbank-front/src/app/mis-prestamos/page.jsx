@@ -52,7 +52,7 @@ const MisPrestamos = () => {
 
     try {
       await axios.delete(
-        `https://web-production-b8a3.up.railway.app/api/eliminar-prestamo/${prestamoAEliminar}/`,
+        `https://duckbank-backend.onrender.com/api/eliminar-prestamo/${prestamoAEliminar}/`,
         {
           headers: {
             Authorization: `Bearer ${token}`,

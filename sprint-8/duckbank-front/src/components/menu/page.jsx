@@ -54,7 +54,6 @@ export default function Menu() {
       items: [
         { name: "Préstamos", path: "/prestamos", icon: <IoCashOutline /> },
         { name: "Mis Préstamos", path: "/mis-prestamos", icon: <BsCashCoin /> },
-        { name: "Gestionar Préstamos", path: "/gestionar-prestamos", icon: <MdOutlineManageAccounts /> },
         { name: "Cuotificalo", path: "/cuotificalo", icon: <TbListDetails /> },
       ],
     },
