@@ -219,6 +219,43 @@ export default function PerfilUsuario() {
         >
           Guardar Cambios
         </button>
+
+        <button
+          onClick={async () => {
+            const confirmed = confirm(
+              "⚠️ Esta acción eliminará tu cuenta permanentemente junto con todos tus datos.\n¿Seguro que deseas continuar?"
+            );
+            if (!confirmed) return;
+
+            try {
+              const token = localStorage.getItem("authToken");
+              const response = await fetch(
+                "https://duckbank-backend.onrender.com/api/delete-account/",
+                {
+                  method: "DELETE",
+                  headers: {
+                    Authorization: `Bearer ${token}`,
+                  },
+                }
+              );
+
+              if (!response.ok) throw new Error("Error al eliminar la cuenta.");
+
+              alert(
+                "Tu cuenta fue eliminada correctamente. ¡Lamentamos verte ir! 😢"
+              );
+
+              localStorage.removeItem("authToken");
+              router.push("/");
+            } catch (error) {
+              console.error(error);
+              alert("Hubo un error al intentar eliminar tu cuenta.");
+            }
+          }}
+          className="mt-6 bg-red-600 hover:bg-red-700 rounded-full px-6 py-2 text-white active:scale-[.98] transition duration-300 mx-auto block"
+        >
+          Eliminar mi cuenta
+        </button>
       </div>
     </div>
   );
