@@ -52,7 +52,35 @@ function AuthCheck() {
   }, [pathname, profileData, router, logout, setProfileData]);
 
   if (isLoading) {
-    return <div>Cargando...</div>;
+    return (
+      <div className="flex justify-center items-center h-screen bg-[#f9f9f9]">
+        <span className="loader"></span>
+
+        <style jsx>{`
+          .loader {
+            width: 48px;
+            height: 48px;
+            background: #4e2d1e; /* color institucional */
+            animation: rotate 1s linear infinite;
+          }
+
+          @keyframes rotate {
+            0% {
+              transform: rotate(0deg) scale(0.2);
+              border-radius: 10%;
+            }
+            50% {
+              transform: rotate(180deg) scale(1.5);
+              border-radius: 50%;
+            }
+            100% {
+              transform: rotate(360deg) scale(0.2);
+              border-radius: 10%;
+            }
+          }
+        `}</style>
+      </div>
+    );
   }
 
   return null;
