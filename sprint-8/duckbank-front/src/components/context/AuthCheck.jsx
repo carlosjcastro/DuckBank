@@ -60,7 +60,7 @@ function AuthCheck() {
           .loader {
             width: 48px;
             height: 48px;
-            background: #4e2d1e; /* color institucional */
+            background: #4e2d1e;
             animation: rotate 1s linear infinite;
           }
 
